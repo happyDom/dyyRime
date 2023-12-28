@@ -3,3 +3,8 @@ build
 *userdb
 installation.yaml
 user.yaml
+*.bat
+csDocBuild*.py
+publish.py
+*.cs
+gitVerInfoCfg.json
