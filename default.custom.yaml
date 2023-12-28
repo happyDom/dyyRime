@@ -8,16 +8,16 @@ patch:
     Shift_R: commit_code  # 候选状态下，按 右 Shift 后，编码上屏
   ascii_composer:
     good_old_caps_lock: true  # true 通过 caps lock 键切换入英文模式后，保持大写输入状态
-  "engine/filters":
+  engine/filters:
     - simplifier  # 引入简体拼音输入法过滤器
     - uniquifier  # 过滤重复候选项，依赖 simplifier
-  "key_binder/bindings":
+  key_binder/bindings:
     - {accept: semicolon, send: 2, when: has_menu}  # 使用 ; 键选择第 2 候选词
     - {accept: apostrophe, send: 3, when: has_menu}  # 使用 . 键选择第 3 候选词
     - {accept: bracketleft, send: Page_Up, when: paging}  # 使用 PageUp 键向上翻页
     - {accept: bracketright, send: Page_Down, when: has_menu}  # 使用 PageDown 键向下翻页
-  "menu/page_size": 10  # 存在候选词选项时，每一页显示的候选词数量，最大是 10
-  "recognizer/patterns/punct": "^/([0-9]0?|[A-Za-z]+)$"  # 标点符号识别模式
+  menu/page_size: 10  # 存在候选词选项时，每一页显示的候选词数量，最大是 10
+  recognizer/patterns/punct: "^/([0-9]0?|[A-Za-z]+)$"  # 标点符号识别模式
   schema_list:
     - {schema: wubi_pinyin}  # 五笔・拼音 输入方案
   switcher:
