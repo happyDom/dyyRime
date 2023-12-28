@@ -1,0 +1,28 @@
+patch:
+  "app_options/code.exe":
+    vscodeFlg: true
+  "app_options/conhost.exe":
+    cmdFlg: true
+  "app_options/dingtalk.exe":
+    dingdingFlg: true
+  "app_options/feishu.exe":
+    feishuFlg: true
+  "app_options/mintty.exe":
+    minttyFlg: true
+  "app_options/pycharm64.exe":
+    pycharmFlg: true
+  "app_options/wechat.exe":
+    wechatFlg: true
+  "preset_color_schemes/+":
+    dyySelf:
+      name: 素
+      author: dyy <douyaoyuan@126.com>
+      text_color: 0x000000
+      back_color: 0xFFFFFF
+      border_color: 0x25000000
+      hilited_text_color: 0x000000
+      hilited_back_color: 0xFFFFFF
+      hilited_candidate_back_color: 0x50CCFF99
+      hilited_candidate_text_color: 0x3300FF
+      comment_text_color: 0xB5B5B5
+  "style/color_scheme": dyySelf
