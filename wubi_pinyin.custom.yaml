@@ -1,0 +1,22 @@
+# encoding:utf-8
+patch:
+  engine/translators/+:  #增加以下translator
+    - table_translator@custom_phrase  # 指定使用 custom_phrase 进行输入字符的翻译
+  custom_phrase:  # 设置用户字/词典
+    dictionary: ""
+    user_dict: Custom_phrase  # 指向 Custom_phrase.txt 文档
+    db_class: stabledb
+    enable_completion: false
+    enable_sentence: true
+    initial_quality: 1
+  punctuator:  # 设置标点符号集
+    import_preset: symbols
+  
+  # 设置以下 translator 相关的开关
+  translator/enable_sentence: true          #是否整句连打
+  translator/enable_user_dict: true         #开启用户词典
+  translator/enable_encoder: true           #是否自动造词
+  translator/encode_commit_history: false 	#对已上屏的内容整合成词条，看需求
+  translator/max_phrase_length: 4          	#自动造词的最长字数
+  
+  translator/enable_completion: true  		#编码逐渐提示开关；编码提示

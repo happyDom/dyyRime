@@ -1,0 +1,19 @@
+# Rime table
+# coding: utf-8
+#@/db_name custom_phrase.txt
+#@/db_type tabledb
+#
+# 【小狼毫】0.9.21 以上
+#
+# 请将该文件以 UTF-8 编码保存
+#
+# 码表各字段以制表符（tab）分隔，制表符不可以用四个空格代替，但允许在文字词句中使用空格
+# 顺序为：文字、编码、权重（权重决定重码的次序，是可选项，数字越大，排序越靠前）
+#
+# 虽然文本码表编辑较为方便，但不适合导入大量条目
+@	at
+
+#latex 相关词汇
+$$	doll
+$$\textcolor{blue}{A}$$	doll
+#latex end
