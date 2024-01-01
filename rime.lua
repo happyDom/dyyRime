@@ -1,0 +1,1 @@
+help_translator = require("help")
