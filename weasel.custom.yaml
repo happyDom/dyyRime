@@ -25,4 +25,14 @@ patch:
       hilited_candidate_back_color: 0x50CCFF99
       hilited_candidate_text_color: 0x3300FF
       comment_text_color: 0xB5B5B5
-  "style/color_scheme": dyySelf
+  style:
+    color_scheme: dyySelf					# 指定引用配色方案 id
+    display_tray_icon: false				# 是否显示右下角图标
+    horizontal: false						# 候选词排列方式。true：横排显示；false：竖排显示
+    font_face: "Microsoft YaHei"			# 候选字体
+    font_point: 16							# 候选字体大小
+    label_font_face: "JetBrains Mono"		# 序号字体
+    label_font_point: 14					# 序号字体大小
+    comment_font_face: "Microsoft YaHei"	# 注释字体
+    comment_font_point: 12					# 注释字体大小
+    inline_preedit: true					# 嵌入式候选窗/单行显示
