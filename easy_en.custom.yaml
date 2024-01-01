@@ -1,0 +1,10 @@
+patch:
+  speller/alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA/" #定义输入字符的识别格式
+  style:
+    inline_preedit: true  	# 是否在输入行内进行预测生成，true 表示不单独显示输入字符
+  punctuator:
+    import_preset: symbols
+  
+  translator/enable_user_dict: true        #开启用户词典
+  translator/enable_encoder: true          #是否自动造词
+  translator/encode_commit_history: false  #对已上屏的内容整合成词条，看需求

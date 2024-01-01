@@ -20,6 +20,7 @@ patch:
   recognizer/patterns/punct: "^/([0-9]0?|[A-Za-z]+)$"  # 标点符号识别模式
   schema_list:
     - {schema: wubi_pinyin}  # 五笔・拼音 输入方案
+    - {schema: easy_en}  # 英文输入方案
   switcher:
     abbreviate_options: true  # 功能选项显示为简写模式
     caption: "〔方案选单〕"  # 选项菜单的名字
