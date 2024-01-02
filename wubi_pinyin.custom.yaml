@@ -1,6 +1,7 @@
 # encoding:utf-8
 patch:
   engine/translators/+:  #增加以下translator
+    - lua_translator@inputShow_translator
     - table_translator@custom_phrase  # 指定使用 custom_phrase 进行输入字符的翻译
     - lua_translator@help_translator
   custom_phrase:  # 设置用户字/词典
