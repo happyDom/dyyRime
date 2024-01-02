@@ -1,7 +1,7 @@
 --lua语言中的注释用“--” 
 function translator(input, seg)
 	if (input == "/help") then
-		yield(Candidate("help", seg.start, seg._end, "带圈汉字/数字/字母-->/hzq/szq/zmq", " "))
+		yield(Candidate("help", seg.start, seg._end, "带圈汉字/数字/字母/注音-->/hzq/szq/zmq/zy", " "))
 		yield(Candidate("help", seg.start, seg._end, "符号/记号/箭头/雪花/表情-->/fh/jh/jt/xh/bq", " "))
 		yield(Candidate("help", seg.start, seg._end, "数学/数字名/音乐/分数/电脑-->/sx/szm/yy/fs/dn", " "))
 		yield(Candidate("help", seg.start, seg._end, "方块/麻将/象棋/色子/扑克-->/fk/mj/xq/sz/pk", " "))
