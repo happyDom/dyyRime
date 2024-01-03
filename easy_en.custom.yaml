@@ -2,7 +2,7 @@ patch:
   speller/alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA/" #定义输入字符的识别格式
   engine/filters/+:
     # 下面的滤镜会对候选项进行格式化处理
-    - lua_filter@Upper_filter #英文后加空格滤镜
+    - lua_filter@Upper_Filter #英文后加空格滤镜
     # 上面的滤镜会增加候选词选项
     - uniquifier
   punctuator:

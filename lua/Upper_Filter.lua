@@ -1,4 +1,4 @@
--- spaceAppending.lua
+-- Upper_Filter.lua
 -- Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
 -- 这个脚本，用于为英文单词提供一个首字母大写的候选项
 
@@ -9,7 +9,7 @@ local function _specialFunc(input, env)
 	end
 end
 
-local function _spaceAppending(input, env)
+local function _upperFilter(input, env)
 	local cands = {}
 	local idx, idxSelf
 	local selfFlg
@@ -59,15 +59,15 @@ local function _spaceAppending(input, env)
 	end
 end
 
-local function spaceAppending(input, env)
+local function upperFilter(input, env)
 	--获取debug选项开关状态
 	local debugSwitchSts = env.engine.context:get_option("debug")
 
 	if debugSwitchSts then
 		_specialFunc(input,env)
 	else
-		_spaceAppending(input, env)
+		_upperFilter(input, env)
 	end
 end
 
-return spaceAppending
+return _upperFilter
