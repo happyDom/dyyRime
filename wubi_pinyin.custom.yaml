@@ -1,5 +1,9 @@
 # encoding:utf-8
 patch:
+  switches/+: #增加以下开关
+    - name: encnDic					# 中英字典开关
+      reset: 1
+      states: [Off, 中英对照]
   engine/translators/+:  #增加以下translator
     - lua_translator@inputShow_translator
     - table_translator@custom_phrase  # 指定使用 custom_phrase 进行输入字符的翻译
@@ -8,6 +12,8 @@ patch:
     - simplifier
     - lua_filter@inputShow_Filter					# 这个过滤器用于在特定场景下，增加候选项
     - uniquifier									# 过滤重复候选项，依赖 simplifier
+    # 下面的滤镜是comment滤镜，不会改变候选项列表
+    - lua_filter@dic_4w_Filter						# 英中对照滤镜
   custom_phrase:  # 设置用户字/词典
     dictionary: ""
     user_dict: Custom_phrase  # 指向 Custom_phrase.txt 文档
