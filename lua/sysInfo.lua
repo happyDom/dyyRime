@@ -1,3 +1,6 @@
+-- 导入log模块记录日志
+local logEnable, log = pcall(require, "runLog")
+
 local M={}
 local dbgFlg = false
 
@@ -69,8 +72,8 @@ M.currentDir = function()
 	--解析info.source所在的路径
 	local path = info.source
 	path = string.sub(path, 2, -1) -- 去掉开头的"@"
-	path = string.gsub(path,'\\','/') -- 路径格式由 c:\\Users\\san.zhang 转换为 c:/Users/san.zhang
-	path = string.match(path, "^(.*)/") -- 捕获最后一个 "\" 之前的部分 就是我们最终要的目录部分
+	path = string.gsub(path,'\\','/') -- 路径格式由 c:\\Users\\san.zhang\\ 转换为 c:/Users/san.zhang/
+	path = string.match(path, "^(.*)/") -- 捕获最后一个 "/" 之前的部分 就是我们最终要的目录部分
 	
 	return path
 end
