@@ -7,6 +7,9 @@ patch:
     - name: phraseReplace			# 敏感词输出开关
       reset: 1
       states: [Off, 👙]
+    - name: pinyin					# 这个开关用于标记是否打开拼音滤镜
+      reset: 0
+      states: [Off, pīnyīn]
   engine/translators/+:  #增加以下translator
     - lua_translator@inputShow_translator
     - table_translator@custom_phrase  # 指定使用 custom_phrase 进行输入字符的翻译
@@ -20,6 +23,7 @@ patch:
     - uniquifier									# 过滤重复候选项，依赖 simplifier
     # 下面的滤镜是comment滤镜，不会改变候选项列表
     - lua_filter@dic_4w_Filter						# 英中对照滤镜
+    - lua_filter@pinyinAdding_Filter				# pinyin滤镜，用于对候选项中的字添加拼音
   custom_phrase:  # 设置用户字/词典
     dictionary: ""
     user_dict: Custom_phrase  # 指向 Custom_phrase.txt 文档
