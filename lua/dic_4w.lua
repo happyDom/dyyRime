@@ -30,7 +30,7 @@ local function dictload(...) -- filename)
 	local dict={}
 	for i,line in next ,lines do
 		if not line:match("^%s*#") then  -- 第一字 # 为注释行
-			local key,val = string.match(line,"(.+)\t(.+)")
+			local key,val = string.match(line,"(.+)\t(%C+)")
 			if nil ~= key then
 				--此处，相同的key，后加载的内容将覆盖前面加载的内容
 				dict[key] = val
