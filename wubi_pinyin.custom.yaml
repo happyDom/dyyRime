@@ -17,6 +17,7 @@ patch:
   engine/filters:									# 设置以下filter
     - simplifier
     - lua_filter@inputShow_Filter					# 这个过滤器用于在特定场景下，增加候选项
+    - lua_filter@dateTime_Filter					# 时间信息，对于特定的时间或者事件关键字，添加时间信息，例如日期，今天，明天，肝炎，父亲等
     # 上面的滤镜会调整候选词选项，或者增加，或者减少。原则上说，减少的滤镜，请放在前端
     - lua_filter@phraseReplace_Filter				# 词语替换滤镜，针对一些指定的关键字，将其替换为指定的内容，或者当没有指定内容时，替换为 *
     # 上面的滤镜会减少或者改变候先词选项
