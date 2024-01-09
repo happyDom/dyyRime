@@ -53,15 +53,14 @@ local function dictload(...) -- filename)
 	
 	for i,line in next ,lines do
 		if not line:match("^%s*#") then  -- 第一字 # 为注释行
-			local key,val = string.match(line,"(.+)\t(.+)")
+			local key,val = string.match(line,"(.+)\t(%C*)")
 			if nil == key then
 				key = string.match(line,'(%S+)')
 				val = ''
 			end
 			if nil ~= key then
 				--此处，如果key 已经存在，则使用后来的值顶替旧的值
-				val = val:gsub('\n','')
-				thisDict[key] = val:gsub('\r','')
+				thisDict[key] = val
 			end
 		end
 	end
