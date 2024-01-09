@@ -11,59 +11,142 @@ M.setDbg = function(flg)
 end
 
 M.homePath = function()
-	return os.getenv("HOMEPATH")
+	local tmpVar = os.getenv("HOMEPATH") or os.getenv("HOME")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
 end
 
 M.computerName = function()
-	return os.getenv("COMPUTERNAME")
+	local tmpVar = os.getenv("COMPUTERNAME") or os.getenv("HOSTNAME")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
 end
 
 M.userName = function()
-	return os.getenv("USERNAME")
+	local tmpVar = os.getenv("USERNAME") or os.getenv("USER")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
 end
 
 M.osName = function()
-	return os.getenv("OS")
+	local tmpVar = os.getenv("OS")
+	if nil == tmpVar then
+		tmpVar = 'UnixLike'
+	end
+	return tmpVar
 end
 
 M.NUMBER_OF_PROCESSORS = function()
-	return os.getenv("NUMBER_OF_PROCESSORS")
+	local tmpVar = os.getenv("NUMBER_OF_PROCESSORS")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
+end
+
+M.pwd = function()
+	local tmpVar = os.getenv("PWD")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
+end
+
+M.oldPwd = function()
+	local tmpVar = os.getenv("OLDPWD")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
 end
 
 M.PROCESSOR_IDENTIFIER = function()
-	return os.getenv("PROCESSOR_IDENTIFIER")
+	local tmpVar = os.getenv("PROCESSOR_IDENTIFIER")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
 end
 
 M.PROGRAMDATA = function()
-	return os.getenv("PROGRAMDATA")
+	local tmpVar = os.getenv("PROGRAMDATA")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
 end
+
 M.PROGRAMFILES = function()
-	return os.getenv("PROGRAMW6432")
+	local tmpVar = os.getenv("PROGRAMW6432")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
 end
 M.PROGRAMFILESx86 = function()
-	return os.getenv("PROGRAMFILES(X86)")
-end
-M.APPDATA = function()
-	return os.getenv("APPDATA")
-end
-M.WINDIR = function()
-	return os.getenv("WINDIR")
-end
-M.COMMONPROGRAMFILES = function()
-	return os.getenv("COMMONPROGRAMFILES")
-end
-M.COMMONPROGRAMFILESx86 = function()
-	return os.getenv("COMMONPROGRAMFILES(x86)")
-end
-M.TEMP = function()
-	local path = os.getenv("TEMP")
-	if nil == path or '' == path then
-		path = os.getenv("TMP")
+	local tmpVar = os.getenv("PROGRAMFILES(X86)")
+	if nil == tmpVar then
+		tmpVar = '未知'
 	end
-	return path
+	return tmpVar
 end
+
+M.APPDATA = function()
+	local tmpVar = os.getenv("APPDATA(X86)")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
+end
+
+M.WINDIR = function()
+	local tmpVar = os.getenv("WINDIR")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
+end
+
+M.COMMONPROGRAMFILES = function()
+	local tmpVar = os.getenv("COMMONPROGRAMFILES")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
+end
+
+M.COMMONPROGRAMFILESx86 = function()
+	local tmpVar = os.getenv("COMMONPROGRAMFILES(x86)")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
+end
+
+M.TEMP = function()
+	local tmpVar = os.getenv("TEMP")
+	if nil == tmpVar or '' == tmpVar then
+		tmpVar = os.getenv("TMP")
+	end
+	
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
+end
+
 M.SYSTEMDRIVE = function()
-	return os.getenv("SYSTEMDRIVE")
+	local tmpVar = os.getenv("SYSTEMDRIVE")
+	if nil == tmpVar then
+		tmpVar = '未知'
+	end
+	return tmpVar
 end
 
 M.currentDir = function()
@@ -78,18 +161,28 @@ M.currentDir = function()
 	return path
 end
 
-M.test = function(printPrefix)
-	if nil == printPrefix then
-		printPrefix = ' '
-	end
+M.writeLog = function(printPrefix)
+	printPrefix = printPrefix or ''
 	
-	if dbgFlg then
-		print(printPrefix..'sysInfo test starting...')
-		
-		print(printPrefix, 'currentDir is：', M.currentDir())
-		print(printPrefix, 'computerName is：', M.computerName())
-		print(printPrefix, 'homePath is：', M.homePath())
-		print(printPrefix, 'userName is：', M.userName())
+	if logEnable then
+		log.writeLog(printPrefix..'homePath: '..M.homePath())
+		log.writeLog(printPrefix..'computerName: '..M.computerName())
+		log.writeLog(printPrefix..'userName: '..M.userName())
+		log.writeLog(printPrefix..'osName: '..M.osName())
+		log.writeLog(printPrefix..'pwd: '..M.pwd())
+		log.writeLog(printPrefix..'oldPwd: '..M.oldPwd())
+		log.writeLog(printPrefix..'numberOfProcessors: '..M.NUMBER_OF_PROCESSORS())
+		log.writeLog(printPrefix..'progressorIdentifier: '..M.PROCESSOR_IDENTIFIER())
+		log.writeLog(printPrefix..'programData: '..M.PROGRAMDATA())
+		log.writeLog(printPrefix..'programFiles: '..M.PROGRAMFILES())
+		log.writeLog(printPrefix..'programFilesx86: '..M.PROGRAMFILESx86())
+		log.writeLog(printPrefix..'appData: '..M.APPDATA())
+		log.writeLog(printPrefix..'winDir: '..M.WINDIR())
+		log.writeLog(printPrefix..'commonProgramFiles: '..M.COMMONPROGRAMFILES())
+		log.writeLog(printPrefix..'commonProgramFilesx86: '..M.COMMONPROGRAMFILESx86())
+		log.writeLog(printPrefix..'temp: '..M.TEMP())
+		log.writeLog(printPrefix..'systemDrive: '..M.SYSTEMDRIVE())
+		log.writeLog(printPrefix..'currentDir: '..M.currentDir())
 	end
 end
 
