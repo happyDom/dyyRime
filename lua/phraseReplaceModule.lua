@@ -60,7 +60,8 @@ local function dictload(...) -- filename)
 			end
 			if nil ~= key then
 				--此处，如果key 已经存在，则使用后来的值顶替旧的值
-				thisDict[key] = val
+				val = val:gsub('\n','')
+				thisDict[key] = val:gsub('\r','')
 			end
 		end
 	end
