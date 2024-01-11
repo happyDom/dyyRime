@@ -7,4 +7,5 @@ user.yaml
 csDocBuild*.py
 publish.py
 *.cs
+lua/runLog.txt
 gitVerInfoCfg.json
