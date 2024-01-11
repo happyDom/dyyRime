@@ -10,16 +10,25 @@ LastEditTime: 2023-06-09 13:27:57
 --Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
 --本脚本主要用于提供一些与运行环境有关的词条信息
 
---引入支持模块，处理日期和时间信息
+--引入支持模块
 local GUIDEnable, GUID = pcall(require, 'GUID')
 local sysInfoEnable, sysInfo = pcall(require, 'sysInfo')
 local socketEnable, socket = pcall(require, "socket")
-local logEnable, log = pcall(require, "runLog")
 local utf8StrEnable, utf8Str = pcall(require, 'utf8String')
 
 if socketEnable then
 	socketEnable = socket.socketEnable
 	socket = socket.socket
+end
+
+local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from dynamicPhrase_Filter.lua')
+	log.writeLog('GUIDEnable:'..tostring(GUIDEnable))
+	log.writeLog('sysInfoEnable:'..tostring(sysInfoEnable))
+	log.writeLog('socketEnable:'..tostring(socketEnable))
+	log.writeLog('utf8StrEnable:'..tostring(utf8StrEnable))
 end
 
 local cands

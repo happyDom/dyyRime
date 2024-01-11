@@ -9,6 +9,11 @@ local lunarEnable, lunar = pcall(require, 'lunarModule')
 
 -- 导入log模块记录日志
 local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from dateTimeModule.lua')
+	log.writeLog('lunarEnable:'..tostring(lunarEnable))
+end
 
 --设置 dbg 开关
 local function setDbg(flg)

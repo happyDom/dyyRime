@@ -1,24 +1,24 @@
--- spaceAppending.lua
+-- phraseComment_Filter.lua
 -- Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
-local dic_4wEnable, dic_4w = pcall(require, 'dic_4w')
-local utf8StringEnable, utf8String = pcall(require, 'utf8String')
+local logEnable, log = pcall(require, 'runLog')
 
-local logEnable, log = pcall(require, "runLog")
+local phraseCommentModuleEnable, phraseCommentModule = pcall(require, 'phraseCommentModule')
+local getVal = phraseCommentModule.getVal
+
+local ok, utf8String = pcall(require, 'utf8String')
+
 if logEnable then
 	log.writeLog('')
-	log.writeLog('log from dic_4w_Filter.lua')
-	log.writeLog('dic_4wEnable:'..tostring(dic_4wEnable))
-	log.writeLog('utf8StringEnable:'..tostring(utf8StringEnable))
+	log.writeLog('log from phraseComment_Filter.lua:')
+	log.writeLog('phraseCommentModuleEnable:'..tostring(phraseCommentModuleEnable))
 end
 
-local getVal = dic_4w.getVal
-
 --最长的comment长度限制
-local maxLenOfComment = 100
+local maxLenOfComment = 250
 
-local function dic_4w_Filter(input, env)
-	--获取中英对照开关状态
-	local on = env.engine.context:get_option("encnDic")
+local function phraseComment_Filter(input, env)
+	--获取选项评论开关状态
+	local on = env.engine.context:get_option("phraseComment")
 	
 	for cand in input:iter() do
 		if on then
@@ -41,16 +41,17 @@ local function dic_4w_Filter(input, env)
 					--去除首尾空格 和 符号
 					thisComment = utf8String.utf8PunctuationsTrim(thisComment)
 				end
+				
 				if cand.comment ~= "" then
 					if thisComment ~= cand.comment then
 						if utf8.len(cand.comment) < 5 then
-							if '💡'==cand.comment then
+							if '💡' == cand.comment then
 								thisComment = cand.comment..thisComment
 							else
 								thisComment = cand.comment..'✔'..thisComment
 							end
 						else
-							thisComment = cand.comment..'\r'..thisComment
+							thisComment = cand.comment..'\r💡'..thisComment
 						end
 					end
 				end
@@ -61,4 +62,4 @@ local function dic_4w_Filter(input, env)
 	end
 end
 
-return dic_4w_Filter
+return phraseComment_Filter

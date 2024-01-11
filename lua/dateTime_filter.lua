@@ -3,27 +3,33 @@
 --本脚本主要用于提供一些与时间日期信息相关的处理服务
 
 --引入支持模块，处理日期和时间信息
-local ok, res = pcall(require, 'dateTimeModule')
-local alltimeInfo = res.alltimeInfo
-local jqListComming = res.jqListComming
-local jqIdxByName = res.jqIdxByName
-local jqInfoByTime = res.jqInfoByTime
-local wInfoByTime = res.wInfoByTime
-local daysDiffName = res.daysDiffName
-local dateInfoByTime = res.dateInfoByTime
-local dateInfoByDaysOffset = res.dateInfoByDaysOffset
-local timeInfoByTime = res.timeInfoByTime
-
+local dateTimeModuleEnable, dateTimeModule = pcall(require, 'dateTimeModule')
+--引入 eventsList 模块，处理日期相关事件信息
+local eventsListModuleEnable, eventsListModule = pcall(require, 'eventsListModule')
 -- 导入log模块记录日志
 local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from dateTime_filter.lua')
+	log.writeLog('dateTimeModuleEnable:'..tostring(dateTimeModuleEnable))
+	log.writeLog('eventsListModuleEnable:'..tostring(eventsListModuleEnable))
+end
+
+local alltimeInfo = dateTimeModule.alltimeInfo
+local jqListComming = dateTimeModule.jqListComming
+local jqIdxByName = dateTimeModule.jqIdxByName
+local jqInfoByTime = dateTimeModule.jqInfoByTime
+local wInfoByTime = dateTimeModule.wInfoByTime
+local daysDiffName = dateTimeModule.daysDiffName
+local dateInfoByTime = dateTimeModule.dateInfoByTime
+local dateInfoByDaysOffset = dateTimeModule.dateInfoByDaysOffset
+local timeInfoByTime = dateTimeModule.timeInfoByTime
 
 --创建节气表
-res.jqListBuild()
+dateTimeModule.jqListBuild()
 
---引入 eventsList 模块，处理日期相关事件信息
-local ok, res1 = pcall(require, 'eventsListModule')
-local getEventsByKw = res1.getEventsByKw
-local getEventsByTime = res1.getEventsByTime
+local getEventsByKw = eventsListModule.getEventsByKw
+local getEventsByTime = eventsListModule.getEventsByTime
 
 --最长的comment长度限制
 local maxLenOfComment = 250

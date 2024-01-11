@@ -2,15 +2,23 @@
 -- Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
 local dbgFlg = false
 
-local ok, res = pcall(require, 'phraseExt_Module')
-local getPhraseList = res.getPhraseList
+local phraseExt_ModuleEnable, phraseExt_Module = pcall(require, 'phraseExt_Module')
+
+local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from phraseExt_Filter.lua')
+	log.writeLog('phraseExt_ModuleEnable:'..tostring(phraseExt_ModuleEnable))
+end
+
+local getPhraseList = phraseExt_Module.getPhraseList
 
 --最长的comment长度限制
 local maxLenOfComment = 250
 
 --设置 dbg 开关
 local function setDbg(dbgFlg)
-	res.setDbg(dbgFlg)
+	phraseExt_Module.setDbg(dbgFlg)
 end
 
 --过滤器

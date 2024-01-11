@@ -6,23 +6,28 @@ local dict={}
 local dbgFlg = false
 
 --引入系统变更处理模块
-local ok, sysInfoRes = pcall(require, 'sysInfo')
-local currentDir = sysInfoRes.currentDir
-local userName = sysInfoRes.userName
+local sysInfoEnable, sysInfo = pcall(require, 'sysInfo')
+
+local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from phraseReplaceModule.lua')
+	log.writeLog('sysInfoEnable:'..tostring(sysInfoEnable))
+end
+
+local currentDir = sysInfo.currentDir
+local userName = sysInfo.userName
 
 --设置 dbg 开关
 local function setDbg(flg)
 	dbgFlg = flg
-	sysInfoRes.setDbg(flg)
+	sysInfo.setDbg(flg)
 	
 	print('phraseReplace dbgFlg is '..tostring(dbgFlg))
 end
 
 --将文档处理成行数组
 local function files_to_lines(...)
-	if dbgFlg then
-		print("--->files_to_lines called here")
-	end
 	local tab=setmetatable({},{__index=table})
 	local index=1
 	for i,filename in next,{...} do
@@ -36,18 +41,10 @@ local function files_to_lines(...)
 			fn:close()
 		end
 	end
-	
-	if dbgFlg then
-		print("--->files_to_lines completed here")
-	end
 	return tab
 end
 
 local function dictload(...) -- filename)
-	if dbgFlg then
-		print("-->dictload called here")
-	end
-	
 	local lines=files_to_lines(...)
 	local thisDict={}
 	
@@ -65,9 +62,6 @@ local function dictload(...) -- filename)
 		end
 	end
 	
-	if dbgFlg then
-		print("-->dictload completed here")
-	end
 	return thisDict
 end
 
@@ -79,7 +73,7 @@ local function test(printPrefix)
 	if dbgFlg then
 		print('phraseReplace test starting...')
 		
-		sysInfoRes.test(printPrefix..' ')
+		sysInfo.test(printPrefix..' ')
 		
 		for k,v in pairs(dict) do
 			if dbgFlg then

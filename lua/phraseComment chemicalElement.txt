@@ -1,0 +1,405 @@
+H h	氢[1](qīng,Hydrogen),[◑H³：12Y]密度最小的元素，同位素为氕、氘和氚
+D d	氢[1](dāo,Deuterium),[◑H³：12Y]密度最小的元素，同位素为氕、氘和氚
+T t	氚[1](chuān,Tritium),[◑H³：12Y]密度最小的元素，同位素为氕、氘和氚
+氢	H[1](qīng,Hydrogen),密度最小的元素，同位素为氕、氘和氚
+氕	H[1](piē,Protium),密度最小的元素，同位素为氕、氘和氚
+氘	☢H[1](dāo,Deuterium),[◑H²：12Y]密度最小的元素，同位素为氕、氘和氚
+氚	☢H[1](chuān,Tritium),[◑H³：12Y]密度最小的元素，同位素为氕、氘和氚
+Hydrogen hydrogen	氢[1](qīng,H),密度最小的元素，同位素为氕、氘和氚
+Protium protium	氕[1](piē,H),密度最小的元素，同位素为氕、氘和氚
+Deuterium deuterium	氘[1](dāo,D/²H),密度最小的元素，可控核聚变，同位素为氕、氘和氚
+Tritium tritium	氚[1](chuān,T/³H),[◑H³：12Y]密度最小的元素，同位素为氕、氘和氚
+He he	氦[2](hài,Helium),最难液化，稀有气体，由中国学者成功制得氦化合物 氦化钠
+氦	He[2](hài,Helium),最难液化，稀有气体，由中国学者成功制得氦化合物 氦化钠
+Helium helium	氦[2](hài,He),最难液化，稀有气体，由中国学者成功制得氦化合物 氦化钠
+Li li	锂[3](lǐ,Lithium),[🔥紫红]密度小于煤油，用石蜡封存的活泼碱金属，空气中生成黑色氮化锂，可与水反应
+锂	Li[3](lǐ,Lithium),[🔥紫红]密度小于煤油，用石蜡封存的活泼碱金属，空气中生成黑色氮化锂，可与水反应
+Lithium lithium	锂[3](lǐ,Li),[🔥紫红]密度小于煤油，用石蜡封存的活泼碱金属，空气中生成黑色氮化锂，可与水反应
+紫 红 紫红	锂[3](lǐ,Lithium)[🔥紫红]
+Be	铍[4](pí,Beryllium),最轻碱土金属元素，有剧毒，与水几乎不反应
+be	铍[4](pí,Beryllium),最轻碱土金属元素，有剧毒，与水几乎不反应
+铍	Be[4](pí,Beryllium),最轻碱土金属元素，有剧毒，与水几乎不反应
+Beryllium	铍[4](pí,Be),最轻碱土金属元素，有剧毒，与水几乎不反应
+beryllium	铍[4](pí,Be),最轻碱土金属元素，有剧毒，与水几乎不反应
+B	硼[5](péng,Boron),单质硬度仅次于金刚石的非金属元素，重要微量元素
+b	硼[5](péng,Boron),单质硬度仅次于金刚石的非金属元素，重要微量元素
+硼	B[5](péng,Boron),单质硬度仅次于金刚石的非金属元素，重要微量元素
+Boron	硼[5](péng,B),单质硬度仅次于金刚石的非金属元素，重要微量元素
+boron	硼[5](péng,B),单质硬度仅次于金刚石的非金属元素，重要微量元素
+C	碳[6](tàn,Carbon),[◑C¹⁴：5730Y]硬度最高（金刚石）、导电（石墨），细胞干重中含量最高，是生命的基本构架
+c	碳[6](tàn,Carbon),[◑C¹⁴：5730Y]硬度最高（金刚石）、导电（石墨），细胞干重中含量最高，是生命的基本构架
+碳	C[6](tàn,Carbon),[◑C¹⁴：5730Y]硬度最高（金刚石）、导电（石墨），细胞干重中含量最高，是生命的基本构架
+Carbon	碳[6](tàn,C),[◑C¹⁴：5730Y]硬度最高（金刚石）、导电（石墨），细胞干重中含量最高，是生命的基本构架
+carbon	碳[6](tàn,C),[◑C¹⁴：5730Y]硬度最高（金刚石）、导电（石墨），细胞干重中含量最高，是生命的基本构架
+N	氮[7](dàn,Nitrogen),空气中含量最多的元素，不活泼，其氧化物是大气污染物
+n	氮[7](dàn,Nitrogen),空气中含量最多的元素，不活泼，其氧化物是大气污染物
+氮	N[7](dàn,Nitrogen),空气中含量最多的元素，不活泼，其氧化物是大气污染物
+Nitrogen	氮[7](dàn,N),空气中含量最多的元素，不活泼，其氧化物是大气污染物
+nitrogen	氮[7](dàn,N),空气中含量最多的元素，不活泼，其氧化物是大气污染物
+O o	氧[8](yǎng,Oxygen),地壳中最多，生物体内最多，支持燃烧和需氧型生物呼吸
+氧	O[8](yǎng,Oxygen),地壳中最多，生物体内最多，支持燃烧和需氧型生物呼吸
+Oxygen oxygen	氧[8](yǎng,O),地壳中最多，生物体内最多，支持燃烧和需氧型生物呼吸
+F f	氟[9](fú,Fluorine),最活泼的非金属元素，化合价没有正价，单质不能被氧化
+氟	F[9](fú,Fluorine),最活泼的非金属元素，化合价没有正价，单质不能被氧化
+Fluorine fluorine	氟[9](fú,F),最活泼的非金属元素，化合价没有正价，单质不能被氧化
+Ne ne	氖[10](nǎi,Neon),稀有气体，用于光源
+氖	Ne[10](nǎi,Neon),稀有气体，用于光源
+Neon neon	氖[10](nǎi,Ne),稀有气体，用于光源
+Na na	钠[11](nà,Sodium),[🔥黄][◑Na²⁴：15h]活泼，与空气或水接触发生反应，只能储存在石蜡、煤油或稀有气体中，钠光灯是重要黄光光源
+钠	Na[11](nà,Sodium),[🔥黄][◑Na²⁴：15h]活泼，与空气或水接触发生反应，只能储存在石蜡、煤油或稀有气体中，钠光灯是重要黄光光源
+Sodium sodium	钠[11](nà,Na),[🔥黄][◑Na²⁴：15h]活泼，与空气或水接触发生反应，只能储存在石蜡、煤油或稀有气体中，钠光灯是重要黄光光源
+黄	钠[11](nà,Sodium)[🔥黄]
+Mg mg	镁[12](měi,Magnesium),碱土金属，能在二氧化碳或氮气中燃烧，能与水反应但相当缓慢
+镁	Mg[12](měi,Magnesium),碱土金属，能在二氧化碳或氮气中燃烧，能与水反应但相当缓慢
+Magnesium magnesium	镁[12](měi,Mg),碱土金属，能在二氧化碳或氮气中燃烧，能与水反应但相当缓慢
+Al al	铝[13](lǚ,Aluminium),地壳里含量最多的金属元素，具有非金属性，应用广泛
+铝	Al[13](lǚ,Aluminium),地壳里含量最多的金属元素，具有非金属性，应用广泛
+Aluminium aluminium	铝[13](lǚ,Al),地壳里含量最多的金属元素，具有非金属性，应用广泛
+Si si	硅[14](guī,Silicon),地壳中含量仅次于氧，外表很像金属，是芯片的重要元素
+硅	Si[14](guī,Silicon),地壳中含量仅次于氧，外表很像金属，是芯片的重要元素
+Silicon silicon	硅[14](guī,Si),地壳中含量仅次于氧，外表很像金属，是芯片的重要元素
+P p	磷[15](lín,Phosphorus),[◑P³²：14D]有白磷和红磷，白磷有剧毒且在常温下可以自燃
+磷	P[15](lín,Phosphorus),[◑P³²：14D]有白磷和红磷，白磷有剧毒且在常温下可以自燃
+Phosphorus phosphorus	磷[15](lín,P),[◑P³²：14D]有白磷和红磷，白磷有剧毒且在常温下可以自燃
+S s	硫[16](liú,Sulphur),黄色固体，质地较软且轻，与火山活动密切相关
+硫	S[16](liú,Sulphur),黄色固体，质地较软且轻，与火山活动密切相关
+Sulphur sulphur	硫[16](liú,S),黄色固体，质地较软且轻，与火山活动密切相关
+Cl cl	氯[17](lǜ,Chlorine),[◑Cl³⁶：40wY]黄绿色有毒气体，活泼，支持燃烧
+氯	Cl[17](lǜ,Chlorine),[◑Cl³⁶：40wY]黄绿色有毒气体，活泼，支持燃烧
+Chlorine chlorine	氯[17](lǜ,Cl),[◑Cl³⁶：40wY]黄绿色有毒气体，活泼，支持燃烧
+Ar ar	氩[18](yà,Argon),稀有气体，在空气中含量最多的稀有气体
+氩	Ar[18](yà,Argon),稀有气体，在空气中含量最多的稀有气体
+Argon argon	氩[18](yà,Ar),稀有气体，在空气中含量最多的稀有气体
+K k	钾[19](jiǎ,Potassium),[🔥浅紫][◑K⁴⁰：13亿Y]比钠还活泼，遇水即燃，钾离子可促进植物体内糖类和淀粉的形成
+钾	K[19](jiǎ,Potassium),[🔥浅紫][◑K⁴⁰：13亿Y]比钠还活泼，遇水即燃，钾离子可促进植物体内糖类和淀粉的形成
+Potassium potassium	钾[19](jiǎ,K),[🔥浅紫][◑K⁴⁰：13亿Y]比钠还活泼，遇水即燃，钾离子可促进植物体内糖类和淀粉的形成
+紫 浅紫	钾[19](jiǎ,Potassium)[🔥浅紫]
+Ca ca	钙[20](gài,Calcium),[🔥砖红]空气中会与氮化合，能与水反应，是石灰、骨骼主要组成成分
+钙	Ca[20](gài,Calcium),[🔥砖红]空气中会与氮化合，能与水反应，是石灰、骨骼主要组成成分
+Calcium calcium	钙[20](gài,Ca),[🔥砖红]空气中会与氮化合，能与水反应，是石灰、骨骼主要组成成分
+红 砖红	钙[20](gài,Calcium)[🔥砖红]
+Sc sc	钪[21](kàng,Scandium),一种柔软过渡金属，常与钆、铒混合存在
+钪	Sc[21](kàng,Scandium),一种柔软过渡金属，常与钆、铒混合存在
+Scandium scandium	钪[21](kàng,Sc),一种柔软过渡金属，常与钆、铒混合存在
+Ti ti	钛[22](tài,Titanium),能在氮气中燃烧，熔点高，被称为“太空金属”
+钛	Ti[22](tài,Titanium),能在氮气中燃烧，熔点高，被称为“太空金属”
+Titanium titanium	钛[22](tài,Ti),能在氮气中燃烧，熔点高，被称为“太空金属”
+V v	钒[23](fán,Vanadium),高熔点稀有金属，抗腐蚀能力较强
+钒	V[23](fán,Vanadium),高熔点稀有金属，抗腐蚀能力较强
+Vanadium vanadium	钒[23](fán,V),高熔点稀有金属，抗腐蚀能力较强
+Cr cr	铬[24](gè,Chromium),硬度最高的金属，主要用于制作不锈钢
+铬	Cr[24](gè,Chromium),硬度最高的金属，主要用于制作不锈钢
+Chromium chromium	铬[24](gè,Cr),硬度最高的金属，主要用于制作不锈钢
+Mn mn	锰[25](měng,Manganese),[🔥黄绿(Mn²⁺)]在地壳中分布广泛，高锰钢可用于制造军用头盔或装甲
+锰	Mn[25](měng,Manganese),[🔥黄绿(Mn²⁺)]在地壳中分布广泛，高锰钢可用于制造军用头盔或装甲
+Manganese manganese	锰[25](měng,Mn),[🔥黄绿(Mn²⁺)]在地壳中分布广泛，高锰钢可用于制造军用头盔或装甲
+黄 绿 黄绿	锰[25](měng,Manganese)[🔥黄绿(Mn²⁺)]
+Fe fe	铁[26](tiě,Iron),[◑Fe⁵⁹：90D]地壳含量第二高的金属，单质产量最高，有磁性
+铁	Fe[26](tiě,Iron),[◑Fe⁵⁹：90D]地壳含量第二高的金属，单质产量最高，有磁性
+Iron iron	铁[26](tiě,Fe),[◑Fe⁵⁹：90D]地壳含量第二高的金属，单质产量最高，有磁性
+Co co	钴[27](gǔ,Cobalt),[◑Co⁶⁰：5Y]有磁性，可作蓝色钴颜料，同位素60Co被应用于X光发生器中
+钴	Co[27](gǔ,Cobalt),[◑Co⁶⁰：5Y]有磁性，可作蓝色钴颜料，同位素60Co被应用于X光发生器中
+Cobalt cobalt	钴[27](gǔ,Co),[◑Co⁶⁰：5Y]有磁性，可作蓝色钴颜料，同位素60Co被应用于X光发生器中
+Ni ni	镍[28](niè,Nickel),有磁性和良好可塑性，可用于制作充电电池，甘肃金昌镍矿
+镍	Ni[28](niè,Nickel),有磁性和良好可塑性，可用于制作充电电池，甘肃金昌镍矿
+Nickel nickel	镍[28](niè,Ni),有磁性和良好可塑性，可用于制作充电电池，甘肃金昌镍矿
+Cu cu	铜[29](tóng,Copper),[🔥浅蓝(Cu)；🔥祖母绿(Cu²⁺)；🔥蓝绿(CuCl⁺)]人类发现较早的金属之一，可塑性很好，导电性能优
+铜	Cu[29](tóng,Copper),[🔥浅蓝(Cu)；🔥祖母绿(Cu²⁺)；🔥蓝绿(CuCl⁺)]人类发现较早的金属之一，可塑性很好，导电性能优
+Copper copper	铜[29](tóng,Cu),[🔥浅蓝(Cu)；🔥祖母绿(Cu²⁺)；🔥蓝绿(CuCl⁺)]人类发现较早的金属之一，可塑性很好，导电性能优
+蓝 浅蓝 绿 蓝绿	铜[29](tóng,Copper)[🔥浅蓝(Cu)；🔥祖母绿(Cu²⁺)；🔥蓝绿(CuCl⁺)]
+Zn zn	锌[30](xīn,Zinc),[🔥蓝绿]人体需要的微量元素，用于白铁和干电池负极
+锌	Zn[30](xīn,Zinc),[🔥蓝绿]人体需要的微量元素，用于白铁和干电池负极
+Zinc zinc	锌[30](xīn,Zn),[🔥蓝绿]人体需要的微量元素，用于白铁和干电池负极
+蓝 绿 蓝绿	锌[30](xīn,Zinc)[🔥蓝绿]
+Ga ga	镓[31](jiā,Gallium),熔点低沸点高，用于半导体
+镓	Ga[31](jiā,Gallium),熔点低沸点高，用于半导体
+Gallium gallium	镓[31](jiā,Ga),熔点低沸点高，用于半导体
+Ge ge	锗[32](zhě,Germanium),具有两性，是一种重要的半导体材料
+锗	Ge[32](zhě,Germanium),具有两性，是一种重要的半导体材料
+Germanium germanium	锗[32](zhě,Ge),具有两性，是一种重要的半导体材料
+As as	砷[33](shēn,Arsenic),又称砒，毒性很强，三氧化二砷俗称砒霜
+砷	As[33](shēn,Arsenic),又称砒，毒性很强，三氧化二砷俗称砒霜
+Arsenic arsenic	砷[33](shēn,As),又称砒，毒性很强，三氧化二砷俗称砒霜
+Se se	硒[34](xī,Selenium),可用于制作硒鼓，可使玻璃致色为鲜红色
+硒	Se[34](xī,Selenium),可用于制作硒鼓，可使玻璃致色为鲜红色
+Selenium selenium	硒[34](xī,Se),可用于制作硒鼓，可使玻璃致色为鲜红色
+Br br	溴[35](xiù,Bromine),红棕色液体，活泼，不易溶于水，易溶于有机溶剂
+溴	Br[35](xiù,Bromine),红棕色液体，活泼，不易溶于水，易溶于有机溶剂
+Bromine bromine	溴[35](xiù,Br),红棕色液体，活泼，不易溶于水，易溶于有机溶剂
+Kr kr	氪[36](kè,Krypton),稀有气体，可与氟化合
+氪	Kr[36](kè,Krypton),稀有气体，可与氟化合
+Krypton krypton	氪[36](kè,Kr),稀有气体，可与氟化合
+Rb rb	铷[37](rú,Rubidium),[🔥紫]密度大于水，比钾更活泼，可用于光电效应以及原子钟
+铷	Rb[37](rú,Rubidium),[🔥紫]密度大于水，比钾更活泼，可用于光电效应以及原子钟
+Rubidium rubidium	铷[37](rú,Rb),[🔥紫]密度大于水，比钾更活泼，可用于光电效应以及原子钟
+紫	铷[37](rú,Rubidium)[🔥紫]
+Sr sr	锶[38](sī,Strontium),[🔥洋红(SrCl⁺)][◑Sr⁹⁰：30Y]是碱土元素中丰度最小的元素，与水反应会使溶液变白
+锶	Sr[38](sī,Strontium),[🔥洋红(SrCl⁺)][◑Sr⁹⁰：30Y]是碱土元素中丰度最小的元素，与水反应会使溶液变白
+Strontium strontium	锶[38](sī,Sr),[🔥洋红(SrCl⁺)][◑Sr⁹⁰：30Y]是碱土元素中丰度最小的元素，与水反应会使溶液变白
+红 洋红	锶[38](sī,Strontium)[🔥洋红(SrCl⁺)]
+Y y	钇[39](yǐ,Yttrium),人工合成的钇铝榴石曾被当做钻石的替代品
+钇	Y[39](yǐ,Yttrium),人工合成的钇铝榴石曾被当做钻石的替代品
+Yttrium yttrium	钇[39](yǐ,Y),人工合成的钇铝榴石曾被当做钻石的替代品
+Zr zr	锆[40](gào,Zirconium),氧化物立方氧化锆为钻石的人工替代品
+锆	Zr[40](gào,Zirconium),氧化物立方氧化锆为钻石的人工替代品
+Zirconium zirconium	锆[40](gào,Zr),氧化物立方氧化锆为钻石的人工替代品
+Nb nb	铌[41](ní,Niobium),用于制作超导材料，铌钢被用于制作汽车外壳
+铌	Nb[41](ní,Niobium),用于制作超导材料，铌钢被用于制作汽车外壳
+Niobium niobium	铌[41](ní,Nb),用于制作超导材料，铌钢被用于制作汽车外壳
+Mo mo	钼[42](mù,Molybdenum),[🔥黄绿]银白色金属，熔点非常高，可用于半导体，植物生长所需的微量元素
+钼	Mo[42](mù,Molybdenum),[🔥黄绿]银白色金属，熔点非常高，可用于半导体，植物生长所需的微量元素
+Molybdenum molybdenum	钼[42](mù,Mo),[🔥黄绿]银白色金属，熔点非常高，可用于半导体，植物生长所需的微量元素
+黄 绿 黄绿	钼[42](mù,Molybdenum)[🔥黄绿]
+Tc tc	☢锝[43](dé,Technetium),原子序数最小的放射性元素，第一个人工合成的元素
+锝	☢Tc[43](dé,Technetium),原子序数最小的放射性元素，第一个人工合成的元素
+Technetium technetium	☢锝[43](dé,Tc),原子序数最小的放射性元素，第一个人工合成的元素
+Ru ru	钌[44](liǎo,Ruthenium),硬而脆呈浅灰色的多价稀有金属元素
+钌	Ru[44](liǎo,Ruthenium),硬而脆呈浅灰色的多价稀有金属元素
+Ruthenium ruthenium	钌[44](liǎo,Ru),硬而脆呈浅灰色的多价稀有金属元素
+Rh rh	铑[45](lǎo,Rhodium),现代珠宝制作过程进行表面处理的必须元素
+铑	Rh[45](lǎo,Rhodium),现代珠宝制作过程进行表面处理的必须元素
+Rhodium rhodium	铑[45](lǎo,Rh),现代珠宝制作过程进行表面处理的必须元素
+Pd pd	钯[46](bǎ,Palladium),银白色金属，可吸收氢气，钯金可用于制作首饰和镶嵌宝石
+钯	Pd[46](bǎ,Palladium),银白色金属，可吸收氢气，钯金可用于制作首饰和镶嵌宝石
+Palladium palladium	钯[46](bǎ,Pd),银白色金属，可吸收氢气，钯金可用于制作首饰和镶嵌宝石
+Ag ag	银[47](yín,Silver),贵金属，导电性最好，银镜反应用于制作镀银玻璃镜
+银	Ag[47](yín,Silver),贵金属，导电性最好，银镜反应用于制作镀银玻璃镜
+Silver silver	银[47](yín,Ag),贵金属，导电性最好，银镜反应用于制作镀银玻璃镜
+Cd	镉[48](gé,Cadmium),重金属，有毒，过量摄入会导致痛痛病，可用于吸收中子
+cd	镉[48](gé,Cadmium),重金属，有毒，过量摄入会导致痛痛病，可用于吸收中子
+镉	Cd[48](gé,Cadmium),重金属，有毒，过量摄入会导致痛痛病，可用于吸收中子
+Cadmium	镉[48](gé,Cd),重金属，有毒，过量摄入会导致痛痛病，可用于吸收中子
+cadmium	镉[48](gé,Cd),重金属，有毒，过量摄入会导致痛痛病，可用于吸收中子
+In in	☢铟[49](yīn,Indium),[🔥蓝]可塑性强，有延展性，115In是主要的放射性同位素
+铟	☢In[49](yīn,Indium),[🔥蓝]可塑性强，有延展性，115In是主要的放射性同位素
+Indium indium	☢铟[49](yīn,In),[🔥蓝]可塑性强，有延展性，115In是主要的放射性同位素
+蓝	铟[49](yīn,Indium)[🔥蓝]
+Sn sn	锡[50](xī,Tin),人类最早发现应用的元素之一，被用于制造青铜器
+锡	Sn[50](xī,Tin),人类最早发现应用的元素之一，被用于制造青铜器
+Tin tin	锡[50](xī,Sn),人类最早发现应用的元素之一，被用于制造青铜器
+Sb sb	锑[51](tī,Antimony),[🔥浅绿]熔点低，被用于制作保险丝，其氧化物可作防火材料，湖南冷水江锑矿
+锑	Sb[51](tī,Antimony),[🔥浅绿]熔点低，被用于制作保险丝，其氧化物可作防火材料，湖南冷水江锑矿
+Antimony antimony	锑[51](tī,Sb),[🔥浅绿]熔点低，被用于制作保险丝，其氧化物可作防火材料，湖南冷水江锑矿
+绿 浅绿	锑[51](tī,Antimony)[🔥浅绿]
+Te te	碲[52](dì,Tellurium),密度最大的非金属，碲酸含6个羟基
+碲	Te[52](dì,Tellurium),密度最大的非金属，碲酸含6个羟基
+Tellurium tellurium	碲[52](dì,Te),密度最大的非金属，碲酸含6个羟基
+I i	碘[53](diǎn,Iodine),[◑I¹³¹：8D]紫黑色固体，可升华，活泼，甲状腺所需的微量元素
+碘	I[53](diǎn,Iodine),[◑I¹³¹：8D]紫黑色固体，可升华，活泼，甲状腺所需的微量元素
+Iodine iodine	碘[53](diǎn,I),[◑I¹³¹：8D]紫黑色固体，可升华，活泼，甲状腺所需的微量元素
+Xe xe	氙[54](xiān,Xenon),稀有气体，可与氟化合，可用于光源
+氙	Xe[54](xiān,Xenon),稀有气体，可与氟化合，可用于光源
+Xenon xenon	氙[54](xiān,Xe),稀有气体，可与氟化合，可用于光源
+Cs cs	铯[55](sè,Cesium),[🔥紫红][◑Cs¹³⁷：30Y]具有金色光泽的碱金属，熔点很低，比铷更活泼，遇水即爆
+铯	Cs[55](sè,Cesium),[🔥紫红][◑Cs¹³⁷：30Y]具有金色光泽的碱金属，熔点很低，比铷更活泼，遇水即爆
+Cesium cesium	铯[55](sè,Cs),[🔥紫红][◑Cs¹³⁷：30Y]具有金色光泽的碱金属，熔点很低，比铷更活泼，遇水即爆
+紫 红 紫红	铯[55](sè,Cesium)[🔥紫红]
+Ba ba	钡[56](bèi,Barium),[🔥黄绿]与水反应不变白，氢氧化钡可溶于水，硫酸钡被应用于钡餐透视
+钡	Ba[56](bèi,Barium),[🔥黄绿]与水反应不变白，氢氧化钡可溶于水，硫酸钡被应用于钡餐透视
+Barium barium	钡[56](bèi,Ba),[🔥黄绿]与水反应不变白，氢氧化钡可溶于水，硫酸钡被应用于钡餐透视
+黄 绿 黄绿	钡[56](bèi,Barium)[🔥黄绿]
+La la	镧[57](lán,Lanthanum),银白色金属，质软，活泼，必须保存于石蜡或矿物油中
+镧	La[57](lán,Lanthanum),银白色金属，质软，活泼，必须保存于石蜡或矿物油中
+Lanthanum lanthanum	镧[57](lán,La),银白色金属，质软，活泼，必须保存于石蜡或矿物油中
+Ce ce	铈[58](shì,Cerium),银灰色稀土金属，用刀刮即可在空气中燃烧，用来制造打火石
+铈	Ce[58](shì,Cerium),银灰色稀土金属，用刀刮即可在空气中燃烧，用来制造打火石
+Cerium cerium	铈[58](shì,Ce),银灰色稀土金属，用刀刮即可在空气中燃烧，用来制造打火石
+Pr pr	镨[59](pǔ,Praseodymium),银白色金属，质软，是用量较大的稀土元素
+镨	Pr[59](pǔ,Praseodymium),银白色金属，质软，是用量较大的稀土元素
+Praseodymium praseodymium	镨[59](pǔ,Pr),银白色金属，质软，是用量较大的稀土元素
+Nd nd	钕[60](nǚ,Neodymium),化学性质较活泼，可在空气中点燃，磁性强，主要用作永磁材料
+钕	Nd[60](nǚ,Neodymium),化学性质较活泼，可在空气中点燃，磁性强，主要用作永磁材料
+Neodymium neodymium	钕[60](nǚ,Nd),化学性质较活泼，可在空气中点燃，磁性强，主要用作永磁材料
+Pm pm	☢钷[61](pǒ,Promethium),有用于β射线源、热源及原子电池等
+钷	☢Pm[61](pǒ,Promethium),有用于β射线源、热源及原子电池等
+Promethium promethium	☢钷[61](pǒ,Pm),有用于β射线源、热源及原子电池等
+Sm sm	钐[62](shān,Samarium),银白色稀土金属，容易磁化却很难退磁
+钐	Sm[62](shān,Samarium),银白色稀土金属，容易磁化却很难退磁
+Samarium samarium	钐[62](shān,Sm),银白色稀土金属，容易磁化却很难退磁
+Eu eu	铕[63](yǒu,Europium),稀土元素中最活泼的金属，能直接与空气和水反应，能放出红光
+铕	Eu[63](yǒu,Europium),稀土元素中最活泼的金属，能直接与空气和水反应，能放出红光
+Europium europium	铕[63](yǒu,Eu),稀土元素中最活泼的金属，能直接与空气和水反应，能放出红光
+Gd gd	钆[64](gá,Gadolinium),银白色金属，有磁性，未配对电子达到上限，用途较广
+钆	Gd[64](gá,Gadolinium),银白色金属，有磁性，未配对电子达到上限，用途较广
+Gadolinium gadolinium	钆[64](gá,Gd),银白色金属，有磁性，未配对电子达到上限，用途较广
+Tb tb	铽[65](tè,Terbium),银灰色稀土金属，通电时改变形状，用于打印机的打印头等精密设备
+铽	Tb[65](tè,Terbium),银灰色稀土金属，通电时改变形状，用于打印机的打印头等精密设备
+Terbium terbium	铽[65](tè,Tb),银灰色稀土金属，通电时改变形状，用于打印机的打印头等精密设备
+Dy dy	镝[66](dī,Dysprosium),银白色稀土金属，硬度低，用于制造磁盘（尤其是机械硬盘）
+镝	Dy[66](dī,Dysprosium),银白色稀土金属，硬度低，用于制造磁盘（尤其是机械硬盘）
+Dysprosium dysprosium	镝[66](dī,Dy),银白色稀土金属，硬度低，用于制造磁盘（尤其是机械硬盘）
+Ho ho	钬[67](huǒ,Holmium),银白色，质软，可用来制磁性材料
+钬	Ho[67](huǒ,Holmium),银白色，质软，可用来制磁性材料
+Holmium holmium	钬[67](huǒ,Ho),银白色，质软，可用来制磁性材料
+Er er	铒[68](ěr,Erbium),银灰色，质软，可用来制特种合金，激光器等
+铒	Er[68](ěr,Erbium),银灰色，质软，可用来制特种合金，激光器等
+Erbium erbium	铒[68](ěr,Er),银灰色，质软，可用来制特种合金，激光器等
+Tm tm	铥[69](diū,Thulium),银白色，质软，可用来制X射线源等
+铥	Tm[69](diū,Thulium),银白色，质软，可用来制X射线源等
+Thulium thulium	铥[69](diū,Tm),银白色，质软，可用来制X射线源等
+Yb yb	镱[70](yì,Ytterbium),银白色，质软，可用来制特种合金，也用作激光材料等
+镱	Yb[70](yì,Ytterbium),银白色，质软，可用来制特种合金，也用作激光材料等
+Ytterbium ytterbium	镱[70](yì,Yb),银白色，质软，可用来制特种合金，也用作激光材料等
+Lu lu	镥[71](lǔ,Lutetium),银白色，质软，可用于核工业
+镥	Lu[71](lǔ,Lutetium),银白色，质软，可用于核工业
+Lutetium lutetium	镥[71](lǔ,Lu),银白色，质软，可用于核工业
+Hf hf	铪[72](hā,Hafnium),银白色，熔点高。可用来制耐高温合金，也用于核工业等
+铪	Hf[72](hā,Hafnium),银白色，熔点高。可用来制耐高温合金，也用于核工业等
+Hafnium hafnium	铪[72](hā,Hf),银白色，熔点高。可用来制耐高温合金，也用于核工业等
+Ta ta	钽[73](tǎn,Tantalum),钢灰色，耐腐蚀质硬，熔点高。可用于航天工业及核工业
+钽	Ta[73](tǎn,Tantalum),钢灰色，耐腐蚀质硬，熔点高。可用于航天工业及核工业
+Tantalum tantalum	钽[73](tǎn,Ta),钢灰色，耐腐蚀质硬，熔点高。可用于航天工业及核工业
+W w	钨[74](wū,Tungsten),稳定金属元素中熔点最高，白炽灯丝首选，江西大余钨矿
+钨	W[74](wū,Tungsten),稳定金属元素中熔点最高，白炽灯丝首选，江西大余钨矿
+Tungsten tungsten	钨[74](wū,W),稳定金属元素中熔点最高，白炽灯丝首选，江西大余钨矿
+Re re	铼[75](lái,Rhenium),最晚被发现的稳定元素，金属熔点仅次于钨，可作灯丝
+铼	Re[75](lái,Rhenium),最晚被发现的稳定元素，金属熔点仅次于钨，可作灯丝
+Rhenium rhenium	铼[75](lái,Re),最晚被发现的稳定元素，金属熔点仅次于钨，可作灯丝
+Os os	锇[76](é,Osmium),密度最大的金属，熔点极高（3000℃以上），硬度大，用于轴承
+锇	Os[76](é,Osmium),密度最大的金属，熔点极高（3000℃以上），硬度大，用于轴承
+Osmium osmium	锇[76](é,Os),密度最大的金属，熔点极高（3000℃以上），硬度大，用于轴承
+Ir ir	铱[77](yī,Iridium),熔点高，质硬而脆。可用来制科学仪器等
+铱	Ir[77](yī,Iridium),熔点高，质硬而脆。可用来制科学仪器等
+Iridium iridium	铱[77](yī,Ir),熔点高，质硬而脆。可用来制科学仪器等
+Pt pt	铂[78](bó,Platinum),化学性质极稳定，被应用于珠宝首饰中的贵金属，俗称铂金
+铂	Pt[78](bó,Platinum),化学性质极稳定，被应用于珠宝首饰中的贵金属，俗称铂金
+Platinum platinum	铂[78](bó,Pt),化学性质极稳定，被应用于珠宝首饰中的贵金属，俗称铂金
+Au au	金[79](jīn,Gold),化学性质极稳定，人类最早发现及应用的贵金属，全球硬通货
+黄金 金	Au[79](jīn,Gold),化学性质极稳定，人类最早发现及应用的贵金属，全球硬通货
+Gold gold	金[79](jīn,Au),化学性质极稳定，人类最早发现及应用的贵金属，全球硬通货
+Hg hg	汞[80](gǒng,Mercury),水银，常温下为液态的金属，汞光灯是重要光源，贵州铜仁汞矿，有毒
+水银 汞	Hg[80](gǒng,Mercury),水银，常温下为液态的金属，汞光灯是重要光源，贵州铜仁汞矿，有毒
+Mercury mercury	汞[80](gǒng,Hg),水银，常温下为液态的金属，汞光灯是重要光源，贵州铜仁汞矿，有毒
+Tl tl	铊[81](tā,Thallium),[🔥绿]银白色，质软。可用来制合金等。铊的化合物有剧毒
+铊	Tl[81](tā,Thallium),[🔥绿]银白色，质软。可用来制合金等。铊的化合物有剧毒
+Thallium thallium	铊[81](tā,Tl),[🔥绿]银白色，质软。可用来制合金等。铊的化合物有剧毒
+绿	铊[81](tā,Thallium)[🔥绿],
+Pb pb	铅[82](qiān,Lead),[🔥绿]密度大，熔点低，对人体有毒性。许多化妆品中必须含有的元素
+铅	Pb[82](qiān,Lead),[🔥绿]密度大，熔点低，对人体有毒性。许多化妆品中必须含有的元素
+Lead lead	铅[82](qiān,Pb),[🔥绿]密度大，熔点低，对人体有毒性。许多化妆品中必须含有的元素
+绿	铅[82](qiān,Lead)[🔥绿]
+Bi bi	☢铋[83](bì,Bismuth),[◑Bi²¹²：1h]合金熔点很低，可用来做保险丝和汽锅上的安全塞等，有极微弱的放射性
+铋	☢Bi[83](bì,Bismuth),[◑Bi²¹²：1h]合金熔点很低，可用来做保险丝和汽锅上的安全塞等，有极微弱的放射性
+Bismuth bismuth	☢铋[83](bì,Bi),[◑Bi²¹²：1h]合金熔点很低，可用来做保险丝和汽锅上的安全塞等，有极微弱的放射性
+Po po	☢钋[84](pō,Polonium),[◑Po²¹⁵：0.0018s；Po²¹⁶：0.16s；Po²¹⁰：3M]银白色金属，能在黑暗中发光，用作中子源
+钋	☢Po[84](pō,Polonium),[◑Po²¹⁵：0.0018s；Po²¹⁶：0.16s；Po²¹⁰：3M]银白色金属，能在黑暗中发光，用作中子源
+Polonium polonium	☢钋[84](pō,Po),[◑Po²¹⁵：0.0018s；Po²¹⁶：0.16s；Po²¹⁰：3M]银白色金属，能在黑暗中发光，用作中子源
+At at	☢砹[85](ài,Astatine),单质外表与碘相似，放射、活泼，地球中含量最小的天然元素
+砹	☢At[85](ài,Astatine),单质外表与碘相似，放射、活泼，地球中含量最小的天然元素
+Astatine astatine	☢砹[85](ài,At),单质外表与碘相似，放射、活泼，地球中含量最小的天然元素
+Rn rn	☢氡[86](dōng,Radon),放射性气体，镭射气
+氡	☢Rn[86](dōng,Radon),放射性气体，镭射气
+Radon radon	☢氡[86](dōng,Rn),放射性气体，镭射气
+Fr fr	☢钫[87](fāng,Francium),放射性碱金属，地球中含量极小，金属性可能不如铯
+钫	☢Fr[87](fāng,Francium),放射性碱金属，地球中含量极小，金属性可能不如铯
+Francium francium	☢钫[87](fāng,Fr),放射性碱金属，地球中含量极小，金属性可能不如铯
+Ra ra	☢镭[88](léi,Radium),[◑Ra²²⁶：1620Y]放射性碱土金属，其射线可用于治疗癌症
+镭	☢Ra[88](léi,Radium),[◑Ra²²⁶：1620Y]放射性碱土金属，其射线可用于治疗癌症
+Radium radium	☢镭[88](léi,Ra),[◑Ra²²⁶：1620Y]放射性碱土金属，其射线可用于治疗癌症
+Ac ac	☢锕[89](ā,Actinium),能在暗处发光，空气中可被氧化，碱性较强
+锕	☢Ac[89](ā,Actinium),能在暗处发光，空气中可被氧化，碱性较强
+Actinium actinium	☢锕[89](ā,Ac),能在暗处发光，空气中可被氧化，碱性较强
+Th th	☢钍[90](tǔ,Thorium),半衰期可长达上百亿年，可用于裂变
+钍	☢Th[90](tǔ,Thorium),半衰期可长达上百亿年，可用于裂变
+Thorium thorium	☢钍[90](tǔ,Th),半衰期可长达上百亿年，可用于裂变
+Pa pa	☢镤[91](pú,Protactinium),镤231半衰期3万多年
+镤	☢Pa[91](pú,Protactinium),镤231半衰期3万多年
+Protactinium protactinium	☢镤[91](pú,Pa),镤231半衰期3万多年
+U u	☢铀[92](yóu,Uranium),[◑U²³⁵：7.1亿Y；U²³⁸：45亿Y]半衰期长达几十亿年，同位素铀235被用于制作原子弹
+铀	☢U[92](yóu,Uranium),[◑U²³⁵：7.1亿Y；U²³⁸：45亿Y]半衰期长达几十亿年，同位素铀235被用于制作原子弹
+Uranium uranium	☢铀[92](yóu,U),[◑U²³⁵：7.1亿Y；U²³⁸：45亿Y]半衰期长达几十亿年，同位素铀235被用于制作原子弹
+Np np	☢镎[93](ná,Neptunium),在铀矿中少量存在
+镎	☢Np[93](ná,Neptunium),在铀矿中少量存在
+Neptunium neptunium	☢镎[93](ná,Np),在铀矿中少量存在
+Pu pu	☢钚[94](bù,Plutonium),[◑Pu²³⁹：2.4wY]在铀矿中少量存在，用于裂变核燃料
+钚	☢Pu[94](bù,Plutonium),[◑Pu²³⁹：2.4wY]在铀矿中少量存在，用于裂变核燃料
+Plutonium plutonium	☢钚[94](bù,Pu),[◑Pu²³⁹：2.4wY]在铀矿中少量存在，用于裂变核燃料
+Am am	⚡☢镅[95](méi,Americium),用于烟雾报警器中
+镅	⚡☢Am[95](méi,Americium),用于烟雾报警器中
+Americium americium	⚡☢镅[95](méi,Am),用于烟雾报警器中
+Cm cm	⚡☢锔[96](jú,Curium)
+锔	⚡☢Cm[96](jú,Curium)
+Curium curium	⚡☢锔[96](jú,Cm)
+Bk bk	⚡☢锫[97](péi,Berkelium)
+锫	⚡☢Bk[97](péi,Berkelium)
+Berkelium berkelium	⚡☢锫[97](péi,Bk)
+Cf cf	⚡☢锎[98](kāi,Californium)
+锎	⚡☢Cf[98](kāi,Californium)
+Californium californium	⚡☢锎[98](kāi,Cf)
+Es es	⚡☢锿[99](āi,Einsteinium)
+锿	⚡☢Es[99](āi,Einsteinium)
+Einsteinium einsteinium	⚡☢锿[99](āi,Es)
+Fm fm	⚡☢镄[100](fèi,Fermium)
+镄	⚡☢Fm[100](fèi,Fermium)
+Fermium fermium	⚡☢镄[100](fèi,Fm)
+Md md	⚡☢钔[101](mén,Mendelevium)
+钔	⚡☢Md[101](mén,Mendelevium)
+Mendelevium mendelevium	⚡☢钔[101](mén,Md)
+No no	⚡☢锘[102](nuò,Nobelium)
+锘	⚡☢No[102](nuò,Nobelium)
+Nobelium nobelium	⚡☢锘[102](nuò,No)
+Lr lr	⚡☢铹[103](láo,Lawrencium)
+铹	⚡☢Lr[103](láo,Lawrencium)
+Lawrencium lawrencium	⚡☢铹[103](láo,Lr)
+Rf rf	⚡☢鈩[104](lú,Rutherfordium)
+鈩	⚡☢Rf[104](lú,Rutherfordium)
+Rutherfordium rutherfordium	⚡☢鈩[104](lú,Rf)
+Db db	⚡☢𨧀[105](dù,Dubnium)
+𨧀	⚡☢Db[105](dù,Dubnium)
+Dubnium dubnium	⚡☢𨧀[105](dù,Db)
+Sg sg	⚡☢𨭎[106](xǐ,Seaborgium)
+𨭎	⚡☢Sg[106](xǐ,Seaborgium)
+Seaborgium seaborgium	⚡☢𨭎[106](xǐ,Sg)
+Bh bh	⚡☢𨨏[107](bō,Bohrium)
+𨨏	⚡☢Bh[107](bō,Bohrium)
+Bohrium bohrium	⚡☢𨨏[107](bō,Bh)
+Hs hs	⚡☢𨭆[108](hēi,Hassium)
+𨭆	⚡☢Hs[108](hēi,Hassium)
+Hassium hassium	⚡☢𨭆[108](hēi,Hs)
+Mt mt	⚡☢䥑[109](mài,Meitnerium)
+䥑	⚡☢Mt[109](mài,Meitnerium)
+Meitnerium meitnerium	⚡☢䥑[109](mài,Mt)
+Ds ds	⚡☢鐽[110](dá,Darmstadtium)
+鐽	⚡☢Ds[110](dá,Darmstadtium)
+Darmstadtium darmstadtium	⚡☢鐽[110](dá,Ds)
+Rg rg	⚡☢錀[111](lún,Roentgenium)
+錀	⚡☢Rg[111](lún,Roentgenium)
+Roentgenium roentgenium	⚡☢錀[111](lún,Rg)
+Cn cn	⚡☢鎶[112](gē,Copernicium)
+鎶	⚡☢Cn[112](gē,Copernicium)
+Copernicium copernicium	⚡☢鎶[112](gē,Cn)
+Nh nh	⚡☢鉨[113](nǐ,Nihonium)
+鉨	⚡☢Nh[113](nǐ,Nihonium)
+Nihonium nihonium	⚡☢鉨[113](nǐ,Nh)
+Fl fl	⚡☢鈇[114](fū,Flerovium),第一种表现出惰性气体特征的超重元素
+鈇	⚡☢Fl[114](fū,Flerovium),第一种表现出惰性气体特征的超重元素
+Flerovium flerovium	⚡☢鈇[114](fū,Fl),第一种表现出惰性气体特征的超重元素
+Mc mc	⚡☢镆[115](mò,Moscovium)
+镆	⚡☢Mc[115](mò,Moscovium)
+Moscovium moscovium	⚡☢镆[115](mò,Mc)
+Lv lv	⚡☢鉝[116](lì,Livermorium)
+鉝	⚡☢Lv[116](lì,Livermorium)
+Livermorium livermorium	⚡☢鉝[116](lì,Lv)
+Ts ts	⚡☢石田[117](tián,Tennessine)
+石田	⚡☢Ts[117](tián,Tennessine)
+Tennessine tennessine	⚡☢石田[117](tián,Ts)
+Og og	⚡☢气奥[118](ào,Oganesson)
+气奥	⚡☢Og[118](ào,Oganesson)
+Oganesson oganesson	⚡☢气奥[118](ào,Og)
+
+# 常用化学式
+硫酸	H₂SO₄
+氯酸 盐酸	HCl
+硝酸	HNO₃
+干冰	CO₂
+食盐	NaCl
+石灰	CaO₂
+酒精 乙醇	C₂H₅OH
+胆矾 蓝矾	CuSO₄・5H₂O
+火碱 硗碱	NaOH
+水垢	CaCO₃
+纯碱 苏打	Na₂CO₃
+甲烷	CH₄
+乙烷	C₂H₆
+乙烯	C₂H₄
+乙炔	C₂H₂

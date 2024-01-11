@@ -39,9 +39,11 @@ local socketEnable, socket = pcall(require, "socket.core") -- 加载socket库
 M.socketEnable = socketEnable
 M.socket = socket
 
-if not socketEnable then
-    if logEnable then
-        log.writeLog('socketEnable is False')
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from socket.lua:')
+	log.writeLog('logEnable:'..tostring(socketEnable))
+	if not socketEnable then
         log.writeLog(socket)
     end
 end

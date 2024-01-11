@@ -13,6 +13,9 @@ patch:
     - name: phraseExt				# 候选词扩展开关
       reset: 1
       states: [Off, phraseExt]
+    - name: phraseComment			# 候选词注释开关
+      reset: 1
+      states: [Off, commentOn]
   engine/translators/+:  #增加以下translator
     - lua_translator@inputShow_translator
     - table_translator@custom_phrase  # 指定使用 custom_phrase 进行输入字符的翻译
@@ -29,6 +32,7 @@ patch:
     - uniquifier									# 过滤重复候选项，依赖 simplifier
     # 下面的滤镜是comment滤镜，不会改变候选项列表
     - lua_filter@dic_4w_Filter						# 英中对照滤镜
+    - lua_filter@phraseComment_Filter				# 短语释义
     - lua_filter@pinyinAdding_Filter				# pinyin滤镜，用于对候选项中的字添加拼音
   custom_phrase:  # 设置用户字/词典
     dictionary: ""

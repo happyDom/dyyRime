@@ -1,7 +1,14 @@
--- dic_4w_en.lua
+-- dic_4w.lua
 -- Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
-local ok, res = pcall(require, 'sysInfo')
-local currentDir = res.currentDir
+local sysInfoEnable, sysInfo = pcall(require, 'sysInfo')
+local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from dic_4w.lua')
+	log.writeLog('sysInfoEnable:'..tostring(sysInfoEnable))
+end
+
+local currentDir = sysInfo.currentDir
 
 local function files_to_lines(...)
 	print("--->files_to_lines called here")
