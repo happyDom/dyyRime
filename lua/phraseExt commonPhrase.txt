@@ -1,10 +1,12 @@
 # 支持使用 &nbsp 来定义空格，而正常的空格被用于分词
+
 # 常用链接
 知乎	https://www.zhihu.com
 百度 度娘	www.baidu.com
 淘宝	www.taobao.com
 谷歌 谷哥 谷姐	www.google.com
 画图 几何 画板	https://webgeo-8gn07v0t78c4ca57-1308819187.tcloudbaseapp.com
+
 # 常用称呼
 运气 华盖	运气 华盖
 南冠 囚犯	南冠 囚犯
@@ -23,7 +25,11 @@
 酉时 日落 日沉 傍晚	酉时 日落 日沉 傍晚
 戌时 黄昏 日夕 日暮 日晚	戌时 黄昏 日夕 日暮 日晚
 亥时 人定 定昏	亥时 人定 定昏
-# python 关键字映射
+
+# 常用词组
+表情	emoji
+
+# python 关键字映射，联想词组前缀：py-
 从	py-from&nbsp
 导入 引入	py-import&nbsp
 尝试	py-try:
@@ -59,7 +65,8 @@
 不是	py-is&nbspnot&nbsp
 类型	py-type&nbsp py-type(
 域	py-#&nbspregion&nbsp py-#&nbspendregion
-# 常用git命令
+
+# 常用git命令，联想词组前缀：git-
 发布	git-git&nbsppb&nbsp
 状态	git-git&nbspst
 日志	git-git&nbsplp git-git&nbsplg git-git&nbsplpp
@@ -73,8 +80,10 @@
 合并	git-git&nbspmr&nbsp git-git&nbspmr&nbspdev git-git&nbspmr&nbsprelease
 打标	git-git&nbsptag&nbsp
 删除	git-git&nbsptag&nbsp-d&nbsprxx git-git&nbsppush&nbsp--delete&nbsporigin&nbsprxx
+
 # 常用cmd命令
 退出	exit exit(0)
+
 # 单位换算
 英寸	0.0254米英寸
 英尺	0.3048米
