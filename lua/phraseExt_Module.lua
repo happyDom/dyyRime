@@ -1,4 +1,4 @@
--- myPhrase.lua
+-- phraseExt_Module.lua
 -- Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
 local M={}
 local dict={}

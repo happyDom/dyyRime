@@ -1,4 +1,4 @@
--- myPhrase_Filter.lua
+-- phraseExt_Filter.lua
 -- Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
 local dbgFlg = false
 
@@ -14,7 +14,7 @@ local function setDbg(dbgFlg)
 end
 
 --过滤器
-local function myPhrase_Filter(input, env)
+local function phraseExt_Filter(input, env)
 	--获取选项增强开关状态
 	local on = env.engine.context:get_option("phraseExt")
 	--获取应用程序标记状态[由于飞书暂不支持文本转表情的输入，帮使用 and false 将其关闭]
@@ -110,4 +110,4 @@ local function myPhrase_Filter(input, env)
 	end
 end
 
-return myPhrase_Filter
+return phraseExt_Filter
