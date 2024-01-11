@@ -1,3 +1,8 @@
+# 不同的应用，使用不同的简写做为前缀
+# 微信	Wx
+# 飞书	Fs
+# 钉钉	Dt
+# QQ	Qq
 done 完成 搞定	esFs[完成] esDt[Done]
 get 了解 知道	esFs[了解] esDt[Get]
 no 不行	esFs[No] esFs[叉号] esDt[打叉]
@@ -188,7 +193,7 @@ vr	esFs[VR]
 礼物	esFsWxDt[礼物]
 生日 蛋糕	esDt[生日快乐]
 厉害	esFs[强] esDt[你强] esFs[牛] esFsDt[赞] esFsDt[100分]
-满分 棒	esFsDt[100分] 💯 esFs[牛] esFs[强] esDt[你强] esFsDt[赞]
+满分 棒	esFsDt[100分] esFs[牛] esFs[强] esDt[你强] esFsDt[赞]
 牛	esFs[牛] esFs[强] esDt[你强] esFsDt[赞] esFsDt[100分] esFs[公牛] esFs[小牛]
 强	esFs[强] esDt[你强] esFs[牛] esFsDt[赞] esFsDt[100分] esWx[强]
 赞 点赞 拇指	esFsDt[赞] esFs[牛] esFs[强] esDt[你强] esFsDt[100分] esDt[点赞]
