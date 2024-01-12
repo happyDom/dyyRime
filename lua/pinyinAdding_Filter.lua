@@ -1,12 +1,18 @@
--- phraseReplace_Filter.lua
+-- pinyinAdding_Filter.lua
 -- Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
 --[[
-这个过滤器的主要作用是，对于候选项中命中的选项(OR 内容)，用其指定的内容来代替，如果没有指定，则使用 * 替换
-由于这个过滤器会改变候选项的内容（主要是会减少候选项数量），所以请将这个过滤器放在其它过滤器的最前端使用
+这个过滤器的主要作用是，逐一检查候选项中的组词，如果在pinyinAddingModule中发现所检察的词组存在有注音记录，则添加其注音信息
 ]]
-local phraseShown = ''
+local pinyinAddingModuleEnable, pinyinAddingModule = pcall(require, 'pinyinAddingModule')
 
-local ok, py = pcall(require, 'pinyinAddingModule')
+local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from pinyinAdding_Filter.lua')
+	log.writeLog('pinyinAddingModuleEnable:'..tostring(pinyinAddingModuleEnable))
+end
+
+local phraseShown = ''
 
 --最长的comment长度限制
 local maxLenOfComment = 250
@@ -20,7 +26,7 @@ local function pinyinAdding(input, env)
 		pyInCommentFlg = false
 	end
 	for cand in input:iter() do
-		local txtWithPy = py.pinyinAdding(cand.text)
+		local txtWithPy = pinyinAddingModule.pinyinAdding(cand.text)
 		if nil == txtWithPy then
 			--没有获取到 txtWithPy，则不做处理
 			yield(cand)

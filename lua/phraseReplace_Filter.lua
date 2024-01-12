@@ -4,11 +4,18 @@
 这个过滤器的主要作用是，对于候选项中命中的选项(OR 内容)，用其指定的内容来代替，如果没有指定，则使用 * 替换
 由于这个过滤器会改变候选项的内容（主要是会减少候选项数量），所以请将这个过滤器放在其它过滤器的最前端使用
 ]]
+local phraseReplaceModuleEnable, phraseReplaceModule = pcall(require, 'phraseReplaceModule')
+
+local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from phraseReplace_Filter.lua')
+	log.writeLog('phraseReplaceModuleEnable:'..tostring(phraseReplaceModuleEnable))
+end
+
+local getShownPhrase = phraseReplaceModule.getShownPhrase
+
 local phraseShown = ''
-
-local ok, res = pcall(require, 'phraseReplaceModule')
-local getShownPhrase = res.getShownPhrase
-
 --最长的comment长度限制
 local maxLenOfComment = 250
 
