@@ -16,8 +16,8 @@ switches:
   - name: full_shape
     reset: 0 # 字符默认半角输出
     states: [ 半角, 全角 ]
-  - name: ascii_punct
-    reset: 1 # 默认使用中文标点
+  - name: ascii_punct  # 默认使用英文标点
+    reset: 1
     states: [ 。，, ．， ]
 engine:
   filters:
@@ -41,11 +41,6 @@ engine:
     - table_translator
     - punct_translator
 key_binder:
-  bindings:
-    - {accept: semicolon, send: 2, when: has_menu}
-    - {accept: apostrophe, send: 3, when: has_menu}
-    - {accept: Page_Up, send: Up, when: composing}
-    - {accept: Page_Dn, send: Down, when: composing}
   import_preset: default
   speller:
     auto_select: true
