@@ -1,0 +1,54 @@
+__build_info:
+  rime_version: 1.5.3
+  timestamps:
+    default: 1626914460
+    default.custom: 1651399897
+    easy_en.custom: 0
+    easy_en.schema: 1491118644
+    key_bindings: 1561218646
+    key_bindings.custom: 0
+    punctuation: 1561218646
+    punctuation.custom: 0
+switches:
+  - name: ascii_mode  # 默认为中文输出模式
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape  # 字符默认半角输出
+    reset: 0
+    states: [ 半角, 全角 ]
+  - name: ascii_punct  # 默认使用中文标点
+    reset: 0
+    states: [ 。，, ．， ]
+  - name: debug  # 默认debug开关为关闭状态
+    reset: 0
+    states: [Off, 🐞]
+engine:
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - recognizer
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - matcher
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+key_binder:
+  import_preset: default
+recognizer:
+  import_preset: default
+speller:
+  alphabet: "zyxwvutsrqponmlkjihgfedcba"
+  delimiter: " "
+schema:
+  author:
+    - "dyy <douyaoyuan@126.com>"
+  description: "pīn yīn 输入"
+  name: "pīn yīn"
+  schema_id: pinyin
+  version: 0.0
