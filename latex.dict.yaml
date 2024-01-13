@@ -4,12 +4,12 @@
 #
 # latex - Latex
 #
-# Patrick <ipatrickmac@gmail.com>
+# dyy <douyaoyuan@126.com>
 #
 
 ---
 name: latex
-version: "0.2"
+version: "0.1"
 sort: by_weight #defaut：使用字典文档顺序；by_weight：使用权重进行排序
 use_preset_vocabulary: false
 ...
