@@ -34,6 +34,13 @@ local function phraseExt_Filter(input, env)
 	local cmdFlg = env.engine.context:get_option("cmdFlg")
 	local pycharmFlg = env.engine.context:get_option("pycharmFlg")
 	local vscodeFlg = env.engine.context:get_option("vscodeFlg")
+	local markdownFlg = env.engine.context:get_option("markdown")
+	
+	-- 候选词组前缀与开关状态的对应字典
+	local prefixSwitchsDict = {['git-']=minttyFlg or cmdFlg,
+								['py-']=pycharmFlg or vscodeFlg,
+								['md-']=markdownFlg}
+	
 	local matchedTxt = ''
 	local esType = ''
 	local esTxt = ''
@@ -88,22 +95,25 @@ local function phraseExt_Filter(input, env)
 									end
 								end
 							else
-								--这不是一个表情选项
-								if string.lower(string.sub(thisTxt, 1, 4)) == 'git-' then
-									-- 这是一个以 git 开头的选项，这被认为是一个 git 命令
-									if minttyFlg or cmdFlg then
-										-- 修剪选项
-										thisTxt = string.sub(thisTxt, 5)
-
-										-- git 命令选项只在 cmd 窗口或者是 mitty 窗口才允许输出，以避免造成干扰
-										yield(Candidate("word", cand.start, cand._end, thisTxt:gsub("&nbsp"," "), '💡'))
+								--这不是一个表情选项，检察是否符合某一前缀规则
+								local prefix = ''
+								local prefixLen = 0
+								local prefixFlg = false
+								for k,v in pairs(prefixSwitchsDict) do
+									if string.find(string.lower(thisTxt),'^'..k) then
+										prefix = k
+										prefixLen = #k
+										prefixFlg = v
+										break
 									end
-								elseif string.lower(string.sub(thisTxt, 1, 3)) == 'py-' then
-									-- 这是一个以 py- 开头的选项，这被认为是一个 python 关键字
-									if pycharmFlg or vscodeFlg then
+								end
+								
+								if prefixLen > 0 then
+									if prefixFlg then
 										-- 修剪选项
-										thisTxt = string.sub(thisTxt, 4)
-										-- python 关键字选项只在 pycharm 或者 vscode 中才允许输出， 以避免造成干扰
+										thisTxt = string.sub(thisTxt, 1 + prefixLen)
+										
+										-- 抛出选项
 										yield(Candidate("word", cand.start, cand._end, thisTxt:gsub("&nbsp"," "), '💡'))
 									end
 								else

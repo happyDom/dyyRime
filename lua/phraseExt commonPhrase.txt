@@ -6,6 +6,41 @@
 淘宝	www.taobao.com
 谷歌 谷哥 谷姐	www.google.com
 画图 几何 画板	https://webgeo-8gn07v0t78c4ca57-1308819187.tcloudbaseapp.com
+分享 专栏	http://t.csdnimg.cn/TlnBW
+分享	https://zhuanlan.zhihu.com/p/675553523
+
+# md语法支持
+红 红字	md-<font&nbspcolor=Red></font>
+红 红底	md-<span&nbspstyle="background:Red"></span>
+绿 绿字	md-<font&nbspcolor=Green></font>
+绿 绿底	md-<span&nbspstyle="background:Green"></span>
+黄 黄字	md-<font&nbspcolor=Yellow></font>
+黄 黄底	md-<span&nbspstyle="background:Yellow"></span>
+青 青字	md-<font&nbspcolor=Aqua></font>
+青 青底	md-<span&nbspstyle="background:Aqua"></span>
+蓝 蓝字	md-<font&nbspcolor=Blue></font>
+蓝 蓝底	md-<span&nbspstyle="background:Blue"></span>
+灰 灰字	md-<font&nbspcolor=Gray></font>
+灰 灰底	md-<span&nbspstyle="background:Gray"></span>
+粉 粉字	md-<font&nbspcolor=Pink></font>
+粉 粉底	md-<span&nbspstyle="background:Pink"></span>
+提醒 醒目	md-<span&nbspstyle="background:Red"><font&nbspcolor=Yellow>醒目</font></span>
+引用 链接	md-[]()
+一级	md-#&nbsp
+二级	md-##&nbsp
+三级	md-###&nbsp
+四级	md-####&nbsp
+列表	md--&nbsp md-*&nbsp md-+&nbsp md-:&nbsp
+选框 复选	md--&nbsp[&nbsp]&nbsp md--&nbsp[x]&nbsp
+代码	md-```bash md-```C md-```C# md-```Python md-```lua md-```javascript md-```yaml
+注脚 脚注	md-[^0] md-[^0]:
+注释	md-*[xxx]:
+公式	md-md公式
+甘特 甘特图	md-md甘特图
+uml	md-mdUML图
+流程图	md-mermaid流程图 md-flowchat流程图
+类	md-classDiagram图
+图	md-mdUML图 md-md甘特图 md-mermaid流程图 md-flowchat流程图 md-classDiagram图
 
 # 常用称呼
 运气 华盖	运气 华盖
@@ -28,6 +63,7 @@
 
 # 常用词组
 表情	emoji
+上述	👆上述
 
 # python 关键字映射，联想词组前缀：py-
 从	py-from&nbsp

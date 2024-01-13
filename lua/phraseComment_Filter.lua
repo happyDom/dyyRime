@@ -14,7 +14,7 @@ if logEnable then
 end
 
 --最长的comment长度限制
-local maxLenOfComment = 250
+local maxLenOfComment = 150
 
 local function phraseComment_Filter(input, env)
 	--获取选项评论开关状态
@@ -32,12 +32,22 @@ local function phraseComment_Filter(input, env)
 					thisComment = cand.comment
 				else
 					--成功获取了释义，下面进行一些格式化处理
+					local brFlg = false
+					if string.find(thisComment,'<br>') then
+						brFlg = true
+					end
 					--替换 <br> 为换行符
-					thisComment = thisComment:gsub("<br>","\r")
+					if brFlg then
+						thisComment = thisComment:gsub("<br>","\r")
+					end
 					--替换 &nbsp 为空格
 					thisComment = thisComment:gsub("&nbsp"," ")
 					--需要限制释义长度为 maxLenOfComment
-					thisComment = string.sub(thisComment, 1, maxLenOfComment)
+					if brFlg then
+						thisComment = string.sub(thisComment, 1, math.max(maxLenOfComment,500))
+					else
+						thisComment = string.sub(thisComment, 1, maxLenOfComment)
+					end
 					--去除首尾空格 和 符号
 					thisComment = utf8String.utf8PunctuationsTrim(thisComment)
 				end

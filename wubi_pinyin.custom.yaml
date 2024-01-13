@@ -16,6 +16,9 @@ patch:
     - name: phraseComment			# 候选词注释开关
       reset: 1
       states: [Off, commentOn]
+    - name: markdown					# 一个markdown语法开关
+      reset: 0
+      states: [Off, md]
   engine/translators/+:  #增加以下translator
     - lua_translator@inputShow_translator
     - table_translator@custom_phrase  # 指定使用 custom_phrase 进行输入字符的翻译

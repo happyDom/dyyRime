@@ -1,3 +1,5 @@
+# 支持使用 &nbsp 来定义空格，支持使用 <br> 来定义换行，而正常的空格被用于分词
+# 一般词汇
 王垕	曹操：借汝头一用；汝死后，汝妻子吾自养之，汝勿虑也。
 匹夫	皓首匹夫，苍髯老贼。
 韶华	看看又是残冬过，满眼韶华一片春。
@@ -7,6 +9,11 @@
 龙吟 虎啸	尔乃龙吟方泽，虎啸山丘。--《归田赋》・张衡
 病历	汉初著名的内科医生淳于意，是我国最早发明和使用病历的医生
 风炮	呜～～～～哒哒哒
+
+# 常用链接
+http://t.csdnimg.cn/TlnBW	rime专栏
+https://webgeo-8gn07v0t78c4ca57-1308819187.tcloudbaseapp.com	几何画板
+https://zhuanlan.zhihu.com/p/675553523	知乎[rime100种效果]
 
 # 24节气相关
 节气	春雨惊春清谷天，夏满芒夏暑相连。<br>秋处露秋寒霜降，冬雪雪冬小大寒。
@@ -313,3 +320,10 @@ x	母衣贯头弓和匕，幼无力🖊
 艮	☶
 ☷	坤
 坤	☷
+
+# md语法提示
+md甘特图	```mermaid<br>gantt<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspdateFormat&nbsp&nbspYYYY-MM-DD<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsptitle&nbspAdding&nbspGANTT&nbspdiagram&nbspfunctionality&nbspto&nbspmermaid<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspsection&nbsp现有任务<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp已完成&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:done,&nbsp&nbsp&nbsp&nbspdes1,&nbsp2014-01-06,2014-01-08<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp进行中&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:active,&nbsp&nbspdes2,&nbsp2014-01-09,&nbsp3d<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp计划中&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspdes3,&nbspafter&nbspdes2,&nbsp5d<br>```
+mdUML图	```mermaid<br>sequenceDiagram<br>张三&nbsp->>&nbsp李四:&nbsp你好！李四,&nbsp最近怎么样?<br>李四-->>王五:&nbsp你最近怎么样，王五？<br>李四--x&nbsp张三:&nbsp我很好，谢谢!<br>李四-x&nbsp王五:&nbsp我很好，谢谢!<br>Note&nbspright&nbspof&nbsp王五:&nbsp李四想了很长时间,&nbsp文字太长了<br/>不适合放在一行.<br>李四-->>张三:&nbsp打量着王五...<br>张三->>王五:&nbsp很好...&nbsp王五,&nbsp你怎么样?<br>```
+mermaid流程图	```mermaid<br>graph&nbspLR<br>A[长方形]&nbsp--&nbsp链接&nbsp-->&nbspB((圆))<br>A&nbsp-->&nbspC(圆角长方形)<br>B&nbsp-->&nbspD{菱形}<br>C&nbsp-->&nbspD<br>```
+flowchat流程图	```mermaid<br>flowchat<br>st=>start:&nbsp开始<br>e=>end:&nbsp结束<br>op=>operation:&nbsp我的操作<br>cond=>condition:&nbsp确认？<br>st->op->cond<br>cond(yes)->e<br>cond(no)->op<br>```
+classDiagram图	```mermaid<br>classDiagram<br>&nbsp&nbsp&nbsp&nbspClass01&nbsp<|--&nbspAveryLongClass&nbsp:&nbspCool<br>&nbsp&nbsp&nbsp&nbsp<<interface>>&nbspClass01<br>&nbsp&nbsp&nbsp&nbspClass09&nbsp-->&nbspC2&nbsp:&nbspWhere&nbspam&nbspi?<br>&nbsp&nbsp&nbsp&nbspClass09&nbsp--*&nbspC3<br>&nbsp&nbsp&nbsp&nbspClass09&nbsp--|>&nbspClass07<br>&nbsp&nbsp&nbsp&nbspClass07&nbsp:&nbspequals()<br>&nbsp&nbsp&nbsp&nbspClass07&nbsp:&nbspObject[]&nbspelementData<br>&nbsp&nbsp&nbsp&nbspClass01&nbsp:&nbspsize()<br>&nbsp&nbsp&nbsp&nbspClass01&nbsp:&nbspint&nbspchimp<br>&nbsp&nbsp&nbsp&nbspClass01&nbsp:&nbspint&nbspgorilla<br>&nbsp&nbsp&nbsp&nbspclass&nbspClass10&nbsp{<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp>>service>><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspint&nbspid<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspsize()<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspsize()<br>&nbsp&nbsp&nbsp&nbsp}<br>```
