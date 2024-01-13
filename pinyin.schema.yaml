@@ -38,13 +38,18 @@ engine:
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
+  translators:
+    - punct_translator
 key_binder:
+  import_preset: default
+punctuator:
   import_preset: default
 recognizer:
   import_preset: default
 speller:
   alphabet: "zyxwvutsrqponmlkjihgfedcba"
   delimiter: " "
+  auto_select_unique_candidate: true # 无重码自动上屏
 schema:
   author:
     - "dyy <douyaoyuan@126.com>"

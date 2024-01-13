@@ -15,7 +15,7 @@ local function pinyin_Filter(input, env)
 	local spaceSwitchFlg = env.engine.context:get_option("space")
 	
 	for cand in input:iter() do
-		if spaceSwitchFlg then
+		if spaceSwitchFlg and string.find(cand.text,'[a-z]') then
 			yield(Candidate("word", cand.start, cand._end, cand.text..' ', cand.comment))
 		else
 			yield(cand)
