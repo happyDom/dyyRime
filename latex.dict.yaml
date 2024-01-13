@@ -1,0 +1,23 @@
+﻿# Rime dictionary
+# mim: set ts=8 sw=8 noet:
+# encoding: utf-8
+#
+# latex - Latex
+#
+# Patrick <ipatrickmac@gmail.com>
+#
+
+---
+name: latex
+version: "0.2"
+sort: by_weight #defaut：使用字典文档顺序；by_weight：使用权重进行排序
+use_preset_vocabulary: false
+...
+#关于词表定义及词序权重的说明
+#词表定义格式如下：
+#输出项	编码	权重
+#关于权重，数字大者，其在候选框内出现的位置则靠前，如果没有指定权重值，则以词表定时次序排序
+
+#常用组合
+$$\textcolor{blue}{解：}$$	qev
+$$\textcolor{blue}{证：}$$	ygh

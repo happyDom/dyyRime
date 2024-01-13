@@ -1,0 +1,23 @@
+patch:
+  translator/enable_user_dict: false				# false：自动造词及动态词频功能失效；true：启用自动造词和动态词频
+  style/inline_preedit: false						# 是否在输入行内进行预测生成，true 表示不单独显示输入字符
+  engine/translators/+:								# 增加以下翻译器
+    - lua_translator@latexletters_translator
+    - lua_translator@latexHelp_translator
+  punctuator:
+    import_preset: symbols
+    half_shape:
+      "-": "-"
+      "|": "|"
+      "^": "^"
+      "]": "]"
+      "[": "["
+      ")": ")"
+      "(": "("
+      "<": "<"
+      ">": ">"
+  custom_phrase:
+    encode_commit_history: false
+    disable_user_dict_for_patterns:
+    #  - "^z.*$"									# 这是原始默认设置
+      - "^[a-y]{1,3}$"								# 三码及以下不使用自动调频、不自动造词

@@ -21,6 +21,7 @@ patch:
   schema_list:
     - {schema: wubi_pinyin}			# 五笔・拼音 输入方案
     - {schema: easy_en}				# 英文输入方案
+    - {schema: latex}				# latex输入方案
     - {schema: pinyin}				# 拼音输入
   switcher:
     abbreviate_options: true  # 功能选项显示为简写模式
