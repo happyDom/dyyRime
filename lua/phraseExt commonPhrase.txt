@@ -38,9 +38,9 @@
 公式	md-md公式
 甘特 甘特图	md-md甘特图
 uml	md-mdUML图
-流程图	md-mermaid流程图 md-flowchat流程图
-类	md-classDiagram图
-图	md-mdUML图 md-md甘特图 md-mermaid流程图 md-flowchat流程图 md-classDiagram图
+流程 流程图	md-mermaid流程图 md-flowchat流程图
+类 类图	md-classDiagram图
+图 画图	md-mdUML图 md-md甘特图 md-mermaid流程图 md-flowchat流程图 md-classDiagram图
 
 # 常用称呼
 运气 华盖	运气 华盖
