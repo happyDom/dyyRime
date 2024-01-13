@@ -9,5 +9,5 @@ patch:
     - uniquifier									# 过滤重复候选项，依赖 simplifier
   switches/+: #增加以下开关
     - name: space					# 一个标志开头，用来控制是否在拼音选项组词后自动加一个空格
-      reset: 0
+      reset: 1
       states: [无,空格]
