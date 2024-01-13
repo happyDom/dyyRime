@@ -17,9 +17,6 @@ local e = {'ē','é','ě','è','e'}
 local i = {'ī','í','ǐ','ì','i'}
 local u = {'ū','ú','ǔ','ù','u'}
 local v = {'ǖ','ǘ','ǚ','ǜ','ü'}
-local jv = {'jū','jú','jǔ','jù','ju'}
-local qv = {'qū','qú','qǔ','qù','qu'}
-local xv = {'xū','xú','xǔ','xù','xu'}
 local iu = {'iū','iú','iǔ','iù','iu'}
 local ui = {'uī','uí','uǐ','uì','ui'}
 
@@ -28,26 +25,29 @@ local aoeListDict = {['a']=a,
 					['e']=e,
 					['i']=i,
 					['u']=u,
-					['v']=v,
-					['jv']=jv,
-					['qv']=qv,
-					['xv']=xv,
+					['ü']=v,
 					['iu']=iu,
 					['ui']=ui}
 
-local aoeList = {'a','o','e','ui','iu','i','u','jv','qv','xv','v'}
+local aoeList = {'a','o','e','ui','iu','i','u','ü'}
 
 function translator(input, seg)
+	local inputStr = input
+	
+	inputStr = string.gsub(inputStr,'jv','ju')
+	inputStr = string.gsub(inputStr,'qv','qu')
+	inputStr = string.gsub(inputStr,'xv','xu')
+	inputStr = string.gsub(inputStr,'v','ü')
+	
 	-- 遍历检查韵母, 找到对应的 aoeKey 值
 	local aoeKey = ''
 	for j,aoeK in ipairs(aoeList) do
-		if nil ~= string.match(input,'.*'..aoeK..'.*') then
+		if string.match(inputStr,'.*'..aoeK..'.*') then
 			aoeKey = aoeK
 			break
 		end
 	end
 	
-	local inputStr = input
 	-- 如果没有 aoeKey，则在input后面加入一个 a，以提供有效的拼音选项
 	if '' == aoeKey then
 		aoeKey = 'a'
@@ -67,7 +67,7 @@ function translator(input, seg)
 		
 		if 4 == j and true then
 		--是否输出轻声选项，如果不想输出轻声选项（如果拼音中不包含 v，轻声可以通过 Enter 键直接将字母上屏即可），请保持判断条件为true
-			if string.find(inputStr,'v') < 1 then
+			if string.find(input,'v') < 1 then
 			--如果确实没有 v 的存在，则可以跳过轻声选项
 				break
 			end
