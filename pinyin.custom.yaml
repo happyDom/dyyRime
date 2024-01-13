@@ -11,3 +11,6 @@ patch:
     - name: space					# 一个标志开头，用来控制是否在拼音选项组词后自动加一个空格
       reset: 1
       states: [无,空格]
+    - name: short					# 一个标志开头，用来控制是否将词组中的zh/ch/sh/ng替换为ẑ/ĉ/ŝ/ŋ以缩短拼音
+      reset: 0
+      states: [zhong,ẑoŋ]

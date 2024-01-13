@@ -10,13 +10,36 @@ if logEnable then
 	log.writeLog('log from pinyin_Filter.lua')
 end
 
+local shortZhChSh = {['zh']='ẑ',
+					['ch']='ĉ',
+					['sh']='ŝ',
+					['ng']='ŋ'}
+
 local function pinyin_Filter(input, env)
 	--获取选项space(空格)开关状态
 	local spaceSwitchFlg = env.engine.context:get_option("space")
+	--获取选项short(短写)开关状态
+	local shortSwitchFlg = env.engine.context:get_option("short")
 	
 	for cand in input:iter() do
-		if spaceSwitchFlg and string.find(cand.text,'[a-z]') then
-			yield(Candidate("word", cand.start, cand._end, cand.text..' ', cand.comment))
+		if string.find(cand.text,'[a-z]') then
+			local candTxt = cand.text
+		
+			if spaceSwitchFlg then
+				candTxt = candTxt..' '
+			end
+			
+			if shortSwitchFlg then
+				for k,v in pairs(shortZhChSh) do
+					candTxt = string.gsub(candTxt,k,v)
+				end
+			end
+		
+			if spaceSwitchFlg or shortSwitchFlg then
+				yield(Candidate("word", cand.start, cand._end, candTxt, cand.comment))
+			else
+				yield(cand)
+			end
 		else
 			yield(cand)
 		end
