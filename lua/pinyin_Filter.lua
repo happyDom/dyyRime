@@ -12,7 +12,7 @@ end
 
 local function pinyin_Filter(input, env)
 	--获取选项space(空格)开关状态
-	local spaceSwitchFlg = env.engine.context:get_option("space") or false
+	local spaceSwitchFlg = env.engine.context:get_option("space")
 	
 	for cand in input:iter() do
 		if spaceSwitchFlg then
