@@ -37,6 +37,7 @@ function translator(input, seg)
 	inputStr = string.gsub(inputStr,'jv','ju')
 	inputStr = string.gsub(inputStr,'qv','qu')
 	inputStr = string.gsub(inputStr,'xv','xu')
+	inputStr = string.gsub(inputStr,'yv','yu')
 	inputStr = string.gsub(inputStr,'v','ü')
 	
 	-- 遍历检查韵母, 找到对应的 aoeKey 值
