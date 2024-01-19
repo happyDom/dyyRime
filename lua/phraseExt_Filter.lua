@@ -38,6 +38,7 @@ local function phraseExt_Filter(input, env)
 	
 	-- 候选词组前缀与开关状态的对应字典
 	local prefixSwitchsDict = {['git-']=minttyFlg or cmdFlg,
+								['cmd-']=cmdFlg,
 								['py-']=pycharmFlg or vscodeFlg,
 								['md-']=markdownFlg}
 	
