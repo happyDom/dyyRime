@@ -22,17 +22,21 @@ end
 current_path = current_path:gsub(pathSpace..'$','')
 
 local x86x64 = 'x86'
+
 -- 添加 cpath 路径，以使 lua 可以找到 current_path 路径下的 dll 库
-if 'Lua 5.4' == _VERSION then
-    local cpath = "\\luaSocket\\x86\\lua5.4\\?.dll"  -- 引入 x86 lua54 版 socket.core
-    if 'x64' == x86x64 then
-        cpath = "\\luaSocket\\x64\\lua5.4\\?.dll"  -- 引入 x64 lua54 版 socket.core
-    end
-    
-    cpath = string.gsub(cpath,'\\',pathSpace)  -- 调整路径分隔符
-    
-    package.cpath = package.cpath..';'..current_path..cpath
+local cpath = "\\luaSocket\\x86\\lua5.4\\?.dll"  -- 引入 x86 lua54 版 socket.core
+
+if 'Lua 5.3' == _VERSION then
+	cpath = string.gsub(cpath, 'Lua 5.4', 'Lua 5.3')  -- 调整版本
+else if 'Lua 5.2' == _VERSION then
+	cpath = string.gsub(cpath, 'Lua 5.4', 'Lua 5.2')  -- 调整版本
 end
+
+if 'x64' == x86x64 then
+	cpath = string.gsub(cpath, 'x86', 'x64')  -- 调整为 x64 版
+end
+
+package.cpath = package.cpath..';'..current_path..cpath
 
 local socketEnable, socket = pcall(require, "socket.core") -- 加载socket库
 
@@ -44,6 +48,8 @@ if logEnable then
 	log.writeLog('log from socket.lua:')
 	log.writeLog('logEnable:'..tostring(socketEnable))
 	if not socketEnable then
+		log.writeLog('_VERSION: '.._VERSION)
+		log.writeLog('package.cpath: '..package.cpath)
         log.writeLog(socket)
     end
 end
