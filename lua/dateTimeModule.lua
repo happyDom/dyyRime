@@ -194,6 +194,7 @@ dateInfo.date_M_Dth_YYYY_2：May 09th, 2022
 dateInfo.date10：二〇二二年五月九日
 dateInfo.date_yyMxx：23M04
 dateInfo.date_YYYYMMDD：20230412
+dateInfo.date_sbxb：²⁰²⁴/₀₂.₂₀ 格式的日期
 dateInfo.lunarInfo: 一个lunar的结构体
 ]]
 local function dateInfoByTime(t)
@@ -206,13 +207,13 @@ local function dateInfoByTime(t)
 	--处理年份信息
 	local yN=tonumber(os.date("%Y",baseTime))
 	local yN_1=''
-	yN_1=os.date("%Y",baseTime):gsub("%d",{["1"]="一",["2"]="二",["3"]="三",["4"]="四",["5"]="五",["6"]="六",["7"]="七",["8"]="八",["9"]="九",["0"]="〇",})
+	yN_1=os.date("%Y",baseTime):gsub("%d",{["1"]="一",["2"]="二",["3"]="三",["4"]="四",["5"]="五",["6"]="六",["7"]="七",["8"]="八",["9"]="九",["0"]="〇"})
 	local yInfo={yN_1.."年"}
 	
 	--处理月份信息
 	local mN=tonumber(os.date("%m",baseTime))
 	local mN_1=''
-	mN_1=os.date("%m",baseTime):gsub("%d",{["1"]="一",["2"]="二",["3"]="三",["4"]="四",["5"]="五",["6"]="六",["7"]="七",["8"]="八",["9"]="九",["0"]="",})
+	mN_1=os.date("%m",baseTime):gsub("%d",{["1"]="一",["2"]="二",["3"]="三",["4"]="四",["5"]="五",["6"]="六",["7"]="七",["8"]="八",["9"]="九",["0"]=""})
 	if mN == 10 then
 		mN_1 = '十'
 	elseif mN == 11 then
@@ -225,7 +226,7 @@ local function dateInfoByTime(t)
 	--处理日期信息
 	local dN=tonumber(os.date("%d",baseTime))
 	local dN_1=''
-	dN_1=os.date("%d",baseTime):gsub("%d",{["1"]="一",["2"]="二",["3"]="三",["4"]="四",["5"]="五",["6"]="六",["7"]="七",["8"]="八",["9"]="九",["0"]="",})
+	dN_1=os.date("%d",baseTime):gsub("%d",{["1"]="一",["2"]="二",["3"]="三",["4"]="四",["5"]="五",["6"]="六",["7"]="七",["8"]="八",["9"]="九",["0"]=""})
 	if dN > 19 then
 		dN_1 = string.sub(dN_1,1,3).."十"..string.sub(dN_1,4,#dN_1)
 	elseif dN > 9 then
@@ -233,6 +234,10 @@ local function dateInfoByTime(t)
 	end
 	dN_1 = dN_1..'日'
 	local dInfo={os.date("%d",baseTime)..numSymbal(dN),dN_1}
+	
+	local sbYYYY = os.date("%Y",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
+	local xbMM = os.date("%m",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
+	local xbDD = os.date("%d",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
 	
 	local dateInfo = {}
 	dateInfo.time = baseTime
@@ -265,6 +270,8 @@ local function dateInfoByTime(t)
 	dateInfo.date_yyMxx = os.date("%yM%m",baseTime)
 	--20230412
 	dateInfo.date_YYYYMMDD = os.date("%Y%m%d",baseTime)
+	--²⁰²⁴/₀₂.₂₀
+	dateInfo.date_sbxb = sbYYYY.."/"..xbMM.."."..xbDD
 	
 	dateInfo.lunarInfo = lunar.solar2LunarByTime(baseTime)
 	
@@ -272,7 +279,7 @@ local function dateInfoByTime(t)
 	return dateInfo
 end
 
---提供 date信息
+--提供 dateInfo 结构信息
 local function dateInfoByDaysOffset(daysOffset)
 	--baseDate准备
 	daysOffset = daysOffset or 0

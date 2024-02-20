@@ -155,9 +155,9 @@ local function Filter(input, env)
 				theCands = {}
 				if ({['今天']=true,['今日']=true,['today']=true,['明天']=true,['明日']=true,['后天']=true,['昨天']=true,['前天']=true})[candTxt_lower] then
 					if ''~=eventsStr then
-						table.insert(theCands,{candTxt_lower.."("..dateInfo.date_YYYYMMDD..")",eventsStr})
+						table.insert(theCands,{candTxt_lower.."("..dateInfo.date_sbxb..")",eventsStr})
 					else
-						table.insert(theCands,{candTxt_lower.."("..dateInfo.date_YYYYMMDD..")",'💡'})
+						table.insert(theCands,{candTxt_lower.."("..dateInfo.date_sbxb..")",'💡'})
 					end
 					table.insert(theCands,{dateInfo.date_YYYYMMDD_1..' '..wInfo.nameCN,'💡'})
 				else
@@ -170,6 +170,7 @@ local function Filter(input, env)
 				
 				table.insert(theCands,{dateInfo.date_M_Dth_YYYY_1,'💡'})
 				table.insert(theCands,{dateInfo.date_YYYYMMDD,'💡'})
+				table.insert(theCands,{dateInfo.date_sbxb,'💡'})
 				if jqTime>0 then
 					table.insert(theCands,{dateInfo.lunarInfo.lunarDate_1,dateInfo.lunarInfo.jiJieLogo..jqName})
 				else
