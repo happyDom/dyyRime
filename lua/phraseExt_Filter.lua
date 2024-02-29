@@ -69,7 +69,10 @@ local function phraseExt_Filter(input, env)
 						if nil == cands[thisTxt] then
 							cands[thisTxt]=true
 							
-							esType,esTxt = string.match(thisTxt,"^es(.+)(%[.+%])$")
+							--第一个括号匹配app标记（例如：fs,wx,qq,dt），
+							--第二个括号匹配表情表达式（例如：[赞]、[/hanx]）
+							esType,esTxt = string.match(thisTxt,"^es(.+)%{(.+)%}$")
+							
 							if nil ~= esType then
 								esType = string.lower(esType)
 
