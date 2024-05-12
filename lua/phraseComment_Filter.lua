@@ -22,8 +22,11 @@ local function phraseComment_Filter(input, env)
 	
 	for cand in input:iter() do
 		if on then
-			local candTxt = cand.text:gsub("%s","") or ""
+			local candTxt = cand.text or ""
 			local thisComment = cand.comment
+			
+			--将candTxt中的 \r 反替换成 <br>, 空格反替换成&nbsp
+			candTxt = candTxt:gsub("\r","<br>"):gsub(" ","&nbsp")
 			
 			if candTxt ~= "" then
 				--获取字典释义

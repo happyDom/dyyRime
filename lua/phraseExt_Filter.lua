@@ -35,12 +35,16 @@ local function phraseExt_Filter(input, env)
 	local pycharmFlg = env.engine.context:get_option("pycharmFlg")
 	local vscodeFlg = env.engine.context:get_option("vscodeFlg")
 	local markdownFlg = env.engine.context:get_option("markdown")
+	local chromeFlg = env.engine.context:get_option("chromeFlg")
+	local qianniuFlg = env.engine.context:get_option("qianniuFlg")
+	local wangwangFlg = env.engine.context:get_option("wangwangFlg")
 	
 	-- 候选词组前缀与开关状态的对应字典
 	local prefixSwitchsDict = {['git-']=minttyFlg or cmdFlg,
 								['cmd-']=cmdFlg,
 								['py-']=pycharmFlg or vscodeFlg,
-								['md-']=markdownFlg}
+								['md-']=markdownFlg,
+								['chrome-']=chromeFlg}
 	
 	local matchedTxt = ''
 	local esType = ''
@@ -97,6 +101,11 @@ local function phraseExt_Filter(input, env)
 									if nil ~= esTxt then
 										yield(Candidate("word", cand.start, cand._end, esTxt, '😃'))
 									end
+								elseif (qianniuFlg or wangwangFlg) and nil ~= string.find(esType,'qn') then
+								--这是一个 千牛/旺旺 表情，且当前在 千牛工作台 或者在阿里旺旺 中输入
+									if nil ~= esTxt then
+										yield(Candidate("word", cand.start, cand._end, esTxt, '😃'))
+									end
 								end
 							else
 								--这不是一个表情选项，检察是否符合某一前缀规则
@@ -104,7 +113,7 @@ local function phraseExt_Filter(input, env)
 								local prefixLen = 0
 								local prefixFlg = false
 								for k,v in pairs(prefixSwitchsDict) do
-									if string.find(string.lower(thisTxt),'^'..k) then
+									if string.find(string.lower(thisTxt),'^'..k..'-') then
 										prefix = k
 										prefixLen = #k
 										prefixFlg = v
@@ -116,12 +125,18 @@ local function phraseExt_Filter(input, env)
 									if prefixFlg then
 										-- 修剪选项
 										thisTxt = string.sub(thisTxt, 1 + prefixLen)
-										
-										-- 抛出选项
-										yield(Candidate("word", cand.start, cand._end, thisTxt:gsub("&nbsp"," "), '💡'))
+									else
+										--清除 thisTxt 的内容
+										thisTxt = ""
 									end
-								else
-									yield(Candidate("word", cand.start, cand._end, thisTxt:gsub("&nbsp"," "), '💡'))
+								end
+								
+								if #thisTxt > 0 then
+									--将 thisTxt 中的 替换为空格，<br> 替换为 \r
+									thisTxt = thisTxt:gsub("&nbsp"," "):gsub("<br>","\r")
+									
+									-- 抛出选项
+									yield(Candidate("word", cand.start, cand._end, thisTxt, '💡'))
 								end
 							end
 						end
