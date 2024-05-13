@@ -4,6 +4,8 @@
 -- 定义一个全局变量，用于记录一个随机数种子
 randomseed = os.time()
 
+local logEnable, log = pcall(require, 'runLog')
+
 local M={}
 local dbgFlg = false
 
@@ -174,6 +176,43 @@ local function utf8PunctuationsTrim(str)
 	return str,cnt
 end
 
+--把给定的字符串，根据指定的字符进行分割，返回分割后的子串数组
+local function utf8Split(str, sp, sp1)
+	if dbgFlg then
+		log.writeLog("utf8Split is called:")
+		log.writeLog("str: "..(str or ""))
+		log.writeLog("sp: "..(sp or ""))
+		log.writeLog("sp1: "..(sp1 or ""))
+	end
+	
+	sp = type(sp) == "string"  and sp or " "
+	if #sp == 0 then
+		--如果分割符是空的，则匹配每个字符，并将其捕获出来
+		sp = "([%z\1-\127\194-\244][\128-\191]*)"
+	elseif #sp == 1 then
+		--如果指定了一个分割字符，则匹配并捕获不包含该分割符的子串，并将其捕获出来
+		sp = "[^" ..  (sp=="%" and "%%" or sp) .. "]*"
+	else
+		--如果指定的分割符（sp）是一个字符串，则需要先将分割字符串替换成新的分割符（sp1），然后再分割
+		sp1 = sp1 or "^"
+		if #sp1 > 1 then
+			--确保分割符 sp1 是一个字符，而不是多字符
+			sp1 = sp1:sub(1,1)
+		end
+		
+		str = str:gsub(sp,sp1)
+		sp = "[^".. sp1 .. "]*"
+	end
+	
+	local tab= {}
+	for v in str:gmatch(sp) do
+		table.insert(tab,v)
+		if dbgFlg then log.writeLog("v: "..v) end
+	end
+	
+	return tab
+end
+
 --生成一个指定长度的随机密码
 function newPwd(len, easyRead)
     len = len or 8
@@ -228,6 +267,7 @@ function M.init(...)
 	M.utf8Trim = utf8Trim
 	M.utf8PunctuationsGo = utf8PunctuationsGo
 	M.utf8PunctuationsTrim = utf8PunctuationsTrim
+	M.utf8Split = utf8Split
 	M.newPwd = newPwd
 
 	M.setDbg = setDbg

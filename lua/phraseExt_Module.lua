@@ -8,11 +8,15 @@ local dbgFlg = false
 --引入系统变更处理模块
 local sysInfoEnable, sysInfo = pcall(require, 'sysInfo')
 
+--引入 utf8String 处理字符串相关操作
+local utf8StringEnable, utf8String = pcall(require, 'utf8String')
+
 local logEnable, log = pcall(require, "runLog")
 if logEnable then
 	log.writeLog('')
 	log.writeLog('log from phraseExt_Module.lua')
 	log.writeLog('sysInfoEnable:'..tostring(sysInfoEnable))
+	log.writeLog('utf8StringEnable:'..tostring(utf8StringEnable))
 end
 
 local currentDir = sysInfo.currentDir
@@ -25,27 +29,7 @@ local function setDbg(flg)
 	print('myPhrase dbgFlg is '..tostring(dbgFlg))
 end
 
---将这附串拆散成 table
-local function stringSplit(str,sp,sp1)
-	sp=(type(sp)=="string") and sp or " "
-	if 0==#sp then
-		sp="([%z\1-\127\194-\244][\128-\191]*)"
-	elseif 1==#sp then
-		sp="[^"..(sp=="%" and "%%" or sp).."]*"
-	else
-		sp1=sp1 or "^"
-		str=str:gsub(sp,sp1)
-		sp="[^"..sp1.."]*"
-	end
-	
-	local tab={}
-	for v in str:gmatch(sp) do
-		if ''~=v then
-			table.insert(tab,v)
-		end
-	end
-	return tab
-end
+local stringSplit = utf8String.utf8Split
 
 --将文档处理成行数组
 local function files_to_lines(...)
