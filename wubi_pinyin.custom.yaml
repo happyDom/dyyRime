@@ -37,6 +37,7 @@ patch:
     - lua_filter@dic_4w_Filter						# 英中对照滤镜
     - lua_filter@phraseComment_Filter				# 短语释义
     - lua_filter@pinyinAdding_Filter				# pinyin滤镜，用于对候选项中的字添加拼音
+    - lua_filter@laneChangeAndSpace_Filter			# laneChangeAndSpace 滤镜将候选词或者注释中的<br>处理成\r，&nbsp处理成一个空格
   custom_phrase:  # 设置用户字/词典
     dictionary: ""
     user_dict: Custom_phrase  # 指向 Custom_phrase.txt 文档

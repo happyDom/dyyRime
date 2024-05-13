@@ -1,5 +1,7 @@
 -- phraseExt_Filter.lua
 -- Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
+-- 这个滤镜的作用是，当候选项列表中出现对应的关键词时，将对应的增强词条追加到候选项列表中
+
 local dbgFlg = false
 
 local phraseExt_ModuleEnable, phraseExt_Module = pcall(require, 'phraseExt_Module')
@@ -132,9 +134,6 @@ local function phraseExt_Filter(input, env)
 								end
 								
 								if #thisTxt > 0 then
-									--将 thisTxt 中的 替换为空格，<br> 替换为 \r
-									thisTxt = thisTxt:gsub("&nbsp"," "):gsub("<br>","\r")
-									
 									-- 抛出选项
 									yield(Candidate("word", cand.start, cand._end, thisTxt, '💡'))
 								end
