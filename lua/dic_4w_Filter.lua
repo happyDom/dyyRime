@@ -30,16 +30,6 @@ local function dic_4w_Filter(input, env)
 				thisComment = getVal(candTxt)
 				if nil == thisComment then
 					thisComment = cand.comment
-				else
-					--成功获取了释义，下面进行一些格式化处理
-					--替换 <br> 为换行符
-					thisComment = thisComment:gsub("<br>","\r")
-					--替换 &nbsp 为空格
-					thisComment = thisComment:gsub("&nbsp"," ")
-					--需要限制释义长度为 maxLenOfComment
-					thisComment = string.sub(thisComment, 1, maxLenOfComment)
-					--去除首尾空格 和 符号
-					thisComment = utf8String.utf8PunctuationsTrim(thisComment)
 				end
 				if cand.comment ~= "" then
 					if thisComment ~= cand.comment then
@@ -50,7 +40,7 @@ local function dic_4w_Filter(input, env)
 								thisComment = cand.comment..'✔'..thisComment
 							end
 						else
-							thisComment = cand.comment..'\r'..thisComment
+							thisComment = cand.comment..'<br>'..thisComment
 						end
 					end
 				end
