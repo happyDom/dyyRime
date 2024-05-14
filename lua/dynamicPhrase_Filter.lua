@@ -84,18 +84,22 @@ local function Filter(input, env)
 			elseif ({['ip']=true})[candTxt_lower] then
 				if socketEnable then
 					--添加选项
-					local ip = socket.dns.toip(socket.dns.gethostname())
-					if ip then
-						table.insert(theCands,{ip,'💡ipv4'})
-					end
-					
-					local addrinfo = socket.dns.getaddrinfo(socket.dns.gethostname(), nil, {family = "inet6"})
+					local addrinfo = socket.dns.getaddrinfo(socket.dns.gethostname())
 					if addrinfo then
-	 					for _, info in ipairs(addrinfo) do
-							if info.family == "inet6" then
-								table.insert(theCands,{info.addr,'💡ipv6'})
+						--先添加所有的 ipv4 地址
+						for _, info in ipairs(addrinfo) do
+							if info.family == "inet" then
+								table.insert(theCands,{tostring(info.addr),'💡'})
 							end
-	 					end
+						end
+						--再添加所有的 ipv6 地址
+						for _, info in ipairs(addrinfo) do
+							if info.family == "inet6" then
+								if nil == string.find(info.addr,'fe80') then
+									table.insert(theCands,{tostring(info.addr),'💡'})
+								end
+							end
+						end
 					end
 				end
 			elseif ({['用户']=true,['路径']=true})[candTxt_lower] then

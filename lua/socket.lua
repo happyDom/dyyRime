@@ -28,8 +28,10 @@ local cpath = "\\luaSocket\\x86\\lua5.4\\?.dll"  -- 引入 x86 lua54 版 socket.
 
 if 'Lua 5.3' == _VERSION then
 	cpath = string.gsub(cpath, 'Lua 5.4', 'Lua 5.3')  -- 调整版本
-else if 'Lua 5.2' == _VERSION then
-	cpath = string.gsub(cpath, 'Lua 5.4', 'Lua 5.2')  -- 调整版本
+else
+	if 'Lua 5.2' == _VERSION then
+		cpath = string.gsub(cpath, 'Lua 5.4', 'Lua 5.2')  -- 调整版本
+	end
 end
 
 if 'x64' == x86x64 then
