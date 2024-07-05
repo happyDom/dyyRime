@@ -231,3 +231,11 @@
     ![20231229173706_rec_](https://s2.loli.net/2023/12/29/CkIlqjKvu8F4nN6.gif)  
     ![20231229174205_rec_](https://s2.loli.net/2023/12/29/3efCKj7WSGR8cHU.gif)  
     ![20231229174327_rec_](https://s2.loli.net/2023/12/29/YW2HcIZ3GysOg1K.gif)
+
+## 感谢以下开发者的贡献
+
+![img](https://contrib.rocks/image?repo=happyDom/dyyRime&_v=0)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=happyDom/dyyRime&type=Date)](https://star-history.com/#happyDom/dyyRime&Date)
