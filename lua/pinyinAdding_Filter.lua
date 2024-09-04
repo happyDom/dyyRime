@@ -14,9 +14,6 @@ end
 
 local phraseShown = ''
 
---最长的comment长度限制
-local maxLenOfComment = 250
-
 local function pinyinAdding(input, env)
 	--获取选项pinyin开关状态
 	local pySwitchFlg = env.engine.context:get_option("pinyin") or false

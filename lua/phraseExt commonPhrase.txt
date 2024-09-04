@@ -1,13 +1,17 @@
 #在候选词中：支持使用 &nbsp 来定义空格，支持使用 <br> 来定义换行，而正常的空格被用于分词
 
 # 常用链接
-知乎	https://www.zhihu.com
-百度 度娘	www.baidu.com
-淘宝	www.taobao.com
-谷歌 谷哥 谷姐	www.google.com
-画图 几何 画板	https://webgeo-8gn07v0t78c4ca57-1308819187.tcloudbaseapp.com
-分享 专栏	http://t.csdnimg.cn/TlnBW
-分享	https://zhuanlan.zhihu.com/p/675553523
+知乎	chrome-https://www.zhihu.com
+百度 度娘	chrome-www.baidu.com
+淘宝	chrome-www.taobao.com
+谷歌 谷哥 谷姐	chrome-www.google.com
+画图 几何 画板	chrome-https://webgeo-8gn07v0t78c4ca57-1308819187.tcloudbaseapp.com
+分享	chrome-https://blog.csdn.net/weixin_42148809/article/details/135594098 chrome-https://zhuanlan.zhihu.com/p/677852323
+分享	chrome-https://zhuanlan.zhihu.com/p/675553523
+词典	chrome-https://wantwords.net
+正则	chrome-https://ihateregex.io chrome-https://regex101.com
+扩展	chrome-chrome://extensions
+测速	chrome-https://www.speedtest.cn
 
 # md语法支持
 红 红字	md-<font&nbspcolor=Red></font>
@@ -26,6 +30,7 @@
 粉 粉底	md-<span&nbspstyle="background:Pink"></span>
 提醒 醒目	md-<span&nbspstyle="background:Red"><font&nbspcolor=Yellow>醒目</font></span>
 引用 链接	md-[]()
+表格	md-md表格
 一级	md-#&nbsp
 二级	md-##&nbsp
 三级	md-###&nbsp
@@ -64,6 +69,7 @@ uml	md-mdUML图
 # 常用词组
 表情	emoji
 上述	👆上述
+鸡 鸡狗 鸡飞狗跳	🐓飞🐕跳
 
 # python 关键字映射，联想词组前缀：py-
 从	py-from&nbsp
@@ -93,21 +99,27 @@ uml	md-mdUML图
 包含	py-contains
 循环	py-for&nbsp py-while&nbsp
 在 在于	py-in&nbsp py-in&nbsp[
-不在	py-not&nbspin&nbsp
+不在	py-not&nbspin&nbsp py-not&nbspin&nbsp[
 和 且 并且 同时	py-and&nbsp
 或 或者	py-or&nbsp
 返回	py-return&nbsp
-是	py-is&nbsp
+是	py-is&nbsp py-True
+真	py-True
+假	py-False
 不是	py-is&nbspnot&nbsp
 类型	py-type&nbsp py-type(
-域	py-#&nbspregion&nbsp py-#&nbspendregion
+域	py-#&nbspregion&nbsp
+结束	py-#&nbspendregion
 
 # 常用git命令，联想词组前缀：git-
 发布	git-git&nbsppb&nbsp
 状态	git-git&nbspst
 日志	git-git&nbsplp git-git&nbsplg git-git&nbsplpp
 版本	git-git&nbspvr&nbsp
-添加 提交	git-git&nbspacm&nbsp' git-git&nbspadd&nbsp
+改动 区别 对比 差异	git-git&nbspdiff
+变动 变化	git-git&nbspdiff&nbsprxx&nbspryy&nbsp--name-only
+添加	git-git&nbspadd&nbsp git-git&nbspadd&nbsp.
+提交	git-git&nbspcm git-git&nbspacm
 推送 同步	git-git&nbsppo
 拉取 同步	git-git&nbsppall
 关联	git-git&nbspbs&nbsp
@@ -116,12 +128,18 @@ uml	md-mdUML图
 合并	git-git&nbspmr&nbsp git-git&nbspmr&nbspdev git-git&nbspmr&nbsprelease
 打标	git-git&nbsptag&nbsp
 删除	git-git&nbsptag&nbsp-d&nbsprxx git-git&nbsppush&nbsp--delete&nbsporigin&nbsprxx
+打包	git-git&nbsparchive&nbspmaster&nbsp--output=master.tar.gz
+退出	git-exit
 
 # 常用cmd命令
-退出	exit exit(0)
+退出	cmd-exit cmd-exit(0)
+构建 编译	cmd-python&nbsp-m&nbspbuild
+发布	cmd-twine&nbspupload&nbspdist/*
+参考 源	cmd-https://pypi.org/project cmd-https://pypi.tuna.tsinghua.edu.cn/simple
+转码	cmd-convmv&nbsp-f&nbspGBK&nbsp-t&nbspUTF8&nbsp*.*&nbsp--notest
 
 # 单位换算
-英寸	0.0254米英寸
+英寸	0.0254米
 英尺	0.3048米
 码	3英尺 36英寸 0.9144米
 英里	1609.344米 0.87海里 5.28英尺 63.36英寸
@@ -132,15 +150,23 @@ uml	md-mdUML图
 亩	4046.856m² 0.37足球场 0.4公倾
 节	1.852kph 0.51mps
 马赫	1225.1kph 340.3mps 661.5节
-盎司	28.35g 0.0625磅
+盎司	≈28.35g ≈31.10g ≈28.41mL ≈29.57mL 30mL 34.8㎛
 磅	0.454kg	16盎司
 卡	4.184焦
 马力	0.7457kW
 巴	0.987大气压 100kPa 750.1875mmHg
 气压	1.01325bar 101.325kPa 760.1275mmHg
-汞柱	0.001333bar 0.001316大气压 0.133kPa
+血压 汞柱	0.001333bar 0.001316大气压 0.133kPa
 角度	0.017453rad 1.111111%坡比
 弧度	57.29578° 63.66198%坡比
 坡比	0.9° 0.02rad
+两	50g 24铢 4锱
+铢	1/24两 1/6锱
+锱	6铢 1/4两
+足球场	7140m²
+头发	0.1mm
+游泳池	1890m³ 长(50m)宽(21m)深(≥1.8m)
+广岛	小男孩
+
 # 其它
 进步	进步开始于起步

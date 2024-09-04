@@ -17,9 +17,9 @@ local shortZhChSh = {['zh']='ẑ',
 
 local function pinyin_Filter(input, env)
 	--获取选项space(空格)开关状态
-	local spaceSwitchFlg = env.engine.context:get_option("space")
+	local spaceSwitchFlg = env.engine.context:get_option("space") or false
 	--获取选项short(短写)开关状态
-	local shortSwitchFlg = env.engine.context:get_option("short")
+	local shortSwitchFlg = env.engine.context:get_option("short") or false
 	
 	for cand in input:iter() do
 		if string.find(cand.text,'[a-z]') then

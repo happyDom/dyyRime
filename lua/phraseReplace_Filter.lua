@@ -13,16 +13,13 @@ if logEnable then
 	log.writeLog('phraseReplaceModuleEnable:'..tostring(phraseReplaceModuleEnable))
 end
 
-local getShownPhrase = phraseReplaceModule.getShownPhrase
-
-local phraseShown = ''
---最长的comment长度限制
-local maxLenOfComment = 250
-
 local function phraseReplace_Filter(input, env)
 	--获取选项敏感词替换开关状态
-	local on = env.engine.context:get_option("phraseReplace")
-	local candsHasBeenHidden = {}
+	local on = env.engine.context:get_option("phraseReplace") or false
+	
+	--一个字典，用于暂存存在于候选词中的敏感词及其替换词
+	local keyValDic = {}
+	
 	local candStart,candEnd
 	
 	for cand in input:iter() do
@@ -30,37 +27,42 @@ local function phraseReplace_Filter(input, env)
 		candEnd = cand._end
 		
 		local candTxt = cand.text:gsub("%s","") or ""
+		local candComment = cand.comment or ""
 		
-		phraseShown = getShownPhrase(candTxt)
+		--清空敏感词暂存字典
+		keyValDic = {}
 		
-		if nil ~= phraseShown then
-			--不管是否开启选项替换，如果该选项是被命中的替换项，则加上替换标记 👙
-			cand.comment = '👙'..cand.comment
-			if '' ~= phraseShown then
-				if on then
-					--如果开启了选项替换功能，且存在替换内容
-					yield(Candidate("word", cand.start, cand._end, phraseShown, cand.comment))
-				else
-					--如果未开启选项替换功能
-					yield(cand)
+		--循环遍历每一个敏感词，以检查是否有某个敏感词存在于候选项中
+		for k,v in pairs(phraseReplaceModule.dict) do
+			if string.find(candTxt,k) then
+				keyValDic[k] = v
+			end
+		end
+		
+		if next(keyValDic) then
+			--如果存在至少一个敏感词，则不论是否进行了脱敏处理，都加上敏感标记 👙
+			candComment = '👙'..candComment
+			
+			if on then
+				--逐一替换到候选项中的敏感词
+				for k,v in pairs(phraseReplaceModule.dict) do
+					if '' == v then
+						v = '*'
+					end
+					
+					candTxt = string.gsub(candTxt, k, v)
 				end
+				
+				yield(Candidate("word", cand.start, cand._end, candTxt, candComment))
 			else
-				if on then
-					--如果开启了选项替换功能，且这个选项应该被隐藏
-					table.insert(candsHasBeenHidden,candTxt)
-				else
-					--如果未开启选项替换功能
-					yield(cand)
-				end
+				--如果没有开启脱敏功能，则抛出原选项
+				cand.comment = candComment
+				yield(cand)
 			end
 		else
+			--如果不存在敏感词，则抛出原选项
 			yield(cand)
 		end
-	end
-	
-	--如果有被隐藏的选项，则抛出一个 * 选项提示
-	if 0 < #candsHasBeenHidden then
-		yield(Candidate("word", candEnd-1, candEnd, '*', '👙'))
 	end
 end
 

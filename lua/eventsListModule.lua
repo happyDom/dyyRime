@@ -20,13 +20,23 @@ e.solarDate：这是事件的日期：20230102
 local lunarDatesList = {}
 
 --引入系统变更处理模块
-local ok, sysInfoRes = pcall(require, 'sysInfo')
+local sysInfoEnable, sysInfoRes = pcall(require, 'sysInfo')
 
 --引入农历计算模块
-local ok, lunar = pcall(require, 'lunarModule')
+local lunarModuleEnable, lunar = pcall(require, 'lunarModule')
 
 --引入日期时间计算模块
-local ok, dt = pcall(require,'dateTimeModule')
+local dateTimeModuleEnable, dt = pcall(require,'dateTimeModule')
+
+-- 导入log模块记录日志
+local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from eventsListModule.lua')
+	log.writeLog('sysInfoEnable:'..tostring(sysInfoEnable))
+	log.writeLog('lunarModuleEnable:'..tostring(lunarModuleEnable))
+	log.writeLog('dateTimeModuleEnable:'..tostring(dateTimeModuleEnable))
+end
 
 --设置 dbg 开关
 local function setDbg(flg)
@@ -1007,6 +1017,7 @@ function M.init(...)
 	local files={...}
 	--文件名不支持中文，其中 # 开始的行为注释行
 	table.insert(files,"eventsList.txt")
+	table.insert(files,"eventsList personal.txt")
 	
 	for i,v in next, files do
 		files[i] = sysInfoRes.currentDir().."/".. v

@@ -71,9 +71,7 @@ local function test(printPrefix)
 		printPrefix = ' '
 	end
 	if dbgFlg then
-		print('phraseReplace test starting...')
-		
-		sysInfo.test(printPrefix..' ')
+		print('phraseReplaceModule test starting...')
 		
 		for k,v in pairs(dict) do
 			if dbgFlg then
@@ -104,6 +102,9 @@ function M.init(...)
 		files[i] = currentDir().."/".. v
 	end
 	dict= dictload(table.unpack(files))
+	
+	--抛出字典实例
+	M.dict = dict
 	
 	--抛出功能函数
 	M.getShownPhrase = getShownPhrase

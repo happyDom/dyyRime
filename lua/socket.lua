@@ -48,7 +48,7 @@ M.socket = socket
 if logEnable then
 	log.writeLog('')
 	log.writeLog('log from socket.lua:')
-	log.writeLog('logEnable:'..tostring(socketEnable))
+	log.writeLog('socketEnable:'..tostring(socketEnable))
 	if not socketEnable then
 		log.writeLog('_VERSION: '.._VERSION)
 		log.writeLog('package.cpath: '..package.cpath)

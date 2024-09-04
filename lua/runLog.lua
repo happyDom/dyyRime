@@ -15,8 +15,8 @@ local current_path = string.sub(debug.getinfo(1).source, 2, string.len("/runLog.
 M.logDoc = current_path..'runLog.txt'
 
 M.writeLog = function (logStr)
-	logStr = logStr or "nothing"
-
+	logStr = tostring(logStr)
+	
 	if nil == newLineFlg then
 		newLineFlg = true
 	end

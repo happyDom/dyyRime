@@ -18,7 +18,7 @@ local getVal = phraseCommentModule.getVal
 
 local function phraseComment_Filter(input, env)
 	--获取选项评论开关状态
-	local on = env.engine.context:get_option("phraseComment")
+	local on = env.engine.context:get_option("phraseComment") or false
 	
 	for cand in input:iter() do
 		if on then

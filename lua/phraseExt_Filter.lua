@@ -29,17 +29,17 @@ local function phraseExt_Filter(input, env)
 	local on = env.engine.context:get_option("phraseExt")
 	--获取应用程序标记状态[由于飞书暂不支持文本转表情的输入，帮使用 and false 将其关闭]
 	local feishuFlg = env.engine.context:get_option("feishuFlg") and false
-	local wechatFlg = env.engine.context:get_option("wechatFlg")
-	local qqFlg = env.engine.context:get_option("qqFlg")
-	local dingdingFlg = env.engine.context:get_option("dingdingFlg")
-	local minttyFlg = env.engine.context:get_option("minttyFlg")
-	local cmdFlg = env.engine.context:get_option("cmdFlg")
-	local pycharmFlg = env.engine.context:get_option("pycharmFlg")
-	local vscodeFlg = env.engine.context:get_option("vscodeFlg")
-	local markdownFlg = env.engine.context:get_option("markdown")
-	local chromeFlg = env.engine.context:get_option("chromeFlg")
-	local qianniuFlg = env.engine.context:get_option("qianniuFlg")
-	local wangwangFlg = env.engine.context:get_option("wangwangFlg")
+	local wechatFlg = env.engine.context:get_option("wechatFlg") or false
+	local qqFlg = env.engine.context:get_option("qqFlg") or false
+	local dingdingFlg = env.engine.context:get_option("dingdingFlg") or false
+	local minttyFlg = env.engine.context:get_option("minttyFlg") or false
+	local cmdFlg = env.engine.context:get_option("cmdFlg") or false
+	local pycharmFlg = env.engine.context:get_option("pycharmFlg") or false
+	local vscodeFlg = env.engine.context:get_option("vscodeFlg") or false
+	local markdownFlg = env.engine.context:get_option("markdown") or false
+	local chromeFlg = env.engine.context:get_option("chromeFlg") or false
+	local qianniuFlg = env.engine.context:get_option("qianniuFlg") or false
+	local wangwangFlg = env.engine.context:get_option("wangwangFlg") or false
 	
 	-- 候选词组前缀与开关状态的对应字典
 	local prefixSwitchsDict = {['git-']=minttyFlg or cmdFlg,

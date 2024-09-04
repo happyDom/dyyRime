@@ -6,27 +6,32 @@ local dict={}
 local dbgFlg = true
 
 --引入系统变更处理模块
-local ok, sysInfoRes = pcall(require, 'sysInfo')
-local currentDir = sysInfoRes.currentDir
-local userName = sysInfoRes.userName
+local sysInfoEnable, sysInfo = pcall(require, 'sysInfo')
 --引入utf8String，用于处理utf8字符串
-local of,utf8Str = pcall(require, 'utf8String')
-local utf8Sub = utf8Str.utf8Sub
-local utf8Len = utf8Str.utf8Len
+local utf8StringEnable,utf8String = pcall(require, 'utf8String')
+
+local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from phraseCommentModule.lua')
+	log.writeLog('sysInfoEnable:'..tostring(sysInfoEnable))
+	log.writeLog('utf8StringEnable:'..tostring(utf8StringEnable))
+end
+
+local currentDir = sysInfo.currentDir
+local utf8Sub = utf8String.utf8Sub
+local utf8Len = utf8String.utf8Len
 
 --设置 dbg 开关
 local function setDbg(flg)
 	dbgFlg = flg
-	sysInfoRes.setDbg(flg)
+	sysInfo.setDbg(flg)
 	
 	print('pinyinAddingModule dbgFlg is '..tostring(dbgFlg))
 end
 
 --将文档处理成行数组
 local function files_to_lines(...)
-	if dbgFlg then
-		print("--->files_to_lines called here")
-	end
 	local tab=setmetatable({},{__index=table})
 	local index=1
 	for i,filename in next,{...} do
@@ -40,18 +45,10 @@ local function files_to_lines(...)
 			fn:close()
 		end
 	end
-	
-	if dbgFlg then
-		print("--->files_to_lines completed here")
-	end
 	return tab
 end
 
 local function dictload(...) -- filename)
-	if dbgFlg then
-		print("-->dictload called here")
-	end
-	
 	local lines=files_to_lines(...)
 	local thisDict={}
 	
@@ -66,10 +63,6 @@ local function dictload(...) -- filename)
 			end
 		end
 	end
-	
-	if dbgFlg then
-		print("-->dictload completed here")
-	end
 	return thisDict
 end
 
@@ -81,7 +74,7 @@ local function test(printPrefix)
 	if dbgFlg then
 		print(printPrefix,'pinyinAddingModule test starting...')
 		
-		sysInfoRes.test(printPrefix..' ')
+		sysInfo.test(printPrefix..' ')
 		
 		for k,v in pairs(dict) do
 			if dbgFlg then

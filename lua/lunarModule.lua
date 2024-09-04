@@ -4,7 +4,15 @@
 local dbgFlg = false
 
 --引入24节气计算模块
-local ok, jq = pcall(require, 'lunarjieQiModule')
+local lunarjieQiModuleEnable, jq = pcall(require, 'lunarjieQiModule')
+
+-- 导入log模块记录日志
+local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from lunarModule.lua')
+	log.writeLog('lunarjieQiModuleEnable:'..tostring(lunarjieQiModuleEnable))
+end
 
 local function setDbg(flg,printPrefix)
 	dbgFlg = flg

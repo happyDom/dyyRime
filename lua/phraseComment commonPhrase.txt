@@ -10,11 +10,29 @@
 龙吟 虎啸	尔乃龙吟方泽，虎啸山丘。--《归田赋》・张衡
 病历	汉初著名的内科医生淳于意，是我国最早发明和使用病历的医生
 风炮	呜～～～～哒哒哒
+小男孩	1.5万吨TNT
+一丝	0.01mm
+≈28.35g	常衡盎司
+≈31.10g	金衡盎司
+≈28.41mL	英制液量盎司
+≈29.57mL	美制液量盎司
+30mL	美制食品标签盎司
+34.8㎛	电路板铜箔厚度
+℃	摄氏度<br>=(℉-32)*5/9
+℉	华氏度<br>=32+℃*9/5
 
 # 常用链接
-http://t.csdnimg.cn/TlnBW	rime专栏
+https://wantwords.net	汉语反向词典
+https://blog.csdn.net/weixin_42148809/article/details/135594098	rime教程(CSDN)
+https://zhuanlan.zhihu.com/p/677852323	rime教程(知乎)
 https://webgeo-8gn07v0t78c4ca57-1308819187.tcloudbaseapp.com	几何画板
 https://zhuanlan.zhihu.com/p/675553523	知乎[rime100种效果]
+https://c.runoob.com/compile/66/	lua语法检察
+https://www.speedtest.cn	网络测速
+https://pypi.org/project	pypi源
+https://pypi.tuna.tsinghua.edu.cn/simple	清华源
+https://ihateregex.io	常用正则表达式
+https://regex101.com	正则表达式测试
 
 # 24节气相关
 节气	春雨惊春清谷天，夏满芒夏暑相连。<br>秋处露秋寒霜降，冬雪雪冬小大寒。
@@ -89,8 +107,7 @@ x	母衣贯头弓和匕，幼无力🖊
 Ο ο	omicron
 Π π	pi
 Ρ ρ	rho
-Σ σ	sigma
-Σ ς	sigma
+Σ σ ς	sigma
 Τ τ	tau
 Υ υ	upsilon
 Φ φ	phi
@@ -166,6 +183,20 @@ x	母衣贯头弓和匕，幼无力🖊
 🕚	11:00
 🕦	11：30
 
+# git命令说明
+git&nbspacm	git&nbspadd&nbsp.&nbsp&&nbspgit&nbspcommit
+git&nbspcm	git&nbspcommit
+git&nbsppo	git&nbsppush&nbsp--all&nbsp&&nbspgit&nbsppush&nbsp--tags&nbsp-f&nbsp&&nbspgit&nbsplpp&nbsp-5
+git&nbsppall	切到到每一个分支并拉取同步其远程变更
+git&nbspbs&nbsp	git&nbsppush&nbsp--set-upstream&nbsporigin
+git&nbspmr&nbsp	git&nbspmerge&nbsp&&nbspgit&nbsplpp&nbsp-5
+git&nbspst	git&nbspstatus&nbsp&&nbspgit&nbsplpp&nbsp-5
+git&nbsplp	python&nbsppublish.py&nbsp--showLog&nbsp--logsCount=15&nbsp兴趣文档
+git&nbsplpp	python&nbsppublish.py&nbsp--showLog&nbsp兴趣文档
+
+# cmd命令说明
+convmv&nbsp-f&nbspGBK&nbsp-t&nbspUTF8&nbsp*.*&nbsp--notest	文档名从GBK转为UTF8
+
 # 其它分类
 扭捏	小媳妇进洞房——扭扭捏捏
 仗义	仗义每多屠狗辈，负心多是读书人
@@ -197,7 +228,7 @@ x	母衣贯头弓和匕，幼无力🖊
 关羽 缪	汉寿亭候，壮缪(mù)候
 吝啬 扣门	夺泥燕口，削铁针头，刮金佛面细搜求，无中生有。<br>鹌鹑嗉内寻豌豆，鹭鸶腿上剔精肉，蚊子腹内刮脂油，亏老先生下得手！
 
-# 音乐
+# 音符
 ♩	四分音符
 ♪	八分音符
 ♫	八分音符₂
@@ -217,6 +248,16 @@ x	母衣贯头弓和匕，幼无力🖊
 🌧	雨
 ❄	雪
 🌫	雾
+
+# 邮箱信件
+📨	来信
+📩	收邮件
+📤	发件箱
+📥	收件箱
+📫	有待收信件
+📪	无待收信件
+📬	有新邮件
+📭	无新邮件
 
 # 冷知识
 妈祖	林默娘
@@ -328,6 +369,13 @@ mdUML图	```mermaid<br>sequenceDiagram<br>张三&nbsp->>&nbsp李四:&nbsp你好�
 mermaid流程图	```mermaid<br>graph&nbspLR<br>A[长方形]&nbsp--&nbsp链接&nbsp-->&nbspB((圆))<br>A&nbsp-->&nbspC(圆角长方形)<br>B&nbsp-->&nbspD{菱形}<br>C&nbsp-->&nbspD<br>```
 flowchat流程图	```mermaid<br>flowchat<br>st=>start:&nbsp开始<br>e=>end:&nbsp结束<br>op=>operation:&nbsp我的操作<br>cond=>condition:&nbsp确认？<br>st->op->cond<br>cond(yes)->e<br>cond(no)->op<br>```
 classDiagram图	```mermaid<br>classDiagram<br>&nbsp&nbsp&nbsp&nbspClass01&nbsp<|--&nbspAveryLongClass&nbsp:&nbspCool<br>&nbsp&nbsp&nbsp&nbsp<<interface>>&nbspClass01<br>&nbsp&nbsp&nbsp&nbspClass09&nbsp-->&nbspC2&nbsp:&nbspWhere&nbspam&nbspi?<br>&nbsp&nbsp&nbsp&nbspClass09&nbsp--*&nbspC3<br>&nbsp&nbsp&nbsp&nbspClass09&nbsp--|>&nbspClass07<br>&nbsp&nbsp&nbsp&nbspClass07&nbsp:&nbspequals()<br>&nbsp&nbsp&nbsp&nbspClass07&nbsp:&nbspObject[]&nbspelementData<br>&nbsp&nbsp&nbsp&nbspClass01&nbsp:&nbspsize()<br>&nbsp&nbsp&nbsp&nbspClass01&nbsp:&nbspint&nbspchimp<br>&nbsp&nbsp&nbsp&nbspClass01&nbsp:&nbspint&nbspgorilla<br>&nbsp&nbsp&nbsp&nbspclass&nbspClass10&nbsp{<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp>>service>><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspint&nbspid<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspsize()<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspsize()<br>&nbsp&nbsp&nbsp&nbsp}<br>```
+md表格	默认左对齐&nbsp|&nbsp居中对齐&nbsp|&nbsp右对齐<br>-|:-:|-:<br>1|a|3
 
+# 特殊符号
+ű	ȕ
 
-换行词条<br>第二行	词条注释<br>也是换行的，&nbsp这个前面还有个空格
+# git命令注释
+git&nbspswitch&nbsp	切换分支
+git&nbspswitch&nbsp-c&nbsp	创建指定名称的分支
+
+蝉	人活一生，蝉鸣半夏；<br>暗夜中若不能破壳，生命中便再难见破晓。<br>就算这一生注定了孤独终老，我还是宁愿活在这热烈里倍受煎熬。

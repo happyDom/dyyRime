@@ -1,25 +1,26 @@
 #在候选词中：支持使用 &nbsp 来定义空格，支持使用 <br> 来定义换行，而正常的空格被用于分词
 
-# 不同的应用，使用不同的简写做为前缀：
+# 不同的应用，使用不同的简写做为前缀
 # 微信	Wx
 # 飞书	Fs
 # 钉钉	Dt
 # QQ	Qq
+# 千牛	Qn
 # 表情表达式（例如：[Done]；再如：/hanx)放于{}内，例如{[Done]}；再如{/hanx}
 done 完成 搞定	esFs{[完成]} esDt{[Done]}
 get 了解 知道	esFs{[了解]} esDt{[Get]}
 no 不行	esFs{[No]} esFs{[叉号]} esDt{[打叉]}
 错 错误	esFs{[叉号]} esDt{[打叉]}
-ok 行 好的 好吧 可以	esFsWxDt{[OK]}
+ok 行 好的 好吧 可以 成交	esFsWxDt{[OK]} esQn{/:(OK)}
 好 好的	esFs{[Yes]} esWx{[好的]}
 行	esFs{[我看行]} esFs{[好的]}
 okr 绩效	esFsDt{[OKR]}
 x 叉 叉号 错 不对 不行	esFs{[叉号]} esDt{[打叉]}
 yes 是的 正确	esFs{[Yes]}
 vr	esFs{[VR]}
-问号 啥 疑问 狐疑	esFs{[什么？]} esWxDt{[疑问]}
+问号 啥 疑问 狐疑	esFs{[什么？]} esWxDt{[疑问]} esQn{/:?}
 费解 问号 疑问	esDt{[费解]}
-爱心	esFsWxDt{[爱心]}
+爱心	esFsWxDt{[爱心]} esQn{/:Y}
 客服	esDt{[客服]}
 傲慢	esWx{[傲慢]}
 虚拟 眼镜	esDt{[AR]}
@@ -28,33 +29,37 @@ vr	esFs{[VR]}
 老虎	esDt{[虎虎生威]}
 猫 猫咪	esDt{[猫咪]}
 白眼	esFsWxDt{[白眼]} esFsWx{[翻白眼]}
-拜拜 再见	esFsWxDt{[再见]}
+拜拜 再见	esFsWxDt{[再见]} esQn{/:804}
+摸摸 摸头 安慰	esFs{[摸头]} esDt{[摸摸]}
 抱抱 安慰	esFs{[求抱抱]} esDt{[抱抱]}
+安慰 摸头	esQn{/:086}
+抱抱	esQn{/:H}
 爆竹 鞭炮	esFsDt{[爆竹]}
 背叛	esFs{[背叛]}
 高铁 火车	esDt{[高铁]}
 火箭	esDt{[火箭]}
-投降	esDt{[投降]}
+服了 投降	esDt{[投降]} esQn{/:044}
 邮件	esDt{[邮件]}
 文档	esDt{[文档]}
 演示	esDt{[演示]}
 表格	esDt{[表格]}
 垃圾 纸篓	esDt{[废纸篓]}
-手机 电话	esDt{[手机]}
-鄙视	esFsWxDt{[鄙视]} esFs{[踩]} esFsDt{[白眼]} esWx{[弱]}
-闭嘴	esFsWxDt{[闭嘴]}
+手机 电话	esDt{[手机]} esQn{/:~B}
+鄙视	esFsWxDt{[鄙视]} esFs{[踩]} esFsDt{[白眼]} esWx{[弱]} esQn{/:P}
+闭嘴	esFsWxDt{[闭嘴]} esQn{/:067}
 便便	esWx{[便便]}
-不看 捂脸 掩面	esFs{[不看]} esFs{[捂脸]} esDt{[捂眼睛]} esDt{[捂脸哭]}
+不看 捂脸 掩面	esFs{[不看]} esFsWx{[捂脸]} esDt{[捂眼睛]} esDt{[捂脸哭]}
 捂眼	esDt{[捂眼睛]}
 擦汗	esWx{[擦汗]}
-财迷	esFsDt{[财迷]}
-迷惑	esDt{[迷惑]}
+迷惑 烧脑	esDt{[迷惑]} esQn{/:811}
 彩虹	esFsDt{[彩虹]}
 踩	esFs{[踩]}
 一点 一些 少许	esDt{[一点点]}
 捏住	esDt{[捏住]}
 菜刀	esWx{[菜刀]}
+胜利	esWxDt{[胜利]}
 耶 成功 显摆	esFsWxDt{[耶]}
+耶 胜利 成功	esQn{/:806}
 吃饭	esFs{[吃饭]}
 吃瓜	esWxDt{[吃瓜]}
 抽泣	esFs{[泣不成声]}
@@ -62,14 +67,16 @@ vr	esFs{[VR]}
 出行	esFs{[出行]}
 春节	esFsDt{[烟花]} esFs{[雪人]}
 打 敲打	esFsWxDt{[敲打]}
-发财	esDt{[恭喜发财]}
-打脸	esFsWx{[打脸]}
+打脸	esFsWx{[打脸]} esQn{/:043}
 捧脸	esDt{[捧脸]}
-哭 大哭	esFsWx{[大哭]}
-大笑	esFsDt{[大笑]}
+哭	esFsDt{[快哭了]} esFs{[泣不成声]} esFsWxDt{[大哭]}
+大哭	esFsWx{[大哭]} esQn{/:>O<}
+痛哭	esQn{/:020}
+哭 悲泣	esQn{/:018}
+大笑	esFsDt{[大笑]} esQn{/:^O^}
 呆 发呆	esWxDt{[发呆]}
 呆 惊呆	esFs{[惊呆]}
-呆	esFs{[呆无辜]}
+呆	esFs{[呆无辜]} esQn{/:084}
 蛋糕	esFsWx{[蛋糕]}
 刀	esFs{[刀]}
 得意	esFsWx{[得意]}
@@ -80,48 +87,56 @@ vr	esFs{[VR]}
 渡假 休假	esFs{[美好生活]} esDt{[休假]}
 对 确认	esFs{[Yes]} esFsDt{[100分]}
 对 勾 勾号 对号 对勾 确认	esFs{[勾号]} esDt{[对勾]}
-发 发财	esFs{[发]}
+发	esFs{[发]} esWx{[發]}
+恭喜 发财	esDt{[恭喜发财]} esQn{/:803}
+财神	esQn{/:073}
+财迷	esFsDt{[财迷]}
+招财 猫	esQn{/:052}
 发抖	esWx{[发抖]}
-发怒	esFsWxDt{[发怒]}
+发怒 大怒	esFsWxDt{[发怒]} esQn{/:808}
 烦躁	esFs{[烦躁]}
-飞机	esFs{[飞行中]} esDt{[出差]}
+飞机	esFs{[飞行中]} esDt{[出差]} esQn{/:plane}
 奋斗 努力	esFsWx{[奋斗]}
 福 福气 有福	esFsDt{[福]}
 负 倒退	esFs{[-1]}
 尬笑	esFs{[尬笑]}
-尴尬	esFs{[尬笑]} esWxDt{[尴尬]}
+尴尬	esFs{[尬笑]} esWxDt{[尴尬]} esQn{/:026}
 公交	esFs{[公交车]}
 公牛	esFs{[公牛]}
 灯笼	esDt{[灯笼]}
 勾引 来呀	esWx{[勾引]} esDt{[来呀]}
 狗头	esFs{[看]} esFs{[呆无辜]} esFs{[白眼]} esWx{[旺柴]} esDt{[狗子]}
 二哈	esDt{[二哈]}
-鼓掌	esFs{[鼓掌]} esWx{[鼓掌]}
-鬼脸	esFs{[做鬼脸]} esDt{[鬼脸]}
-凄凉 凄惨 凄苦	esDt{[凄凉]}
+拍手 鼓掌	esFsWxDt{[鼓掌]} esWx{[鼓掌]} esQn{/:8*8}
+鬼脸	esFs{[做鬼脸]} esDt{[鬼脸]} esQn{/:072}
+凄凉 凄惨 凄苦 悲凉	esDt{[凄凉]} esQn{/:027}
 乱麻	esDt{[一团乱麻]}
 滚	esFs{[闭嘴]}
 郁闷	esDt{[郁闷]}
 拜托	esDt{[拜托]}
-欠扁 欠抽	esDt{[欠扁]}
+欠扁 欠抽	esDt{[欠扁]} esQn{/:043}
 承让	esDt{[承让]}
 屎 尿 屁 三多	esDt{[三多]}
 哈欠	esFsWx{[哈欠]}
-羞 害羞	esFsWxDt{[害羞]}
+羞 害羞	esFsWxDt{[害羞]} esQn{/:^$^}
 憨笑 开心	esDt{[开心]} esFsWxDt{[憨笑]} esFs{[笑容满面]}
+憨笑	esQn{/:813}
 嘿嘿	esDt{[嘿嘿]}
-汗 流汗 擦汗	esFs{[汗]} esWxDt{[流汗]} esWx{[擦汗]}
+汗 流汗 擦汗	esFs{[汗]} esWxDt{[流汗]} esWx{[擦汗]} esQn{/:802}
 喝彩	esFs{[欢兔喝彩]}
 黑线	esFs{[黑线]} esFs{[新月脸]}
 眼圈 熬夜 通宵	esDt{[黑眼圈]}
 黑脸	esFs{[新月脸]}
 嘿哈	esWx{[嘿哈]}
 坏笑 邪恶	esFsWxDt{[坏笑]} esWx{[阴险]} esWx{[奸笑]}
+邪恶	esQn{/:036}
 奸笑	esWx{[奸笑]} esFsWxDt{[坏笑]}
 阴险	esWx{[阴险]} esFsWxDt{[坏笑]}
 斜眼	esFsWxDt{[坏笑]} esWx{[奸笑]}
-算账 会计 财务	esDt{[算账]}
-比赛 单挑	esDt{[PK]}
+斜眼 奸笑 阴险	esQn{/:^W^}
+计算 算账 会计 财务 算盘	esDt{[算账]} esQn{/:807}
+查找 搜索	esQn{/:080}
+比赛 单挑	esDt{[PK]} esQn{/:039}
 忍者	esDt{[忍者]}
 哼	esWx{[左哼哼]} esWx{[右哼哼]} esWx{[傲慢]} esDt{[哼]}
 左 向左	esDt{[向左]}
@@ -129,16 +144,17 @@ vr	esFs{[VR]}
 上 向上	esDt{[向上]}
 下 向下	esDt{[向下]}
 锦鲤 鲤鱼	esDt{[锦鲤]}
-红包	esFsWxDt{[红包]}
+红包	esFsWxDt{[红包]} esQn{/:$}
 红花	esFs{[送你小红花]}
 胡瓜 黄瓜	esFs{[胡瓜]}
 欢呼	esFs{[欢呼]}
 欢迎	esFs{[击掌]}
 火	esFsDt{[火]}
 击掌	esFs{[击掌]}
-机智	esFsWx{[机智]} esFs{[灵光一闪]}
+机智	esFsWx{[机智]} esFs{[灵光一闪]} esQn{/:045}
 鸡腿 奖励	esFsDt{[鸡腿]}
 加油 加电 打气	esFsWxDt{[加油]} esFs{[冲！]} esDt{[加油干]}
+加油	esQn{/:012}
 冲	esFs{[冲！]}
 键盘	esFs{[敲键盘]}
 奖杯	esFs{[奖杯]}
@@ -146,9 +162,9 @@ vr	esFs{[VR]}
 在做了 进行中 赶工	esFs{[在做了]}
 禁	esFs{[18禁]}
 惊恐 惊喜	esFsWx{[惊恐]} esDt{[惊喜]}
-惊恐 惊愕	esDt{[惊愕]}
+惊恐 惊愕	esDt{[惊愕]} esQn{/:O}
 回头	esDt{[回头]}
-惊讶	esWxDt{[惊讶]}
+惊讶	esWxDt{[惊讶]} esQn{/:069}
 静静	esFs{[我想静静]}
 居家	esFs{[在家办公]}
 举手	esFsDt{[举手]} esWx{[嘿哈]}
@@ -156,20 +172,20 @@ vr	esFs{[VR]}
 大腿	esDt{[抱大腿]}
 跪了 认输	esDt{[跪了]}
 鞠躬 道歉	esDt{[鞠躬]} esDt{[对不起]}
-对不起	esDt{[对不起]}
+对不起	esDt{[对不起]} esQn{/:819}
 我	esDt{[选我]}
 气泡 聊天 留言	esDt{[气泡]}
 精神	esDt{[元气满满]}
 咖啡 休闲	esFsWxDt{[咖啡]}
 看 呵呵	esFs{[看]} esFsDt{[白眼]}
-考虑 思考	esFsDt{[思考]}  esFs{[思考中]} esDt{[专注]}
+考虑 思考	esFsDt{[思考]}  esFs{[思考中]} esDt{[专注]} esQn{/:801}
 专注 认真 上班 办公	esDt{[专注]}
 繁忙	esDt{[忙疯了]}
 瞌睡	esFs{[哈欠]} esFs{[困]}
-困 困了	esFsWx{[困]} esFs{[哈欠]}
-睡 睡觉	esWxDt{[睡]} esFs{[鼾睡]}
+困 困了	esFsWx{[困]} esFs{[哈欠]} esQn{/:(Zz...)}
+睡 睡觉	esWxDt{[睡]} esFs{[鼾睡]} esQn{/:(Zz...)}
 鼾睡	esFs{[鼾睡]}
-可爱	esWx{[愉快]} esFsWxDt{[呲牙]} esDt{[可爱]}
+可爱	esWx{[愉快]} esFsWxDt{[呲牙]} esDt{[可爱]} esQn{/:Q}
 可爱 调皮	esFsWxDt{[调皮]}
 愉快	esFsWx{[愉快]}
 可怜	esFsWxDt{[可怜]}
@@ -177,12 +193,11 @@ vr	esFs{[VR]}
 顺	esWxDt{[666]}
 抠鼻	esFsWxDt{[抠鼻]}
 鼻血	esDt{[流鼻血]}
-哭	esFsDt{[快哭了]} esFs{[泣不成声]} esFsDt{[大哭]}
 骷髅	esFsWx{[骷髅]}
 苦涩 泪目	esWx{[苦涩]}
 酷	esFs{[酷]} esWx{[得意]} esDt{[推眼镜]}
 偷看 关注 窥视	esDt{[暗中观察]}
-喇叭 广播	esFs{[喇叭]} esDt{[广播]}
+喇叭 广播 呼叫	esFs{[喇叭]} esDt{[广播]} esQn{/:066}
 冷笑	esDt{[冷笑]}
 热	esDt{[热]}
 脑暴	esDt{[脑暴]}
@@ -200,6 +215,8 @@ vr	esFs{[VR]}
 牛	esFs{[牛]} esFs{[强]} esDt{[你强]} esFsDt{[赞]} esFsDt{[100分]} esFs{[公牛]} esFs{[小牛]}
 强	esFs{[强]} esDt{[你强]} esFs{[牛]} esFsDt{[赞]} esFsDt{[100分]} esWx{[强]}
 赞 点赞 拇指	esFsDt{[赞]} esFs{[牛]} esFs{[强]} esDt{[你强]} esFsDt{[100分]} esDt{[点赞]}
+强 赞 拇指	esQn{/:b}
+强 赞 点赞	esQn{/:071}
 平安 健康	esDt{[平安健康]}
 满意	esFsDt{[100分]}
 一定	esDt{[定胜]}
@@ -213,23 +230,23 @@ vr	esFs{[VR]}
 绿帽	esWx{[悠闲]}
 骂	esWx{[咒骂]}
 骂人	esWx{[咒骂]}
-鲜花 玫瑰	esFsWx{[玫瑰]} esDt{[鲜花]}
-摸摸 摸头 安慰	esFs{[摸头]} esDt{[摸摸]}
+鲜花 玫瑰	esFsWx{[玫瑰]} esDt{[鲜花]} esQn{/:-F}
+爱慕	esQn{/:809} esQn{/:087}
+飞吻	esQn{/:087}
 奶茶	esFsDt{[奶茶]}
-茶 喝茶	esDt{[茶]}
-南瓜灯	esFs{[南瓜灯]}
+茶 喝茶	esDt{[茶]} esQn{/:008}
 难过	esWx{[难过]}
-闹钟	esFs{[闹钟]} esDt{[时间]}
+时钟 闹钟	esFs{[闹钟]} esDt{[时间]} esQn{/:clock}
 时间	esDt{[时间]}
+等待 沙漏	esQn{/:R}
 柠檬	esFs{[柠檬]}
 怄火	esWx{[怄火]}
-拍手	esFsDt{[鼓掌]}
 派对	esFs{[派对]}
 啤酒	esFsWx{[啤酒]}
 撇嘴	esFsWx{[撇嘴]}
 强壮	esWx{[强壮]}
-亲亲	esWxDt{[亲亲]}
-庆祝	esWx{[庆祝]}
+亲亲	esWxDt{[亲亲]} esQn{/:^x^}
+举杯 庆祝 红酒	esWx{[庆祝]} esQn{/:U*U}
 抱拳	esFsWxDt{[抱拳]}
 拳头	esWx{[拳头]}
 碰拳	esFs{[碰拳]}
@@ -239,14 +256,15 @@ vr	esFs{[VR]}
 撒花 祝贺 欢迎	esFsDt{[撒花]} esDt{[干杯]}
 干杯	esDt{[干杯]}
 魔法	esDt{[魔法棒]}
-色	esWxDt{[色]}
+色 花痴	esWxDt{[色]} esQn{/:814}
+惊艳	esQn{/:girl}
+财迷	esQn{/:805}
 稍等 稍候 勿扰	esFs{[稍等]} esDt{[等一等]}
 社会 大哥	esWx{[社会社会]}
 什么	esFs{[什么？]}
 圣诞节	esFs{[圣诞树]} esFs{[圣诞帽]} esFs{[雪人]}
 圣诞帽 帽子	esFs{[圣诞帽]}
 树 圣诞树	esFs{[圣诞树]}
-胜利	esWxDt{[胜利]}
 石化	esFs{[石化]}
 屎	esFs{[便便]}
 收到 了解	esFs{[了解]} esDt{[收到]}
@@ -263,10 +281,10 @@ vr	esFs{[VR]}
 跳跳	esWx{[跳跳]}
 听歌	esFs{[听歌]}
 认同 同意 附议 确实	esFs{[+1]} esDt{[加一]}
-偷笑 捂嘴	esFsWxDt{[偷笑]}
-无聊	esDt{[无聊]}
+偷笑 捂嘴	esFsWxDt{[偷笑]} esQn{/:815}
+无聊 发呆	esDt{[无聊]} esQn{/:083}
 图钉 钉子	esFs{[图钉]} esDt{[钉子]}
-吐 呕 呕吐	esFsWxDt{[吐]}
+吐 呕 呕吐	esFsWxDt{[吐]} esQn{/:>@<}
 吐舌	esFs{[吐舌]}
 吐血	esFs{[吐血]}
 兔	esFs{[玉兔]} esFs{[欢兔喝彩]}
@@ -274,13 +292,14 @@ vr	esFs{[VR]}
 哇	esWx{[哇]}
 完成	esFs{[完成]}
 万圣节 南瓜	esFs{[南瓜灯]}
+南瓜灯	esFs{[南瓜灯]}
 旺柴	esWx{[旺柴]}
-微笑	esFsWxDt{[微笑]}
+微笑	esFsWxDt{[微笑]} esQn{/:^_^}
 灵感	esDt{[灵感]}
-委屈	esFsWxDt{[委屈]} esFsWxDt{[快哭了]}
+委屈	esFsWxDt{[委屈]} esFsWxDt{[快哭了]} esQn{/:>_<}
 我看	esWx{[让我看看]}
 我看行	esFs{[我看行]}
-握手	esFsWxDt{[握手]}
+握手	esFsWxDt{[握手]} esQn{/:)-(}
 无辜	esFs{[呆无辜]} esFs{[无辜笑]}
 致敬	esFs{[致敬]}
 摊手 摊牌	esFs{[耸肩摊手]} esDt{[摊手]}
@@ -290,16 +309,18 @@ vr	esFs{[VR]}
 吓人	esWx{[惊恐]}
 小牛	esFs{[小牛]}
 笑 嘻嘻 笑脸 老实 傻笑 呲牙	esFsWxDt{[呲牙]} esWx{[破涕为笑]} esDt{[傻笑]}
-笑哭	esFsDt{[笑哭]} esWx{[破涕为笑]}
+傻笑	esQn{/:007}
+心酸 苦笑 笑哭	esFsDt{[笑哭]} esWx{[破涕为笑]} esQn{/:085}
 谢谢 感谢 辛苦	esFs{[双手合十]} esWx{[合十]} esFsDt{[感谢]}
 拒绝 不要	esDt{[拒绝]}
 心 比心	esFsDt{[比心]}
-心碎	esFsWxDt{[心碎]}
-嘘 安静	esFsWxDt{[嘘]} esDt{[静音]}
+心碎	esFsWxDt{[心碎]} esQn{/:qp}
+嘘 安静	esFsWxDt{[嘘]} esDt{[静音]} esQn{/:!}
 静音 禁言 勿扰	esDt{[静音]}
 学习 培训	esFs{[精神补给]}
 地球	esDt{[地球]}
 雪人	esFs{[雪人]}
+雪糕	🍨
 回收 绿色	esDt{[回收标志]}
 烟花 焰火	esFsDt{[烟花]}
 幼苗 发芽 苗子	esDt{[幼苗]}
@@ -308,17 +329,47 @@ vr	esFs{[VR]}
 悠闲	esWx{[悠闲]}
 元宵	esFs{[元宵]}
 月饼 中秋	esFsDt{[月饼]}
-月亮	esFs{[天色已晚]} esWx{[月亮]}
-晕	esFsWxDt{[晕]}
-炸弹	esFsWxDt{[炸弹]}
+月亮 晚上	esFs{[天色已晚]} esWx{[月亮]} esQn{/:C}
+晕	esFsWxDt{[晕]} esQn{/:*&*}
+炸弹	esFsWxDt{[炸弹]} esQn{/:048}
 震惊	esFs{[震惊]}
 咒骂	esWx{[咒骂]}
-皱眉	esFs{[皱眉]}
+皱眉	esFs{[皱眉]} esQn{/:812}
 猪头	esWx{[猪头]}
 抓狂	esFsWx{[抓狂]}
 转圈	esWx{[转圈]}
-嘴唇 亲亲	esFsWx{[嘴唇]}
+红唇 嘴唇 亲亲	esFsWx{[嘴唇]} esQn{/:lip}
 失望	esWx{[失望]}
-跳舞	esDt{[跳舞]}
+跳舞	esDt{[跳舞]} esQn{/:081}
 无奈	esDt{[无奈]}
-感冒 口罩	esDt{[感冒]} esFs{[戴口罩]}
+感冒 口罩	esDt{[感冒]} esFs{[戴口罩]} esQn{/:028}
+舌头	esQn{/:Q}
+天使	esQn{/:065}
+享受	esQn{/:818}
+期待	esQn{/:015}
+剁手	esQn{/:077}
+怀疑	esQn{/:817}
+做错事 乞求	esQn{/:068}
+不容易 艰难 辛酸 穷	esQn{/:079}
+不会吧 意外	esQn{/:816}
+南	esQn{/:'""}
+忧伤	esQn{/:810}
+累 好累	esQn{/:"}
+背 背时 不巧	esQn{/:076}
+生气	esQn{/:>W<}
+小二	esQn{/:074}
+老大	esQn{/:O=O}
+隐形 蒙面 打劫	esQn{/:046}
+尖叫	esQn{/:047}
+围观 吃瓜	esQn{/:man}
+残花 枯萎 调零 心灰 意冷 失意 失望	esQn{/:-W}
+快递	esQn{/:%}
+包裹	esQn{/:(&)}
+收件 签收	esQn{/:@}
+支付 支付宝	esQn{/:075}
+# 以下属于千牛/旺旺自定义表情词条
+嘻嘻	esQn{/:表面笑嘻嘻}
+黑人 问号	esQn{/:黑人问号脸}
+假	esQn{/:假}
+你好	esQn{/:有人吗?}
+不可思议 不可	esQn{/:不可思议}

@@ -66,9 +66,9 @@ Phosphorus phosphorus	磷[15](lín,P),[◑P³²：14D]有白磷和红磷，白�
 S s	硫[16](liú,Sulphur),黄色固体，质地较软且轻，与火山活动密切相关
 硫	S[16](liú,Sulphur),黄色固体，质地较软且轻，与火山活动密切相关
 Sulphur sulphur	硫[16](liú,S),黄色固体，质地较软且轻，与火山活动密切相关
-Cl cl	氯[17](lǜ,Chlorine),[◑Cl³⁶：40wY]黄绿色有毒气体，活泼，支持燃烧
-氯	Cl[17](lǜ,Chlorine),[◑Cl³⁶：40wY]黄绿色有毒气体，活泼，支持燃烧
-Chlorine chlorine	氯[17](lǜ,Cl),[◑Cl³⁶：40wY]黄绿色有毒气体，活泼，支持燃烧
+Cl cl	氯[17](lǜ,Chlorine),[◑Cl³⁶：40万Y]黄绿色有毒气体，活泼，支持燃烧
+氯	Cl[17](lǜ,Chlorine),[◑Cl³⁶：40万Y]黄绿色有毒气体，活泼，支持燃烧
+Chlorine chlorine	氯[17](lǜ,Cl),[◑Cl³⁶：40万Y]黄绿色有毒气体，活泼，支持燃烧
 Ar ar	氩[18](yà,Argon),稀有气体，在空气中含量最多的稀有气体
 氩	Ar[18](yà,Argon),稀有气体，在空气中含量最多的稀有气体
 Argon argon	氩[18](yà,Ar),稀有气体，在空气中含量最多的稀有气体
@@ -313,9 +313,9 @@ Uranium uranium	☢铀[92](yóu,U),[◑U²³⁵：7.1亿Y；U²³⁸：45亿Y]�
 Np np	☢镎[93](ná,Neptunium),在铀矿中少量存在
 镎	☢Np[93](ná,Neptunium),在铀矿中少量存在
 Neptunium neptunium	☢镎[93](ná,Np),在铀矿中少量存在
-Pu pu	☢钚[94](bù,Plutonium),[◑Pu²³⁹：2.4wY]在铀矿中少量存在，用于裂变核燃料
-钚	☢Pu[94](bù,Plutonium),[◑Pu²³⁹：2.4wY]在铀矿中少量存在，用于裂变核燃料
-Plutonium plutonium	☢钚[94](bù,Pu),[◑Pu²³⁹：2.4wY]在铀矿中少量存在，用于裂变核燃料
+Pu pu	☢钚[94](bù,Plutonium),[◑Pu²³⁹：2.4万Y]在铀矿中少量存在，用于裂变核燃料
+钚	☢Pu[94](bù,Plutonium),[◑Pu²³⁹：2.4万Y]在铀矿中少量存在，用于裂变核燃料
+Plutonium plutonium	☢钚[94](bù,Pu),[◑Pu²³⁹：2.4万Y]在铀矿中少量存在，用于裂变核燃料
 Am am	⚡☢镅[95](méi,Americium),用于烟雾报警器中
 镅	⚡☢Am[95](méi,Americium),用于烟雾报警器中
 Americium americium	⚡☢镅[95](méi,Am),用于烟雾报警器中

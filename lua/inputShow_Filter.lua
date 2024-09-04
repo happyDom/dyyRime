@@ -1,4 +1,4 @@
--- spaceAppending.lua
+-- inputShow_Filter.lua
 -- Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
 --[[
 	这个脚本，作为filter来用，需要结合inputShow的在translator阶段的处理信息进行工作
