@@ -34,6 +34,15 @@ https://pypi.tuna.tsinghua.edu.cn/simple	清华源
 https://ihateregex.io	常用正则表达式
 https://regex101.com	正则表达式测试
 
+# 常用pip命令
+pip&nbspinstall&nbsp-i&nbsphttps://pypi.org/project&nbspxxx	pypi源
+pip&nbspinstall&nbsp--index-url&nbsphttps://test.pypi.org/simple	pypi测试源
+pip&nbspinstall&nbsp-i&nbsphttps://pypi.tuna.tsinghua.edu.cn/simple&nbspxxx	清华源
+pip&nbspinstall&nbsp-i&nbsphttps://pypi.org/project&nbsp-U&nbspxxx	pypi源
+pip&nbspinstall&nbsp-i&nbsphttps://test.pypi.org/simple&nbsp-U&nbspxxx	pypi测试源
+pip&nbspinstall&nbsp-i&nbsphttps://pypi.tuna.tsinghua.edu.cn/simple&nbsp-U&nbspxxx	清华源
+twine&nbspupload&nbspdist/*	发布pypi包
+twine&nbspupload&nbsp--repository&nbsptestpypi&nbspdist/*	发布pypi包到测试服务器
 # 24节气相关
 节气	春雨惊春清谷天，夏满芒夏暑相连。<br>秋处露秋寒霜降，冬雪雪冬小大寒。
 气候	二十四节气，立春始，奇为节，偶为气，为之节气；约15日一节/气，又为5日为一候，3候一节/气，共72候；以上，合曰气候
@@ -193,6 +202,14 @@ git&nbspmr&nbsp	git&nbspmerge&nbsp&&nbspgit&nbsplpp&nbsp-5
 git&nbspst	git&nbspstatus&nbsp&&nbspgit&nbsplpp&nbsp-5
 git&nbsplp	python&nbsppublish.py&nbsp--showLog&nbsp--logsCount=15&nbsp兴趣文档
 git&nbsplpp	python&nbsppublish.py&nbsp--showLog&nbsp兴趣文档
+git&nbspcheckout	git&nbspcheckout&nbspdev&nbspobject:从指定分支捡出指定的文档<br>git&nbspcheckout&nbspcommit&nbsp--&nbspobject:从指定commit捡出指定的文档
+git&nbspdiff&nbsp--staged	比较暂存区
+git&nbspbr	git&nbspbranch
+git&nbspbrs	git&nbspbranch&nbsp-a
+git&nbspbranch&nbsp-d&nbspxxx	删除本地分支
+git&nbsppush&nbsporigin&nbsp-d&nbspxxx	删除远程分支
+git&nbsptag&nbsp-d&nbsprxx	删除本地tag
+git&nbsppush&nbsp--delete&nbsporigin&nbsprxx	删除远程tag
 
 # cmd命令说明
 convmv&nbsp-f&nbspGBK&nbsp-t&nbspUTF8&nbsp*.*&nbsp--notest	文档名从GBK转为UTF8
@@ -378,4 +395,5 @@ md表格	默认左对齐&nbsp|&nbsp居中对齐&nbsp|&nbsp右对齐<br>-|:-:|-:<
 git&nbspswitch&nbsp	切换分支
 git&nbspswitch&nbsp-c&nbsp	创建指定名称的分支
 
-蝉	人活一生，蝉鸣半夏；<br>暗夜中若不能破壳，生命中便再难见破晓。<br>就算这一生注定了孤独终老，我还是宁愿活在这热烈里倍受煎熬。
+# 其它
+奰唗	扇巴掌

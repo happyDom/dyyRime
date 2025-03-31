@@ -15,16 +15,20 @@ local current_path = string.sub(debug.getinfo(1).source, 2, string.len("/runLog.
 M.logDoc = current_path..'runLog.txt'
 
 M.writeLog = function (logStr)
-	logStr = tostring(logStr)
-	
-	if nil == newLineFlg then
-		newLineFlg = true
+	if nil == logStr then
+		logStr = ''
+	else
+		logStr = tostring(logStr)
 	end
 	
 	local f = io.open(M.logDoc,'a')
 	if f then
-		local timeStamp = os.date("%Y/%m/%d %H:%M:%S")
-		f:write(timeStamp..'['.._VERSION..']'..'\t'..logStr..'\n')
+		if '' == logStr then
+			f:write('\n')
+		else
+			local timeStamp = os.date("%Y/%m/%d %H:%M:%S")
+			f:write(timeStamp..'['.._VERSION..']'..'\t'..tostring(logStr)..'\n')
+		end
 		f:close()
 	end
 end

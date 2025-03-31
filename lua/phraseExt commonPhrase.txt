@@ -116,7 +116,7 @@ uml	md-mdUML图
 状态	git-git&nbspst
 日志	git-git&nbsplp git-git&nbsplg git-git&nbsplpp
 版本	git-git&nbspvr&nbsp
-改动 区别 对比 差异	git-git&nbspdiff
+改动 区别 对比 差异	git-git&nbspdiff git-git&nbspdiff&nbsp--staged
 变动 变化	git-git&nbspdiff&nbsprxx&nbspryy&nbsp--name-only
 添加	git-git&nbspadd&nbsp git-git&nbspadd&nbsp.
 提交	git-git&nbspcm git-git&nbspacm
@@ -124,19 +124,29 @@ uml	md-mdUML图
 拉取 同步	git-git&nbsppall
 关联	git-git&nbspbs&nbsp
 切换	git-git&nbspswitch&nbsp git-git&nbspswitch&nbsp-c&nbsp
+切出 捡出	git-git&nbspcheckout
 恢复	git-git&nbsprestore&nbsp git-git&nbsprestore&nbsp.
 合并	git-git&nbspmr&nbsp git-git&nbspmr&nbspdev git-git&nbspmr&nbsprelease
 打标	git-git&nbsptag&nbsp
 删除	git-git&nbsptag&nbsp-d&nbsprxx git-git&nbsppush&nbsp--delete&nbsporigin&nbsprxx
+删除	git-git&nbspbranch&nbsp-d&nbspxxx git-git&nbsppush&nbsporigin&nbsp-d&nbspxxx
 打包	git-git&nbsparchive&nbspmaster&nbsp--output=master.tar.gz
 退出	git-exit
+分支	git-git&nbspbr git-git&nbspbrs
 
 # 常用cmd命令
 退出	cmd-exit cmd-exit(0)
 构建 编译	cmd-python&nbsp-m&nbspbuild
 发布	cmd-twine&nbspupload&nbspdist/*
+发布	cmd-twine&nbspupload&nbsp--repository&nbsptestpypi&nbspdist/*
 参考 源	cmd-https://pypi.org/project cmd-https://pypi.tuna.tsinghua.edu.cn/simple
 转码	cmd-convmv&nbsp-f&nbspGBK&nbsp-t&nbspUTF8&nbsp*.*&nbsp--notest
+安装	cmd-pip&nbspinstall&nbsp-i&nbsphttps://pypi.org/project&nbspxxx
+安装	cmd-pip&nbspinstall&nbsp--index-url&nbsphttps://test.pypi.org/simple
+安装	cmd-pip&nbspinstall&nbsp-i&nbsphttps://pypi.tuna.tsinghua.edu.cn/simple&nbspxxx
+升级 更新	cmd-pip&nbspinstall&nbsp-i&nbsphttps://pypi.org/project&nbsp-U&nbspxxx
+升级 更新	cmd-pip&nbspinstall&nbsp-i&nbsphttps://test.pypi.org/simple&nbsp-U&nbspxxx
+升级 更新	cmd-pip&nbspinstall&nbsp-i&nbsphttps://pypi.tuna.tsinghua.edu.cn/simple&nbsp-U&nbspxxx
 
 # 单位换算
 英寸	0.0254米
@@ -170,3 +180,5 @@ uml	md-mdUML图
 
 # 其它
 进步	进步开始于起步
+嘴巴 巴掌	奰唗
+别	嫑

@@ -68,18 +68,31 @@ local function Filter(input, env)
 			candTxt_lower = cand.text:lower()
 			
 			--时间选项整理
-			if ({['time']=true,['时间']=true,['现在']=true,['now']=true,['此刻']=true,['此时']=true})[candTxt_lower] then
+			if ({['time']=true,['时间']=true,['现在']=true,['now']=true,['此刻']=true,['此时']=true,['后缀']=true})[candTxt_lower] then
 				--处理时间信息
-				alltInfo = alltimeInfo()
-				theCands={}
+				timeInfo = timeInfoByTime()
+				--获取周序信息
+				wInfo = wInfoByTime()
+				--获取日期信息
+				dateInfo = dateInfoByDaysOffset(0)
 				
-				if ({['现在']=true,['now']=true,['此刻']=true,['此时']=true})[candTxt_lower] then
-					table.insert(theCands,{candTxt_lower.."("..alltInfo.YYYYMMDD_hhmmss..")",alltInfo.timeLogo})
+				theCands={}
+				if ({['后缀']=true})[candTxt_lower] then
+					table.insert(theCands,{dateInfo.YYYY_sb..dateInfo.MM_xb..dateInfo.DD_xb..wInfo.nameCN_1,timeInfo.timeLogo})
+					table.insert(theCands,{dateInfo.YYYY_xb..dateInfo.MM..dateInfo.DD..timeInfo.hh_xb.."."..timeInfo.mm_xb,timeInfo.timeLogo})
+				else
+					if ({['现在']=true,['now']=true,['此刻']=true,['此时']=true})[candTxt_lower] then
+						table.insert(theCands,{candTxt_lower.."("..dateInfo.date_YYYYMMDD_1.." "..timeInfo.time1..")",timeInfo.timeLogo})
+					end
+					--2025/03/25 16:02:33
+					table.insert(theCands,{dateInfo.date_YYYYMMDD_1.." "..timeInfo.time1,timeInfo.timeLogo})
+					--2025-03-25 16:02
+					table.insert(theCands,{dateInfo.date_YYYYMMDD_2.." "..timeInfo.time2,timeInfo.timeLogo})
+					--2025年3月25日 星期二 16点02分50秒
+					table.insert(theCands,{dateInfo.date_YYYY_M_D_1.." "..wInfo.nameCN.." "..timeInfo.time3,timeInfo.timeLogo})
+					--Tues. Mar. 25th 16:02:57, 2025
+					table.insert(theCands,{wInfo.nameEN_short.." "..dateInfo.date_M_Dth.." "..timeInfo.time1.." "..dateInfo.YYYY,timeInfo.timeLogo})
 				end
-				table.insert(theCands,{alltInfo.YYYYMMDD_hhmmss,alltInfo.timeLogo})
-				table.insert(theCands,{alltInfo.YYYYMMDD_hhmm,alltInfo.timeLogo})
-				table.insert(theCands,{alltInfo.YYYYMMDD_W_hhmmss,alltInfo.timeLogo})
-				table.insert(theCands,{alltInfo.W_M_Date_hhmmss_YYYY,alltInfo.timeLogo})
 				
 				--抛出选项
 				for idx = 1, #theCands do
@@ -155,9 +168,9 @@ local function Filter(input, env)
 				theCands = {}
 				if ({['今天']=true,['今日']=true,['today']=true,['明天']=true,['明日']=true,['后天']=true,['昨天']=true,['前天']=true})[candTxt_lower] then
 					if ''~=eventsStr then
-						table.insert(theCands,{candTxt_lower.."("..dateInfo.date_sbxb..")",eventsStr})
+						table.insert(theCands,{candTxt_lower.."("..dateInfo.YYYY_sb.."/"..dateInfo.MM_xb.."."..dateInfo.DD_xb..")",eventsStr})
 					else
-						table.insert(theCands,{candTxt_lower.."("..dateInfo.date_sbxb..")",'💡'})
+						table.insert(theCands,{candTxt_lower.."("..dateInfo.YYYY_sb.."/"..dateInfo.MM_xb.."."..dateInfo.DD_xb..")",'💡'})
 					end
 					table.insert(theCands,{dateInfo.date_YYYYMMDD_1..' '..wInfo.nameCN,'💡'})
 				else
@@ -169,8 +182,9 @@ local function Filter(input, env)
 				end
 				
 				table.insert(theCands,{dateInfo.date_M_Dth_YYYY_1,'💡'})
+				table.insert(theCands,{dateInfo.date_YYYYMMDD_3,'💡'})
 				table.insert(theCands,{dateInfo.date_YYYYMMDD,'💡'})
-				table.insert(theCands,{dateInfo.date_sbxb,'💡'})
+				table.insert(theCands,{dateInfo.YYYY_sb.."/"..dateInfo.MM_xb.."."..dateInfo.DD_xb,'💡'})
 				if jqTime>0 then
 					table.insert(theCands,{dateInfo.lunarInfo.lunarDate_1,dateInfo.lunarInfo.jiJieLogo..jqName})
 				else
@@ -416,7 +430,7 @@ local function Filter(input, env)
 				theCands={}
 				table.insert(theCands,{wInfo.nameCN,'💡'})
 				table.insert(theCands,{wInfo.nameEN,'💡'})
-				table.insert(theCands,{wInfo.nameShort,'💡'})
+				table.insert(theCands,{wInfo.nameEN_short,'💡'})
 				
 				--抛出选项
 				for idx = 1, #theCands do

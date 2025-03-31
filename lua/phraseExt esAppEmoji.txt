@@ -119,8 +119,8 @@ vr	esFs{[VR]}
 屎 尿 屁 三多	esDt{[三多]}
 哈欠	esFsWx{[哈欠]}
 羞 害羞	esFsWxDt{[害羞]} esQn{/:^$^}
-憨笑 开心	esDt{[开心]} esFsWxDt{[憨笑]} esFs{[笑容满面]}
-憨笑	esQn{/:813}
+憨笑 开心 哈哈	esDt{[开心]} esFsWxDt{[憨笑]} esFs{[笑容满面]}
+憨笑 哈哈	esQn{/:813}
 嘿嘿	esDt{[嘿嘿]}
 汗 流汗 擦汗	esFs{[汗]} esWxDt{[流汗]} esWx{[擦汗]} esQn{/:802}
 喝彩	esFs{[欢兔喝彩]}
@@ -211,10 +211,10 @@ vr	esFs{[VR]}
 礼物	esFsWxDt{[礼物]}
 生日 蛋糕	esDt{[生日快乐]}
 厉害	esFs{[强]} esDt{[你强]} esFs{[牛]} esFsDt{[赞]} esFsDt{[100分]}
-满分 棒	esFsDt{[100分]} esFs{[牛]} esFs{[强]} esDt{[你强]} esFsDt{[赞]}
-牛	esFs{[牛]} esFs{[强]} esDt{[你强]} esFsDt{[赞]} esFsDt{[100分]} esFs{[公牛]} esFs{[小牛]}
-强	esFs{[强]} esDt{[你强]} esFs{[牛]} esFsDt{[赞]} esFsDt{[100分]} esWx{[强]}
-赞 点赞 拇指	esFsDt{[赞]} esFs{[牛]} esFs{[强]} esDt{[你强]} esFsDt{[100分]} esDt{[点赞]}
+满分 棒	esFsDt{[100分]} esFs{[牛]} esFsWx{[强]} esDt{[你强]} esFsDt{[赞]}
+牛	esFs{[牛]} esFsWx{[强]} esDt{[你强]} esFsDt{[赞]} esFsDt{[100分]} esFs{[公牛]} esFs{[小牛]}
+强	esFsWx{[强]} esDt{[你强]} esFs{[牛]} esFsDt{[赞]} esFsDt{[100分]}
+赞 点赞 拇指	esFsDt{[赞]} esFs{[牛]} esWxFs{[强]} esDt{[你强]} esFsDt{[100分]} esDt{[点赞]}
 强 赞 拇指	esQn{/:b}
 强 赞 点赞	esQn{/:071}
 平安 健康	esDt{[平安健康]}
@@ -325,7 +325,7 @@ vr	esFs{[VR]}
 烟花 焰火	esFsDt{[烟花]}
 幼苗 发芽 苗子	esDt{[幼苗]}
 音乐	esFs{[音乐]}
-拥抱	esWx{[拥抱]}
+拥抱 抱抱	esWx{[拥抱]}
 悠闲	esWx{[悠闲]}
 元宵	esFs{[元宵]}
 月饼 中秋	esFsDt{[月饼]}

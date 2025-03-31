@@ -27,10 +27,10 @@ local x86x64 = 'x86'
 local cpath = "\\luaSocket\\x86\\lua5.4\\?.dll"  -- 引入 x86 lua54 版 socket.core
 
 if 'Lua 5.3' == _VERSION then
-	cpath = string.gsub(cpath, 'Lua 5.4', 'Lua 5.3')  -- 调整版本
+	cpath = string.gsub(cpath, 'Lua5.4', 'Lua5.3')  -- 调整版本
 else
 	if 'Lua 5.2' == _VERSION then
-		cpath = string.gsub(cpath, 'Lua 5.4', 'Lua 5.2')  -- 调整版本
+		cpath = string.gsub(cpath, 'Lua5.4', 'Lua5.2')  -- 调整版本
 	end
 end
 
@@ -50,7 +50,6 @@ if logEnable then
 	log.writeLog('log from socket.lua:')
 	log.writeLog('socketEnable:'..tostring(socketEnable))
 	if not socketEnable then
-		log.writeLog('_VERSION: '.._VERSION)
 		log.writeLog('package.cpath: '..package.cpath)
         log.writeLog(socket)
     end

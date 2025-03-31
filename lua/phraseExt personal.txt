@@ -1,13 +1,49 @@
 #在候选词中：支持使用 &nbsp 来定义空格，支持使用 <br> 来定义换行，而正常的空格被用于分词
 
-# 这个字典用于管理 个人/私人 信息，以便在共享/分享rime配置时，可以方便的将个人信息进行隔离
+# 这个字典用于管理个人/私人信息，以便在共享/分享rime配置时，可以方便的将个人信息进行隔离
+
+# 常用链接
+记账 报账	chrome-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcn9LmD6srU7vjWsMdOPscJcc
+专利	chrome-https://vn23lpv9tk.feishu.cn/base/bascn4iXaCtE28gIN24FKP6lrud?table=tbldc1quPADcJEVn&view=vewXR96i4M
+薪资 工资	chrome-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnoGmlx4Km1P6vL1q1hq3Vud
+采购	chrome-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnVHxjOy6dzmV29Nx7Y5ItO5
+采购	chrome-https://ynrx7b5i1u.feishu.cn/base/bascnrVmQvxuC6EeKBdJJwEWwoc?table=tbluKlslLxkjUOXy&view=vewlSTR1XX
+签收	chrome-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnENCuF7j4rv7YoqdbtIV30d
+销售	chrome-https://ynrx7b5i1u.feishu.cn/base/bascnrVmQvxuC6EeKBdJJwEWwoc?table=tbluKlslLxkjUOXy&view=vewXSOEyEv
+邀请	chrome-https://bewildcard.com/i/DOU
+财报	chrome-https://finchat.io
+产品	chrome-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcn8jIChFJbVMrjJESTtpYaf1
+错题	chrome-https://ynrx7b5i1u.feishu.cn/docx/N2C3dfHsYooan6xcT4Kc5yCDnJf
+货款	chrome-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnF2lalvdNCx2lbPZgFUbk1e
+发票	chrome-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnlua6oQJ0yVxUKH8ueJWSPf chrome-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnGcXFm35chlLOYLzyJnLh3b
+
+# 账号信息
+中国银行	Yangqian_yy Yaoyuan_yy
+迅雷	18217511303 +Q2@5Be&^3HDMz
+账号	yqdyy2&nbspmht3ZAKCibVhH5U
 
 # 常用联系方式
-电话 手机	123456789AB 123456789AC
-快递 地址	湖南省长春市快乐区开心社区2栋305室
+邮箱	15327533266@139.com
+佛振	chen.sst@gmail.com
+邮编	448000 448268 467224
+地址 五里	湖北省荆门市沙洋县五里铺镇五里社区五组170号 顺丰ID：SFDYY0WL000
+地址 荆门	湖北省荆门市东宝区象山大道12号华府家园3幢2单 顺丰ID：SFDYY0JM000
+地址 豆岗	河南省平顶山市叶县辛店乡豆岗村西组 顺丰ID：SFDYY0DG000
+地址 办公	广东省广州市花都区花城街大华村兴隆一街35号广州宇宏精密模具有限公司旁边芭蕉树一楼101号
+地址 办公	顺丰ID：SFDYY0BG000
+手机 电话 电信	19171537237 19171607705 15327533266
+手机 电话 倩	19171607705
+手机 电话 老姐	13163235916
+手机 电话 老爸	15872898669 19137588616
+手机 电话 老妈	15872898696 18037587064
+业务	19171537237
+业务	19171537237@139.com
+杨倩	420822198710122843<br>湖北省沙洋县五里社区170号
+团团	豆弘润<br>410422201708020179<br>河南省叶县辛店乡油坊李村七组
+圆圆	杨灵润<br>410422201708020224<br>河南省叶县辛店乡油坊李村七组
+顺丰	顺丰ID：SFDYY0CZ000 顺丰ID：SFDYY0BG000 顺丰ID：SFDYY0JM000 顺丰ID：SFDYY0DG000 顺丰ID：SFDYY0WL000 顺丰ID：SFDYY0ZZ000 顺丰ID：SFDYY0WH000
+
 # 常用办公信息
-工号	000000
-邮箱	san.zhang@aibaba.com
-快递 地址	浙江省杭州市阿里马马集团2号快递收发室
-# 其它常用信息
-博客	https://www.myblogs.com
+工号	02375
+发票	海口业焱科技有限公司<br>91310120MA1HMANK1K<br>海南省海口市龙华区滨海大道32号复兴城A1区A5002-395号(18217511303)<br>中国银行股份有限公司海口海府支行(265036218653)<br>yypdyy1012@126.com
+业焱	海口业焱科技有限公司 91310120MA1HMANK1K 海南省海口市龙华区滨海大道32号复兴城A1区A5002-395号(18217511303) 中国银行股份有限公司海口海府支行(265036218653) yypdyy1012@126.com

@@ -68,6 +68,12 @@ end
 
 --[[提供一个timeInfo的时间结构，定义如下
 timeInfo.time: 以秒为单位的时间戳
+timeInfo.hh_sb: ¹²小时值
+timeInfo.hh_xb: ₁₂小时值
+timeInfo.mm_sb: ⁴⁵分钟值
+timeInfo.mm_xb: ₄₈分钟值
+timeInfo.ss_sb: ⁰⁸秒钟值
+timeInfo.ss_xb: ₅₈秒钟值
 timeInfo.shiChen：时辰
 timeInfo.time1：22:47:12
 timeInfo.time2：22:47
@@ -83,6 +89,19 @@ local function timeInfoByTime(t)
 	
 	local timeInfo = {}
 	timeInfo.time = tBase
+	--¹²小时值
+	timeInfo.hh_sb = os.date("%H",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
+	--₁₂小时值
+	timeInfo.hh_xb = os.date("%H",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
+	--⁴⁵分钟值
+	timeInfo.mm_sb = os.date("%M",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
+	--₄₈分钟值
+	timeInfo.mm_xb = os.date("%M",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
+	--⁰⁸秒钟值
+	timeInfo.ss_sb = os.date("%S",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
+	--₅₈秒钟值
+	timeInfo.ss_xb = os.date("%S",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
+	
 	timeInfo.shiChen = ''
 	timeInfo.time1 = os.date("%H:%M:%S",tBase)
 	timeInfo.time2 = os.date("%H:%M",tBase)
@@ -104,7 +123,7 @@ alltimeInfo.YYYYMMDD_hhmm: 2022-05-09 22:47
 alltimeInfo.YYYYMMDD_W_hhmmss: 2022年5月9日 星期一 22点47分16秒
 alltimeInfo.W_M_Date_hhmmss_YYYY: Mon. May. 09th, 22:47:01, 2022
 alltimeInfo.timeLogo: 时间对应的时钟符号
-]]
+
 local function alltimeInfo(t)
 	t = t or os.time()
 	local tBase = os.time()
@@ -144,7 +163,7 @@ local function alltimeInfo(t)
 	
 	--返回alltime信息
 	return alltimeInfo
-end
+end]]
 
 --提供 alltList 信息
 local function allt()
@@ -180,21 +199,28 @@ end
 --[[根据时间返回日期信息，一个日期信息结构如下
 dateInfo.time：日期的时间值
 dateInfo.YYYY：日期的年份值
-dateInfo.MM：日期的年份值
-dateInfo.DD：日期的年份值
+dateInfo.MM：日期的月份值
+dateInfo.DD：日期的日期值
+dateInfo.YYYY_sb：²⁰²⁵日期的年份值
+dateInfo.YYYY_xb：₂₀₂₅日期的年份值
+dateInfo.MM_sb：⁰³日期的月份值
+dateInfo.MM_xb：₀₃日期的月份值
+dateInfo.DD_sb：²⁸日期的日期值
+dateInfo.DD_xb：₂₈日期的日期值
 dateInfo.date_YYYYMMDD_1：2022/05/09
 dateInfo.date_MMDD_1：05/09
 dateInfo.date_YYYYMMDD_2：2022-05-09
+dateInfo.date_YYYYMMDD_3：2022_05_09
 dateInfo.date_MMDD_2：05-09
 dateInfo.date_YYYY_MM_DD_1：2022年05月09日
 dateInfo.date_YYYY_M_D_1：2022年5月9日
 dateInfo.date_M_D_1：5月9日
+dateInfo.date_M_Dth：Mar.09th
 dateInfo.date_M_Dth_YYYY：Mar. 09th, 2022
 dateInfo.date_M_Dth_YYYY_2：May 09th, 2022
 dateInfo.date10：二〇二二年五月九日
 dateInfo.date_yyMxx：23M04
 dateInfo.date_YYYYMMDD：20230412
-dateInfo.date_sbxb：²⁰²⁴/₀₂.₂₀ 格式的日期
 dateInfo.lunarInfo: 一个lunar的结构体
 ]]
 local function dateInfoByTime(t)
@@ -235,15 +261,23 @@ local function dateInfoByTime(t)
 	dN_1 = dN_1..'日'
 	local dInfo={os.date("%d",baseTime)..numSymbal(dN),dN_1}
 	
-	local sbYYYY = os.date("%Y",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
-	local xbMM = os.date("%m",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
-	local xbDD = os.date("%d",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
-	
 	local dateInfo = {}
 	dateInfo.time = baseTime
 	dateInfo.YYYY = os.date("%Y",baseTime)
 	dateInfo.MM = os.date("%m",baseTime)
 	dateInfo.DD = os.date("%d",baseTime)
+	--²⁰²⁵日期的年份值
+	dateInfo.YYYY_sb = os.date("%Y",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
+	--₂₀₂₅日期的年份值
+	dateInfo.YYYY_xb = os.date("%Y",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
+	--⁰³日期的月份值
+	dateInfo.MM_sb = os.date("%m",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
+	--₀₃日期的月份值
+	dateInfo.MM_xb = os.date("%m",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
+	--²⁸日期的日期值
+	dateInfo.DD_sb = os.date("%d",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
+	--₂₈日期的日期值
+	dateInfo.DD_xb = os.date("%d",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
 	
 	--合成 dateInfo 信息
 	--2022/05/09
@@ -252,26 +286,28 @@ local function dateInfoByTime(t)
 	dateInfo.date_MMDD_1 = os.date("%m/%d",baseTime)
 	--2022-05-09
 	dateInfo.date_YYYYMMDD_2 = os.date("%Y-%m-%d",baseTime)
+	--2022-05-09
+	dateInfo.date_YYYYMMDD_3 = os.date("%Y_%m_%d",baseTime)
 	--05-09
 	dateInfo.date_MMDD_2 = os.date("%m-%d",baseTime)
 	--2022年05月09日
 	dateInfo.date_YYYY_MM_DD_1 = os.date("%Y年%m月%d日",baseTime)
 	--2022年5月9日
 	dateInfo.date_YYYY_M_D_1 = os.date("%Y年",baseTime)..tonumber(os.date("%m",baseTime)).."月"..tonumber(os.date("%d",baseTime)).."日"
+	--Mar.09th
+	dateInfo.date_M_Dth = mInfo[2]..dInfo[1]
 	--5月9日
 	dateInfo.date_M_D_1 = tonumber(os.date("%m",baseTime)).."月"..tonumber(os.date("%d",baseTime)).."日"
 	--May. 09th, 2022
-	dateInfo.date_M_Dth_YYYY_1 = mInfo[2]..' '..dInfo[1]..', '..os.date("%Y",baseTime)
+	dateInfo.date_M_Dth_YYYY_1 = mInfo[2]..' '..dInfo[1]..', '..dateInfo.YYYY
 	--May 09th, 2022
-	dateInfo.date_M_Dth_YYYY_2 = mInfo[1]..' '..dInfo[1]..', '..os.date("%Y",baseTime)
+	dateInfo.date_M_Dth_YYYY_2 = mInfo[1]..' '..dInfo[1]..', '..dateInfo.YYYY
 	--二〇二二年五月九日
 	dateInfo.date10 = yInfo[1]..mInfo[3]..dInfo[2]
 	--23M04
 	dateInfo.date_yyMxx = os.date("%yM%m",baseTime)
 	--20230412
 	dateInfo.date_YYYYMMDD = os.date("%Y%m%d",baseTime)
-	--²⁰²⁴/₀₂.₂₀
-	dateInfo.date_sbxb = sbYYYY.."/"..xbMM.."."..xbDD
 	
 	dateInfo.lunarInfo = lunar.solar2LunarByTime(baseTime)
 	
@@ -300,9 +336,10 @@ end
 --提供指定时间的 wInfo 信息
 --[[week结构如下
 wInfo.time：时间戳
-wInfo.nameCN：周名称，中文
-wInfo.nameEN：周名称，英文
-wInfo.nameShort：周名称，简写
+wInfo.nameCN：周序名称，中文，星期一
+wInfo.nameCN_1：周序名称，中文，周一
+wInfo.nameEN：周序名称，英文
+wInfo.nameEN_short：周序名称，简写
 wInfo.xxWxx：周序，23W29
 wInfo.offset2Sun：距离周日的天数
 wInfo.offset2Year：年内周数，同步于xxWxx
@@ -322,8 +359,9 @@ local function wInfoByTime(t)
 	local wInfo = {}
 	wInfo.time = timeBase
 	wInfo.nameCN = wNames_CN[wN+1]
+	wInfo.nameCN_1 = string.gsub(wInfo.nameCN,"星期","周")
 	wInfo.nameEN = wNames_EN[wN+1]
-	wInfo.nameShort = wNames_Short[wN+1]
+	wInfo.nameEN_short = wNames_Short[wN+1]
 	wInfo.offset2Sun = wN
 	wInfo.offset2Year = weekNo
 	wInfo.xxWxx = os.date("%y",timeBase).."W"..wInfo.offset2Year
@@ -334,7 +372,7 @@ end
 --提供指定时间的 week 信息
 local function week(t)
 	local thisInfo = wInfoByTime(t)
-	return {thisInfo.nameCN,thisInfo.nameEN,thisInfo.nameShort,thisInfo.xxWxx}
+	return {thisInfo.nameCN,thisInfo.nameEN,thisInfo.nameEN_short,thisInfo.xxWxx}
 end
 
 --[[计算两个时间之间的差别，以 t1 为参考点，返回结构体如下：
