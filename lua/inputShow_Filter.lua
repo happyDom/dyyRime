@@ -157,14 +157,14 @@ local function _inputShow(input, env)
 		idx = idx + 1
 		if 1 == idx then
 			if candsWillBeShownStr then
-				table.insert(cands, Candidate("latex", 0, 0, candsWillBeShownStr, ''))
+				table.insert(cands, Candidate("inputShow", 0, string.len(candsWillBeShownStr), candsWillBeShownStr, ''))
 			end
 		end
 	end
 	-- 如果没有候选项，但是存在 inputShow 选项，则单独抛出该选项
 	if 0 == idx then
 		if candsWillBeShownStr then
-			table.insert(cands, Candidate("latex", 0, 0, candsWillBeShownStr, ''))
+			table.insert(cands, Candidate("inputShow", 0, string.len(candsWillBeShownStr), candsWillBeShownStr, ''))
 		end
 	end
 	
