@@ -18,7 +18,7 @@ end
 --设置 dbg 开关
 local function setDbg(flg)
 	flg = flg or dbgFlg
-	
+
 	dbgFlg = flg
 	if lunarEnable then
 		lunar.setDbg(flg)
@@ -26,7 +26,7 @@ local function setDbg(flg)
 	if logEnable then
 		log.setDbg(flg)
 	end
-	
+
 	print('dateTimeModule dbgFlg is '..tostring(dbgFlg))
 end
 
@@ -56,7 +56,7 @@ local function timeLogo(t)
 	end
 	local hourValue = os.date("%H",timeNow)
 	local minValue=tonumber(os.date("%M",timeNow))
-	
+
 	if 15 < minValue and minValue < 45 then
 		return timeLogos[string.format("%02d30",hourValue)]
 	elseif 15 > minValue then
@@ -86,7 +86,7 @@ local function timeInfoByTime(t)
 	if type(t)==type(tBase) then
 		tBase = t
 	end
-	
+
 	local timeInfo = {}
 	timeInfo.time = tBase
 	--¹²小时值
@@ -101,99 +101,19 @@ local function timeInfoByTime(t)
 	timeInfo.ss_sb = os.date("%S",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
 	--₅₈秒钟值
 	timeInfo.ss_xb = os.date("%S",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
-	
+
 	timeInfo.shiChen = ''
 	timeInfo.time1 = os.date("%H:%M:%S",tBase)
 	timeInfo.time2 = os.date("%H:%M",tBase)
 	timeInfo.time3 = os.date("%H点%M分%S秒",tBase)
-	
+
 	local h = tonumber(os.date('%H',tBase))
 	h = math.floor((h + 1)/2)+1
 	timeInfo.shiChen = (diZhi[h] or diZhi[1])..'时'
 
 	timeInfo.timeLogo = timeLogo(tBase)
-	
+
 	return timeInfo
-end
-
---[[根据指定的时间，返回结构化的 alltimeInfo 对象，结构如下
-alltimeInfo.time: 时间值
-alltimeInfo.YYYYMMDD_hhmmss: 2022-05-09 22:47:12
-alltimeInfo.YYYYMMDD_hhmm: 2022-05-09 22:47
-alltimeInfo.YYYYMMDD_W_hhmmss: 2022年5月9日 星期一 22点47分16秒
-alltimeInfo.W_M_Date_hhmmss_YYYY: Mon. May. 09th, 22:47:01, 2022
-alltimeInfo.timeLogo: 时间对应的时钟符号
-
-local function alltimeInfo(t)
-	t = t or os.time()
-	local tBase = os.time()
-	if type(t) == type(tBase) then
-		tBase = t
-	end
-	
-	local alltimeInfo = {}
-	alltimeInfo.time = tBase
-	
-	--处理星期信息, os.date("%w"): 距离周日的天数
-	local wN=tonumber(os.date("%w",tBase)) + 1
-	local wInfo={wNames_CN[wN],wNames_EN[wN],wNames_Short[wN]}
-	
-	--处理月份信息
-	local mN=tonumber(os.date("%m",tBase))
-	local mInfo={mName_EN[mN],mName_Short[mN]}
-	
-	--处理日期信息
-	local dN=tonumber(os.date("%d",tBase))
-	local dInfo={os.date("%d")..numSymbal(dN)}
-	
-	--处理时分信息
-	local timeInfo = timeInfoByTime(tBase)
-	
-	--合成alltime信息
-	--2022-05-09 22:47:12
-	alltimeInfo.YYYYMMDD_hhmmss=os.date("%Y-%m-%d")..' '..timeInfo.time1
-	--2022-05-09 22:47
-	alltimeInfo.YYYYMMDD_hhmm=os.date("%Y-%m-%d")..' '..timeInfo.time2
-	--2022年5月9日 星期一 22点47分16秒
-	alltimeInfo.YYYYMMDD_W_hhmmss = os.date("%Y年")..tonumber(os.date("%m"))..'月'..tonumber(os.date('%d'))..'日 '..wInfo[1]..' '..timeInfo.time3
-	--Mon. May. 09th, 22:47:01, 2022
-	alltimeInfo.W_M_Date_hhmmss_YYYY = wInfo[3]..' '..mInfo[2]..' '..dInfo[1]..' '..timeInfo.time1..', '..os.date("%Y")
-	
-	alltimeInfo.timeLogo = timeInfo.timeLogo
-	
-	--返回alltime信息
-	return alltimeInfo
-end]]
-
---提供 alltList 信息
-local function allt()
-	--处理星期信息, os.date("%w"): 距离周日的天数
-	local wN=tonumber(os.date("%w")) + 1
-	local wInfo={wNames_CN[wN],wNames_EN[wN],wNames_Short[wN]}
-	
-	--处理月份信息
-	local mN=tonumber(os.date("%m"))
-	local mInfo={mName_EN[mN],mName_Short[mN]}
-	
-	--处理日期信息
-	local dN=tonumber(os.date("%d"))
-	local dInfo={os.date("%d")..numSymbal(dN)}
-	
-	--处理时分信息
-	local timeInfo = timeInfoByTime()
-	
-	--合成alltime信息
-	--2022-05-09 22:47:12
-	local allt_1 = os.date("%Y-%m-%d")..' '..timeInfo.time1
-	--2022-05-09 22:47
-	local allt_2 = os.date("%Y-%m-%d")..' '..timeInfo.time2
-	--2022年5月9日 星期一 22点47分16秒
-	local allt_3 = os.date("%Y年")..tonumber(os.date("%m"))..'月'..tonumber(os.date('%d'))..'日 '..wInfo[1]..' '..timeInfo.time3
-	--Mon. May. 09th, 22:47:01, 2022
-	local allt_4 = wInfo[3]..' '..mInfo[2]..' '..dInfo[1]..' '..timeInfo.time1..', '..os.date("%Y")
-	
-	--返回alltime信息
-	return {allt_1,allt_2,allt_3,allt_4}
 end
 
 --[[根据时间返回日期信息，一个日期信息结构如下
@@ -201,6 +121,9 @@ dateInfo.time：日期的时间值
 dateInfo.YYYY：日期的年份值
 dateInfo.MM：日期的月份值
 dateInfo.DD：日期的日期值
+dateInfo.y：日期的年份值（数字）
+dateInfo.m：日期的月份值（数字）
+dateInfo.d：日期的日期值（数字）
 dateInfo.YYYY_sb：²⁰²⁵日期的年份值
 dateInfo.YYYY_xb：₂₀₂₅日期的年份值
 dateInfo.MM_sb：⁰³日期的月份值
@@ -229,13 +152,13 @@ local function dateInfoByTime(t)
 	if type(t) == type(baseTime) then
 		baseTime = t
 	end
-	
+
 	--处理年份信息
 	local yN=tonumber(os.date("%Y",baseTime))
 	local yN_1=''
 	yN_1=os.date("%Y",baseTime):gsub("%d",{["1"]="一",["2"]="二",["3"]="三",["4"]="四",["5"]="五",["6"]="六",["7"]="七",["8"]="八",["9"]="九",["0"]="〇"})
 	local yInfo={yN_1.."年"}
-	
+
 	--处理月份信息
 	local mN=tonumber(os.date("%m",baseTime))
 	local mN_1=''
@@ -248,7 +171,7 @@ local function dateInfoByTime(t)
 		mN_1 = '十二'
 	end
 	local mInfo={mName_EN[mN],mName_Short[mN],mN_1..'月'}
-	
+
 	--处理日期信息
 	local dN=tonumber(os.date("%d",baseTime))
 	local dN_1=''
@@ -260,12 +183,15 @@ local function dateInfoByTime(t)
 	end
 	dN_1 = dN_1..'日'
 	local dInfo={os.date("%d",baseTime)..numSymbal(dN),dN_1}
-	
+
 	local dateInfo = {}
 	dateInfo.time = baseTime
 	dateInfo.YYYY = os.date("%Y",baseTime)
 	dateInfo.MM = os.date("%m",baseTime)
 	dateInfo.DD = os.date("%d",baseTime)
+	dateInfo.y = yN
+	dateInfo.m = mN
+	dateInfo.d = dN
 	--²⁰²⁵日期的年份值
 	dateInfo.YYYY_sb = os.date("%Y",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
 	--₂₀₂₅日期的年份值
@@ -278,7 +204,7 @@ local function dateInfoByTime(t)
 	dateInfo.DD_sb = os.date("%d",baseTime):gsub("%d",{["1"]="¹",["2"]="²",["3"]="³",["4"]="⁴",["5"]="⁵",["6"]="⁶",["7"]="⁷",["8"]="⁸",["9"]="⁹",["0"]="⁰"})
 	--₂₈日期的日期值
 	dateInfo.DD_xb = os.date("%d",baseTime):gsub("%d",{["1"]="₁",["2"]="₂",["3"]="₃",["4"]="₄",["5"]="₅",["6"]="₆",["7"]="₇",["8"]="₈",["9"]="₉",["0"]="₀"})
-	
+
 	--合成 dateInfo 信息
 	--2022/05/09
 	dateInfo.date_YYYYMMDD_1 = os.date("%Y/%m/%d",baseTime)
@@ -308,9 +234,9 @@ local function dateInfoByTime(t)
 	dateInfo.date_yyMxx = os.date("%yM%m",baseTime)
 	--20230412
 	dateInfo.date_YYYYMMDD = os.date("%Y%m%d",baseTime)
-	
+
 	dateInfo.lunarInfo = lunar.solar2LunarByTime(baseTime)
-	
+
 	--输出 dateInfo 信息
 	return dateInfo
 end
@@ -323,12 +249,12 @@ local function dateInfoByDaysOffset(daysOffset)
 	if type(thisOffset) == type(daysOffset) then
 		thisOffset = daysOffset
 	end
-	
+
 	local baseTime = os.date("*t")
 	baseTime.day = baseTime.day + thisOffset
-	
+
 	local info = dateInfoByTime(os.time(baseTime))
-	
+
 	--输出 dateInfo 信息
 	return info
 end
@@ -343,6 +269,7 @@ wInfo.nameEN_short：周序名称，简写
 wInfo.xxWxx：周序，23W29
 wInfo.offset2Sun：距离周日的天数
 wInfo.offset2Year：年内周数，同步于xxWxx
+wInfo.offset2Month：月内周数，对齐于offset2Year
 ]]
 local function wInfoByTime(t)
 	t = t or os.time()
@@ -351,11 +278,16 @@ local function wInfoByTime(t)
 		timeBase = t
 	end
 	
+	local dateBase = os.date("*t")
+	dateBase.day = 1
+
 	--处理星期信息, os.date("%w"): 距离周日的天数
-	local wN=tonumber(os.date("%w",timeBase))
+	local wN = tonumber(os.date("%w",timeBase))
 	--计算今年以来的周数
-	local weekNo=os.date("%W",timeBase) + 1
-	
+	local weekNo = os.date("%W",timeBase) + 1
+	--计算本月初日期在今年以来的周数
+	local weekNo1 = os.date("%W",os.time(dateBase)) + 1
+
 	local wInfo = {}
 	wInfo.time = timeBase
 	wInfo.nameCN = wNames_CN[wN+1]
@@ -364,8 +296,9 @@ local function wInfoByTime(t)
 	wInfo.nameEN_short = wNames_Short[wN+1]
 	wInfo.offset2Sun = wN
 	wInfo.offset2Year = weekNo
+	wInfo.offset2Month = weekNo - weekNo1 + 1
 	wInfo.xxWxx = os.date("%y",timeBase).."W"..wInfo.offset2Year
-	
+
 	return wInfo
 end
 
@@ -394,7 +327,7 @@ local function timeDiff(t1,t2)
 		t2 = t1
 		t1 = os.time()
 	end
-	
+
 	diff.tRef = t1
 	diff.tTgt = t2
 	diff.timeDiff = 0
@@ -402,30 +335,30 @@ local function timeDiff(t1,t2)
 	diff.monthsDiff = 0
 	diff.yearsDiff = 0
 	diff.weeksDiff = 0
-	
+
 	local t11 = os.date("*t", t1)
 	local t22 = os.date("*t", t2)
-	
+
 	--计算时间差
 	diff.timeDiff = t2 - t1
-	
+
 	--计算天数差
 	local t11_noTime = os.time({year=t11.year, month=t11.month, day=t11.day})
 	local t22_noTime = os.time({year=t22.year, month=t22.month, day=t22.day})
 	diff.daysDiff = math.floor((t22_noTime - t11_noTime) / (3600 * 24))
-	
+
 	--计算年数差
 	diff.yearsDiff = t22.year - t11.year
-	
+
 	--计算月数差
 	diff.monthsDiff = diff.yearsDiff * 12 + t22.month - t11.month
-	
+
 	--计算周数差
 	local t1_wn = tonumber(os.date("%w",t1))
 	local t2_wn = tonumber(os.date("%w",t2))
 	local daysDiffToWeekStart = diff.daysDiff + t1_wn - t2_wn
 	diff.weeksDiff = math.floor(daysDiffToWeekStart/7)
-	
+
 	return diff
 end
 
@@ -433,7 +366,7 @@ end
 local function daysDiffName(t1,t2)
 	local tDiff = timeDiff(t1,t2)
 	local comment = ''
-	
+
 	if tDiff.daysDiff == -3 then
 		comment = '大前天'
 	elseif tDiff.daysDiff == -2 then
@@ -485,25 +418,20 @@ local function daysDiffName(t1,t2)
 	elseif tDiff.daysDiff ~= 0 then
 		comment = math.abs(tDiff.daysDiff)..'天'..((tDiff.daysDiff<0) and '前' or '后')
 	end
-	
+
 	return comment
 end
 
 --=========================这是测试函数=======================
 local function test()
-	local alltList = allt()
 	local idx
-	print("allt")
-	for idx=1,#alltList do
-		print('\t'..alltList[idx])
-	end
-	
+
 	local lunarList,jqList,dateList = lunar.jqListComming()
 	print("lunarInfo")
 	for idx=1,#lunarList do
 		print('\t'..lunarList[idx]..'\t'..jqList[idx]..'\t'..dateList[idx])
 	end
-	
+
 	local wInfo = week()
 	print("week info")
 	for idx=1,#wInfo do
@@ -514,16 +442,14 @@ end
 --=========================模块化封装=========================
 function M.init(...)
 	print("-> M.init called here")
-	
+
 	--抛出功能函数
 	M.jqListComming = lunar.jqListComming
 	M.jqIdxByName = lunar.jqIdxByName
 	M.jqInfoByTime = lunar.jqInfoByTime
 	M.jqListBuild = lunar.jqListBuild
-	
+
 	M.timeInfoByTime = timeInfoByTime
-	M.alltimeInfo = alltimeInfo
-	M.allt = allt
 	M.dateInfoByTime = dateInfoByTime
 	M.dateInfoByDaysOffset = dateInfoByDaysOffset
 	M.week = week
@@ -531,7 +457,7 @@ function M.init(...)
 	M.timeLogo = timeLogo
 	M.timeDiff = timeDiff
 	M.daysDiffName = daysDiffName
-	
+
 	M.setDbg = setDbg
 	M.test = test
 end

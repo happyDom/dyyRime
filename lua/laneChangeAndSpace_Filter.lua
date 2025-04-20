@@ -24,6 +24,7 @@ local utf8Split = utf8String.utf8Split
 local utf8Sub = utf8String.utf8Sub
 local utf8Len = utf8String.utf8Len
 local utf8PunctuationsTrim = utf8String.utf8PunctuationsTrim
+local laneChangeChar = '\r'
 
 --过滤器
 local function laneChangeAndSpace_Filter(input, env)
@@ -44,7 +45,7 @@ local function laneChangeAndSpace_Filter(input, env)
 		if nil ~= string.find(candTxt,"<br>") or nil ~= string.find(candTxt,"&nbsp") then
 			-- candTxt 存在 <br> 或者 &nbsp
 			candTxtNewFlg = true
-			candTxt = candTxt: gsub("<br>","\r"):gsub("&nbsp"," ")
+			candTxt = candTxt: gsub("<br>",laneChangeChar):gsub("&nbsp"," ")
 		end
 		
 		candComment_brExistFlg = false
@@ -54,7 +55,7 @@ local function laneChangeAndSpace_Filter(input, env)
 			candComment_brExistFlg = true
 			
 			candCommentNewFlg = true
-			candComment = candComment: gsub("<br>","\r")
+			candComment = candComment: gsub("<br>",laneChangeChar)
 		end
 		if candComment_brExistFlg or nil ~= string.find(candComment,"&nbsp") then
 			-- candComment 存在 &nbsp
@@ -74,7 +75,7 @@ local function laneChangeAndSpace_Filter(input, env)
 				candComment = utf8Sub(candComment, 1, maxLenOfComment)
 			else
 				--如果原注释中存在 <br> 符号，则需要按行分别处理
-				local subStrList = utf8Split(candComment,"\r")
+				local subStrList = utf8Split(candComment,laneChangeChar)
 				local subStrTrimedList = {}
 				for idx=1,#subStrList do
 					--更新 bottomLineLen，以使其始终保持为最后一行的字符长度值
@@ -87,7 +88,7 @@ local function laneChangeAndSpace_Filter(input, env)
 				end
 				
 				--将拆分的各行内容使用 \r 连接起来
-				candComment = table.concat(subStrTrimedList,"\r")
+				candComment = table.concat(subStrTrimedList,laneChangeChar)
 			end
 		end
 		

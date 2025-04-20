@@ -1,3 +1,5 @@
+--lunarJieQiModule.lua
+--Copyright (C) 2023 yaoyuan.dou <douyaoyuan@126.com>
 --该计算脚本取自 博文 https://www.cnblogs.com/moodlxs/archive/2012/09/15/2686472.html
 --感谢博主 绿色冰点 对脚本的贡献和分享
 
@@ -50,8 +52,8 @@ end
 
 --将弧度转为字串
 local function rad2str(d,tim)
-	---tim=0输出格式示例: -23°59' 48.23"
-	---tim=1输出格式示例:  18h 29m 44.52s
+	--tim=0输出格式示例: -23°59' 48.23"
+	--tim=1输出格式示例:  18h 29m 44.52s
 	local s="+"
 	local w1="°" w2="’"  w3="”"
 	if d<0 then

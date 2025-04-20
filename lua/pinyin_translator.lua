@@ -31,7 +31,7 @@ local aoeListDict = {['a']=a,
 
 local aoeList = {'a','o','e','ui','iu','i','u','ü'}
 
-function translator(input, seg)
+function pinyin_translator(input, seg)
 	local inputStr = input
 	
 	inputStr = string.gsub(inputStr,'jv','ju')
@@ -82,4 +82,4 @@ function translator(input, seg)
 	end
 end
 
-return translator
+return pinyin_translator

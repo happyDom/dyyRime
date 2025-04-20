@@ -15,11 +15,11 @@ if logEnable then
 	log.writeLog('eventsListModuleEnable:'..tostring(eventsListModuleEnable))
 end
 
-local alltimeInfo = dateTimeModule.alltimeInfo
 local jqListComming = dateTimeModule.jqListComming
 local jqIdxByName = dateTimeModule.jqIdxByName
 local jqInfoByTime = dateTimeModule.jqInfoByTime
 local wInfoByTime = dateTimeModule.wInfoByTime
+local timeDiff = dateTimeModule.timeDiff
 local daysDiffName = dateTimeModule.daysDiffName
 local dateInfoByTime = dateTimeModule.dateInfoByTime
 local dateInfoByDaysOffset = dateTimeModule.dateInfoByDaysOffset
@@ -41,7 +41,6 @@ local cands
 local theCands
 local candTxt_lower
 local thisComment
-local alltInfo
 local dateInfoList
 local jqTime
 local jqName
@@ -57,7 +56,7 @@ local function Filter(input, env)
 	--获取dateTimeInfo开关状态
 	local on = true --env.engine.context:get_option("dateTime")
 	cands={}
-	
+
 	for cand in input:iter() do
 		--抛出原选项
 		if nil == cands[cand.text] then
@@ -66,7 +65,7 @@ local function Filter(input, env)
 		end
 		if on then
 			candTxt_lower = cand.text:lower()
-			
+
 			--时间选项整理
 			if ({['time']=true,['时间']=true,['现在']=true,['now']=true,['此刻']=true,['此时']=true,['后缀']=true})[candTxt_lower] then
 				--处理时间信息
@@ -75,7 +74,7 @@ local function Filter(input, env)
 				wInfo = wInfoByTime()
 				--获取日期信息
 				dateInfo = dateInfoByDaysOffset(0)
-				
+
 				theCands={}
 				if ({['后缀']=true})[candTxt_lower] then
 					table.insert(theCands,{dateInfo.YYYY_sb..dateInfo.MM_xb..dateInfo.DD_xb..wInfo.nameCN_1,timeInfo.timeLogo})
@@ -93,12 +92,12 @@ local function Filter(input, env)
 					--Tues. Mar. 25th 16:02:57, 2025
 					table.insert(theCands,{wInfo.nameEN_short.." "..dateInfo.date_M_Dth.." "..timeInfo.time1.." "..dateInfo.YYYY,timeInfo.timeLogo})
 				end
-				
+
 				--抛出选项
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
@@ -112,7 +111,7 @@ local function Filter(input, env)
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
@@ -122,12 +121,12 @@ local function Filter(input, env)
 				local timeInfo = timeInfoByTime()
 				theCands={}
 				table.insert(theCands,{timeInfo.timeLogo,'💡'})
-				
+
 				--抛出选项
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
@@ -146,14 +145,14 @@ local function Filter(input, env)
 				elseif ({['前天']=true})[candTxt_lower] then
 					dateInfo = dateInfoByDaysOffset(-2)
 				end
-				
+
 				--获取周序信息
 				wInfo = wInfoByTime(dateInfo.time)
 				--获取今天的事件信息
 				eventsList = getEventsByTime(dateInfo.time)
 				--获取今天的24节气信息
 				jqTime, jqName = jqInfoByTime(dateInfo.time)
-				
+
 				--如果今天有特殊事件，则合成事件的comment信息
 				local eventsStr = ''
 				for idx = 1, #eventsList do
@@ -164,7 +163,7 @@ local function Filter(input, env)
 						eventsStr = '[🔊]'..thisEvent.c3
 					end
 				end
-				
+
 				theCands = {}
 				if ({['今天']=true,['今日']=true,['today']=true,['明天']=true,['明日']=true,['后天']=true,['昨天']=true,['前天']=true})[candTxt_lower] then
 					if ''~=eventsStr then
@@ -180,7 +179,7 @@ local function Filter(input, env)
 						table.insert(theCands,{dateInfo.date_YYYYMMDD_1..' '..wInfo.nameCN,'💡'})
 					end
 				end
-				
+
 				table.insert(theCands,{dateInfo.date_M_Dth_YYYY_1,'💡'})
 				table.insert(theCands,{dateInfo.date_YYYYMMDD_3,'💡'})
 				table.insert(theCands,{dateInfo.date_YYYYMMDD,'💡'})
@@ -190,12 +189,12 @@ local function Filter(input, env)
 				else
 					table.insert(theCands,{dateInfo.lunarInfo.lunarDate_4,dateInfo.lunarInfo.jiJieLogo})
 				end
-				
+
 				--抛出选项
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
@@ -206,14 +205,14 @@ local function Filter(input, env)
 				timeBase = os.date('*t')
 				wInfo = wInfoByTime()
 				local wOffsetInput = ({['周日']=0,['周一']=1,['周二']=2,['周三']=3,['周四']=4,['周五']=5,['周六']=6})[candTxt_lower]
-				
+
 				--调整 base
 				timeBase.day = timeBase.day + wOffsetInput - wInfo.offset2Sun
 				wInfo = wInfoByTime(os.time(timeBase))
 				jqTime, jqName = jqInfoByTime(os.time(timeBase))
 				dateInfo = dateInfoByDaysOffset(wOffsetInput-tonumber(os.date('%w')))
 				local daysDiff = daysDiffName(os.time(),os.time(timeBase))
-				
+
 				eventsList = getEventsByTime(os.time(timeBase))
 				local eventsStr = ''
 				for idx = 1, #eventsList do
@@ -224,7 +223,7 @@ local function Filter(input, env)
 						eventsStr = '[🔊]'..thisEvent.c3
 					end
 				end
-				
+
 				local commentStr = ''
 				if '今天'==daysDiff then
 					commentStr = '[🚩]'
@@ -235,7 +234,7 @@ local function Filter(input, env)
 						commentStr = '['..daysDiff..'👈]'
 					end
 				end
-				
+
 				if ''~=jqName then
 					if ''==commentStr then
 						commentStr = jqName
@@ -250,7 +249,7 @@ local function Filter(input, env)
 						commentStr = commentStr..'\r'..eventsStr
 					end
 				end
-				
+
 				dateInfoList = {dateInfo.date_YYYYMMDD_1,dateInfo.date_YYYYMMDD_2,dateInfo.date_M_Dth_YYYY_1,dateInfo.date_YYYYMMDD}
 				for idx = 1, #dateInfoList do
 					thisTxt = dateInfoList[idx]
@@ -266,16 +265,16 @@ local function Filter(input, env)
 			elseif ({['lunar']=true,['农历']=true,['节气']=true})[candTxt_lower] then
 				--处理农历信息
 				lunarList,jqList,timeList = jqListComming()
-				
+
 				theCands={}
-				
+
 				for idx = 1, math.min(6,#lunarList) do
 					thisJq = jqList[idx]
 					thisTime = timeList[idx]
-					
+
 					dateInfo = dateInfoByTime(thisTime)
 					thisLunar = dateInfo.lunarInfo.lunarDate_4
-					
+
 					if os.date("%Y/%m/%d",thisTime) == os.date("%Y/%m/%d") then
 						thisJq = '🚩/'..dateInfo.lunarInfo.jiJieLogo..thisJq
 					else
@@ -287,18 +286,18 @@ local function Filter(input, env)
 								daysDiff = '['..daysDiff..'👈]'
 							end
 						end
-						
+
 						thisLunar = dateInfo.lunarInfo.lunarDate_4..'('..thisJq..')'
 						thisJq = dateInfo.lunarInfo.jiJieLogo..dateInfo.date_YYYYMMDD..daysDiff
 					end
 					table.insert(theCands,{thisLunar,thisJq})
 				end
-				
+
 				--抛出选项
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
@@ -307,15 +306,15 @@ local function Filter(input, env)
 			elseif ({['wx']=true,['周序']=true,['周数']=true})[candTxt_lower] then
 				--处理周信息
 				wInfo = wInfoByTime()
-				
+
 				theCands={}
 				table.insert(theCands,{wInfo.xxWxx,'💡'})
-				
+
 				--抛出周序选项
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
@@ -331,20 +330,20 @@ local function Filter(input, env)
 				elseif ({['下周']=true})[candTxt_lower] then
 					timeBase.day = timeBase.day + 7
 				end
-				
+
 				wInfo = wInfoByTime(os.time(timeBase))
-				
+
 				theCands={}
 				if ({['本周']=true,['上周']=true,['下周']=true})[candTxt_lower] then
 					table.insert(theCands,{candTxt_lower.."("..wInfo.xxWxx..")",'💡'})
 				end
 				table.insert(theCands,{wInfo.xxWxx,'💡'})
-				
+
 				for idx=0,6 do
 					timeReBase = os.date('*t',os.time(timeBase))
 					timeReBase.day = timeReBase.day + idx
 					local daysDiff = daysDiffName(os.time(),os.time(timeReBase))
-					
+
 					--获取事件
 					eventsList = getEventsByTime(os.time(timeReBase))
 					--节取节气
@@ -353,7 +352,7 @@ local function Filter(input, env)
 					dateInfo = dateInfoByTime(os.time(timeReBase))
 					--周序信息
 					wInfo = wInfoByTime(os.time(timeReBase))
-					
+
 					--如果存在节气，或者存在事件
 					if ''~=jqN or 0<#eventsList then
 						thisComment = ''
@@ -412,12 +411,12 @@ local function Filter(input, env)
 						table.insert(theCands,{dateInfo.date_YYYYMMDD_1..' '..wInfo.nameCN,thisComment})
 					end
 				end
-				
+
 				--抛出选项
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
@@ -426,17 +425,17 @@ local function Filter(input, env)
 			elseif ({['week']=true,['星期']=true})[candTxt_lower] then
 				--处理周信息
 				wInfo = wInfoByTime()
-				
+
 				theCands={}
 				table.insert(theCands,{wInfo.nameCN,'💡'})
 				table.insert(theCands,{wInfo.nameEN,'💡'})
 				table.insert(theCands,{wInfo.nameEN_short,'💡'})
-				
+
 				--抛出选项
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
@@ -451,18 +450,18 @@ local function Filter(input, env)
 				elseif ({['下月']=true})[candTxt_lower] then
 					dateInfo = dateInfoByDaysOffset(45-os.date("%d"))
 				end
-				
+
 				theCands={}
 				if ({['本月']=true,['上月']=true,['下月']=true})[candTxt_lower] then
 					table.insert(theCands,{candTxt_lower.."("..dateInfo.date_yyMxx..")",'💡'})
 				end
 				table.insert(theCands,{dateInfo.date_yyMxx,'💡'})
-				
+
 				--抛出选项
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
@@ -480,19 +479,19 @@ local function Filter(input, env)
 				elseif ({['后年']=true})[candTxt_lower] then
 					dateInfo = dateInfoByTime(os.time({year = tonumber(os.date("%Y"))+2, month = 5, day = 1, hour = 8, min = 0, sec = 0}))
 				end
-				
+
 				theCands={}
-				
+
 				table.insert(theCands,{candTxt_lower.."("..dateInfo.YYYY..")",'💡'})
 				table.insert(theCands,{dateInfo.lunarInfo.year_shengXiao..'年','💡'})
 				table.insert(theCands,{dateInfo.lunarInfo.year_ganZhi..'年','💡'})
 				table.insert(theCands,{dateInfo.lunarInfo.year_ganZhi.."("..dateInfo.lunarInfo.year_shengXiao..")"..'年','💡'})
-				
+
 				--抛出选项
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
@@ -501,10 +500,10 @@ local function Filter(input, env)
 			elseif jqIdxByName(candTxt_lower)>0 then
 				--查找指定的节气信息
 				lunarList,jqList,timeList = jqListComming()
-				
+
 				local matchFlg = false
 				local jqCnt = 0
-				
+
 				theCands={}
 				for idx = 1, #jqList do
 					thisLunar = lunarList[idx]
@@ -512,14 +511,14 @@ local function Filter(input, env)
 					thisTime = timeList[idx]
 					wInfo = wInfoByTime(thisTime)
 					dateInfo = dateInfoByTime(thisTime)
-					
+
 					if not matchFlg then
 						matchFlg = (thisJq == candTxt_lower) or false
 					end
-					
+
 					if matchFlg then
 						local daysDiff = daysDiffName(os.time(),thisTime)
-						
+
 						if '今天' == daysDiff then
 							thisJq = ' 🚩'..thisJq
 						else
@@ -533,34 +532,34 @@ local function Filter(input, env)
 							thisLunar = thisLunar..'('..thisJq..')'
 							thisJq = dateInfo.lunarInfo.jiJieLogo..os.date("%Y/%m/%d",thisTime)..daysDiff
 						end
-						
+
 						--加入周信息
 						thisLunar = thisLunar..' '..wInfo.nameCN
-						
+
 						if nil == cands[thisLunar] then
 							table.insert(theCands,{thisLunar,thisJq})
-							
+
 							jqCnt = jqCnt + 1
 						end
 						if jqCnt >= 4 then
 							break
 						end
 					end
-					
+
 				end
-				
+
 				--抛出选项
 				for idx = 1, #theCands do
 					thisTxt = theCands[idx][1]
 					thisComment = theCands[idx][2]
-					
+
 					if nil == cands[thisTxt] then
 						yield(Candidate("word", cand.start, cand._end, thisTxt, thisComment))
 						cands[thisTxt] = true
 					end
 				end
 			end
-			
+
 			do--事件选项整理
 				local eventsList = getEventsByKw(candTxt_lower)
 				if 0<#eventsList then
@@ -574,7 +573,7 @@ local function Filter(input, env)
 							wInfo = wInfoByTime(thisE.time)
 							local tDiff = daysDiffName(thisE.time) or ''
 							local thisComment = thisE.c3
-							
+
 							local thisCandTxt = dateInfo.date_YYYYMMDD_1..' '..wInfo.nameCN
 							if nil==cands[thisCandTxt] and ''~= thisComment then
 								if ''==tDiff then
@@ -587,7 +586,7 @@ local function Filter(input, env)
 									end
 								end
 								yield(Candidate("word", cand.start, cand._end, thisCandTxt, thisComment))
-								
+
 								cands[thisCandTxt]=true
 							end
 						end

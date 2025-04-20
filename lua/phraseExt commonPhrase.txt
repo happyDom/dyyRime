@@ -14,21 +14,21 @@
 测速	chrome-https://www.speedtest.cn
 
 # md语法支持
-红 红字	md-<font&nbspcolor=Red></font>
-红 红底	md-<span&nbspstyle="background:Red"></span>
-绿 绿字	md-<font&nbspcolor=Green></font>
-绿 绿底	md-<span&nbspstyle="background:Green"></span>
-黄 黄字	md-<font&nbspcolor=Yellow></font>
-黄 黄底	md-<span&nbspstyle="background:Yellow"></span>
-青 青字	md-<font&nbspcolor=Aqua></font>
-青 青底	md-<span&nbspstyle="background:Aqua"></span>
-蓝 蓝字	md-<font&nbspcolor=Blue></font>
-蓝 蓝底	md-<span&nbspstyle="background:Blue"></span>
-灰 灰字	md-<font&nbspcolor=Gray></font>
-灰 灰底	md-<span&nbspstyle="background:Gray"></span>
-粉 粉字	md-<font&nbspcolor=Pink></font>
-粉 粉底	md-<span&nbspstyle="background:Pink"></span>
-提醒 醒目	md-<span&nbspstyle="background:Red"><font&nbspcolor=Yellow>醒目</font></span>
+红 红字	md-<font&nbspcolor=red> md-</font>
+绿 绿字	md-<font&nbspcolor=green> md-</font>
+黄 黄字	md-<font&nbspcolor=yellow> md-</font>
+青 青字	md-<font&nbspcolor=aqua> md-</font>
+蓝 蓝字	md-<font&nbspcolor=blue> md-</font>
+灰 灰字	md-<font&nbspcolor=gray> md-</font>
+粉 粉字	md-<font&nbspcolor=pink> md-</font>
+浅绿 绿字	md-<font&nbspcolor=lightgreen> md-</font>
+浅黄 黄字	md-<font&nbspcolor=lightyellow> md-</font>
+浅蓝 蓝字	md-<font&nbspcolor=lightblue> md-</font>
+浅粉 粉字	md-<font&nbspcolor=lightpink> md-</font>
+上标	md-<sup> md-</sup>
+下标	md-<sub> md-</sub>
+强调 重点	md-<strong> md-</strong> md-<em> md-</em>
+删除	md-<del> md-</del>
 引用 链接	md-[]()
 表格	md-md表格
 一级	md-#&nbsp
@@ -40,7 +40,6 @@
 代码	md-```bash md-```C md-```C# md-```Python md-```lua md-```javascript md-```yaml
 注脚 脚注	md-[^0] md-[^0]:
 注释	md-*[xxx]:
-公式	md-md公式
 甘特 甘特图	md-md甘特图
 uml	md-mdUML图
 流程 流程图	md-mermaid流程图 md-flowchat流程图
@@ -177,6 +176,10 @@ uml	md-mdUML图
 头发	0.1mm
 游泳池	1890m³ 长(50m)宽(21m)深(≥1.8m)
 广岛	小男孩
+
+# 社交
+招呼	我是杨锐，法士特液缓供应商
+祝	祝生意兴隆
 
 # 其它
 进步	进步开始于起步

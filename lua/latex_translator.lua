@@ -978,6 +978,7 @@ function translator(input, seg)
 					matchFlg=true
 				elseif str=="canc" then
 					yield(Candidate("latex", seg.start, seg._end, subStr_0..string.gsub (subStr_1, pattern, "\\cancel{}", 1), " "))
+					yield(Candidate("latex", seg.start, seg._end, subStr_0..string.gsub (subStr_1, pattern, "\\bcancel{}", 1), " "))
 					yield(Candidate("latex", seg.start, seg._end, subStr_0..string.gsub (subStr_1, pattern, "\\xcancel{}", 1), " "))
 					matchFlg=true
 				elseif str=="case" then
