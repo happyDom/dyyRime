@@ -1,0 +1,74 @@
+# encoding:utf-8
+patch:
+  switches:							# 覆写 switches 配置，增加 ascii_punct 开关的 reset 属性
+    - name: ascii_mode
+      reset: 0
+      states: [ 中文, 西文 ]
+    - name: full_shape
+      states: [ 半角, 全角 ]
+    - name: extended_charset
+      states: [ 常用, 增廣 ]
+    - name: ascii_punct
+      reset: 0						# 默认标点符号为中文标点
+      states: [ 。，, ．， ]
+  switches/+: 						# 定制增加以下开关
+    - name: debug					# 一个debug的标志开关
+      states: [Off, 🐞]
+    - name: phraseReplace			# 敏感词输出开关
+      reset: 1
+      states: [Off, 👙]
+    - name: phraseExt				# 候选词扩展开关
+      reset: 1
+      states: [Off, 扩展]
+    - name: phraseComment			# 候选词注释开关
+      reset: 1
+      states: [Off, 注释]
+    - name: pinyin					# 这个开关用于标记是否打开拼音滤镜
+      states: [Off, pīnyīn]
+    - name: encnDic					# 中英字典开关
+      states: [Off, 中英对照]
+    - name: markdown					# 一个markdown语法开关
+      states: [Off, md]
+  engine/translators/+:				#定制translator如下
+    - table_translator@custom_phrase				# 指定使用 custom_phrase 进行输入字符的翻译
+    - lua_translator@*help
+    - lua_translator@*latexLettersInWubi
+    - lua_translator@*force_gc          # 暴力 GC 降低内存
+  engine/filters:									# 设置以下filter
+    - simplifier
+    - lua_filter@*inputShow_Filter					# 这个过滤器用于在特定场景下，增加候选项，并整理部分出词顺序
+    - lua_filter@*phraseExt_Filter					# 自定义短语滤镜，针对响应的关键字，添加新的选项进来
+    - lua_filter@*dateTime_filter					# 时间信息，对于特定的时间或者事件关键字，添加时间信息，例如日期，今天，明天，肝炎，父亲等
+    - lua_filter@*dynamicPhrase_Filter				# 动态候选项，用于动态获取与运行环境有关的信息
+    - lua_filter@*phraseReplace_Filter				# 词语替换滤镜，针对一些指定的关键字，将其替换为指定的内容，或者当没有指定内容时，替换为 *
+    - lua_filter@*pinyinAdding_Filter				# pinyin滤镜，用于对候选项中的字添加拼音
+    # 上面的滤镜会调整候选词选项，或者增加，或者减少。原则上说，会导致候选项减少的滤镜，请放在前端
+    # 上面的滤镜会减少或者改变候先词选项
+    - uniquifier									# 过滤重复候选项，依赖 simplifier
+    # 下面的滤镜是comment滤镜，不会改变候选项列表
+    - lua_filter@*dic_4w_Filter						# 英中对照滤镜
+    - lua_filter@*phraseComment_Filter				# 短语释义
+    - lua_filter@*laneChangeAndSpace_Filter			# laneChangeAndSpace 滤镜将候选词或者注释中的<br>处理成\r，&nbsp处理成一个空格
+
+  custom_phrase:  # 设置用户字/词典
+    dictionary: ""
+    user_dict: custom_phrase					# 指向 custom_phrase.txt 文档
+    db_class: stabledb
+    enable_completion: false
+    enable_sentence: true
+    initial_quality: 1
+  
+  punctuator:  # 设置标点符号集
+    import_preset: symbols
+  
+  # 指定 wubi 字典
+  translator/dictionary: dyyWubi
+  
+  # 设置以下 translator 相关的开关
+  translator/enable_sentence: true				#是否整句连打
+  translator/enable_user_dict: true				#开启用户词典，这将会记录用户词频并有自动调频效果
+  translator/enable_encoder: true				#是否自动造词
+  translator/encode_commit_history: false		#对已上屏的内容整合成词条，看需求
+  translator/max_phrase_length: 8				#自动造词的最长字数
+  
+  translator/enable_completion: true			#编码逐渐提示开关；编码提示
