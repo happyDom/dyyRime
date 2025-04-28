@@ -181,8 +181,7 @@ local function Filter(input, env)
 				end
 
 				table.insert(theCands,{dateInfo.date_M_Dth_YYYY_1,'💡'})
-				table.insert(theCands,{dateInfo.date_YYYYMMDD_3,'💡'})
-				table.insert(theCands,{dateInfo.date_YYYYMMDD,'💡'})
+				table.insert(theCands,{dateInfo.YYYY_xb..dateInfo.MM..dateInfo.DD, '💡'})
 				table.insert(theCands,{dateInfo.YYYY_sb.."/"..dateInfo.MM_xb.."."..dateInfo.DD_xb,'💡'})
 				if jqTime>0 then
 					table.insert(theCands,{dateInfo.lunarInfo.lunarDate_1,dateInfo.lunarInfo.jiJieLogo..jqName})

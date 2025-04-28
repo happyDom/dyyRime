@@ -7,6 +7,13 @@
 --引入 utf8String 处理字符串相关操作
 local utf8StringEnable, utf8String = pcall(require, 'utf8String')
 
+local logEnable, log = pcall(require, "runLog")
+if logEnable then
+	log.writeLog('')
+	log.writeLog('log from inputShow_Filter.lua')
+	log.writeLog('utf8StringEnable:'..tostring(utf8StringEnable))
+end
+
 --对于指定的输入符号，需要直接提供对应转换值的输入选项，供后处理使用
 local candsWillBeShown={}
 --以下单字母需要输出
@@ -147,29 +154,92 @@ candsWillBeShown['lv']='Lv'
 candsWillBeShown['ts']='Ts'
 candsWillBeShown['og']='Og'
 
+local wordFirsPosfix = 'z'
+local wordFirstFlg = false
+
+local candsCnt = 0
+local candsIdx = 0
+
 local function _inputShow(input, env)
-	local cands = {}	
-	local idx = 0
-	local candsWillBeShownStr = candsWillBeShown[env.engine.context.input]
+	local charCands = {}
+	local wordCands = {}
+	local cands = {}
+	local inputStr = tostring(env.engine.context.input)
+	local inputStrLen = string.len(inputStr)
+	local candsWillBeShownStr = candsWillBeShown[inputStr]
 	
+	wordFirstFlg = false
+	if inputStrLen > 0 then
+		if wordFirsPosfix == inputStr:sub(inputStrLen) then
+			wordFirstFlg = true
+		end
+	end
+	
+	candsIdx = 0
+	candsCnt = 0
 	for cand in input:iter() do
-		table.insert(cands, cand)
-		idx = idx + 1
-		if 1 == idx then
-			if candsWillBeShownStr then
-				table.insert(cands, Candidate("inputShow", 0, string.len(candsWillBeShownStr), candsWillBeShownStr, ''))
+		if 1 == inputStrLen then
+			if '~' ~= string.sub(cand.comment,1,1) then
+				-- 如果输入的字符数量为1，则只出一简字
+				table.insert(charCands, cand)
+				candsCnt = candsCnt + 1
+			end
+			if candsIdx > 10 then
+				break
+			end
+		else
+			if utf8String.utf8Len(cand.text) > 1 then
+				-- 3码以上才出词
+				if inputStrLen > 2 then
+					table.insert(wordCands, cand)
+					candsCnt = candsCnt + 1
+				end
+			else
+				table.insert(charCands, cand)
+				candsCnt = candsCnt + 1
 			end
 		end
+		
+		table.insert(cands, cand)
+		if 1 == candsCnt then
+			if candsWillBeShownStr then
+				table.insert(charCands, Candidate("inputShow", 0, inputStrLen, candsWillBeShownStr, ''))
+				table.insert(cands, Candidate("inputShow", 0, inputStrLen, candsWillBeShownStr, ''))
+			end
+		end
+		
+		candsIdx = candsIdx + 1
 	end
+	
 	-- 如果没有候选项，但是存在 inputShow 选项，则单独抛出该选项
-	if 0 == idx then
+	if 0 == candsCnt then
 		if candsWillBeShownStr then
-			table.insert(cands, Candidate("inputShow", 0, string.len(candsWillBeShownStr), candsWillBeShownStr, ''))
+			table.insert(charCands, Candidate("inputShow", 0, inputStrLen, candsWillBeShownStr, ''))
+			table.insert(cands, Candidate("inputShow", 0, inputStrLen, candsWillBeShownStr, ''))
 		end
 	end
 	
-	for idx=1,#cands do
-		yield(cands[idx])
+	-- 在五笔中，3码以上，则按原顺序抛候选项
+	if inputStrLen > 3 and not wordFirstFlg then
+		for idx=1,#cands do
+			yield(cands[idx])
+		end
+	else
+		if wordFirstFlg then
+			for idx=1,#wordCands do
+				yield(wordCands[idx])
+			end
+			for idx=1,#charCands do
+				yield(charCands[idx])
+			end
+		else
+			for idx=1,#charCands do
+				yield(charCands[idx])
+			end
+			for idx=1,#wordCands do
+				yield(wordCands[idx])
+			end
+		end
 	end
 end
 

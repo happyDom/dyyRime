@@ -180,6 +180,12 @@ local function Filter(input, env)
 					table.insert(theCands, {utf8Str.newPwd(16), '💡16位随机密码'})
 					table.insert(theCands, {utf8Str.newPwd(18), '💡18位随机密码'})
 				end
+			elseif ({['下标']=true})[candTxt_lower] then
+				if utf8StrEnable then
+					table.insert(theCands, {utf8Str.newSubscripts(2), '💡2位随机下标'})
+					table.insert(theCands, {utf8Str.newSubscripts(3), '💡3位随机下标'})
+					table.insert(theCands, {utf8Str.newSubscripts(5), '💡5位随机下标'})
+				end
 			end
 		end
 		

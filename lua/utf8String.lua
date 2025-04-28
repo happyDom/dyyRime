@@ -50,6 +50,10 @@ local lettersForPwd = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L
 "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
 "~", "!", "@", "#", "$", "%", "^", "&", "*", "-", "=", "+"}
 
+local lettersForSubscript = {"₁", "₂", "₃", "₄", "₅", "₆", "₇", "₈", "₉", "₀",
+"‸", "₊", "₋", "₌", "ₐ", "ᵦ", "ₑ", "ₔ", "ᵩ", "ᵧ", "ₕ", "ᵢ", "ₖ", "ₗ", "ₘ", "ₙ",
+"ₒ", "ᵣ", "ᵨ", "ₛ", "ₜ", "ᵤ", "ᵥ","ₓ"}
+
 --设置 dbg 开关
 local function setDbg(flg)
 	dbgFlg = flg
@@ -245,6 +249,28 @@ function newPwd(len, easyRead)
     return pwd
 end
 
+--生成一个指定长度的随机下标字串
+function newSubscripts(len)
+    len = len or 8
+
+	local subscripts = ''
+	local tmpChar = ''
+	local cntForOptions = #lettersForSubscript
+
+	-- 初始化随机数种子
+	math.randomseed(randomseed)
+
+	repeat
+		-- 重置随机数种子
+		randomseed = math.random(0, 100000000)
+		
+		--随机挑选一个字符
+		tmpChar = lettersForSubscript[math.random(cntForOptions)]
+		subscripts = subscripts .. tmpChar
+	until (utf8Len(subscripts) >= len)
+
+    return subscripts
+end
 
 --这是用于测试的函数
 local function test(printPrefix)
@@ -269,6 +295,7 @@ function M.init(...)
 	M.utf8PunctuationsTrim = utf8PunctuationsTrim
 	M.utf8Split = utf8Split
 	M.newPwd = newPwd
+	M.newSubscripts = newSubscripts
 
 	M.setDbg = setDbg
 	M.test = test
