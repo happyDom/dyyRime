@@ -1,16 +1,25 @@
 patch:
-  switches/+: #增加以下开关
-    - name: encnDic					# 中英字典开关
-      reset: 1
-      states: [Off, 中英对照]
   speller/alphabet: "zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA/" #定义输入字符的识别格式
+  switches/+: #增加以下开关
+    - name: debug # 一个debug的标志开关
+      reset: 0
+      states: [Off, Debug]
+  engine/translators/+: #增加以下translator
+    - table_translator@custom_phrase  # 指定使用 custom_phrase 进行输入字符的翻译
   engine/filters/+:
+    - lua_filter@*dateTime_Filter # 时间信息
     # 下面的滤镜会对候选项进行格式化处理
-    - lua_filter@Upper_Filter #英文后加空格滤镜
+    - lua_filter@*Upper_Filter #英文后加空格滤镜
     # 上面的滤镜会增加候选词选项
+    - lua_filter@*dic_4w_Filter						# 英中对照滤镜
     - uniquifier
-    # 上面的滤镜会增加候选词选项
-    - lua_filter@dic_4w_Filter						# 英中对照滤镜
+  custom_phrase:
+    dictionary: ""
+    user_dict: custom_phrase
+    db_class: stabledb
+    enable_completion: false
+    enable_sentence: true
+    initial_quality: 1
   punctuator:
     import_preset: symbols
   

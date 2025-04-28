@@ -1,11 +1,30 @@
-sync
-build
-*userdb
-installation.yaml
+# 屏敝所有文件
+*.*
+build/
+sync/
+
+# 优化对yaml的屏敝
+!*.yaml
+!*.lua
+!*.txt
 user.yaml
-*.bat
-csDocBuild*.py
-publish.py
-*.cs
-lua/runLog.txt
-gitVerInfoCfg.json
+installation.yaml
+runLog.txt
+wubi_pinyin.schema.yaml
+wubi_trad.schema.yaml
+wubi86.dict.yaml
+wubi86.schema.yaml
+pinyin_simp.dict.yaml
+pinyin_simp.schema.yaml
+
+# 解除对opencc文件夹的屏敝
+!opencc/
+!opencc/*.*
+
+#解除对 python for ENCHDicBuilding 的屏敝
+!python for ENCHDicBuilding/
+!python for ENCHDicBuilding/*.py
+
+#解除对 滤镜唯一性检查 的屏敝
+!滤镜唯一性检查/
+!滤镜唯一性检查/*.py

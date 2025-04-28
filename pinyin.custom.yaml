@@ -2,15 +2,13 @@ patch:
   translator/enable_user_dict: false				# false：自动造词及动态词频功能失效；true：启用自动造词和动态词频
   style/inline_preedit: false						# 是否在输入行内进行预测生成，true 表示不单独显示输入字符
   engine/translators/+:
-    - lua_translator@pinyin_translator				# 添加 pinyin_translator lua 翻译器
+    - lua_translator@*pinyin_translator				# 添加 pinyin_translator lua 翻译器
   engine/filters:									# 设置以下filter
     - simplifier
-    - lua_filter@pinyin_Filter						# 这个过滤器用于给拼音候选词组增加一个尾部空格
+    - lua_filter@*pinyin_Filter						# 这个过滤器用于给拼音候选词组增加一个尾部空格
     - uniquifier									# 过滤重复候选项，依赖 simplifier
   switches/+: #增加以下开关
     - name: space					# 一个标志开头，用来控制是否在拼音选项组词后自动加一个空格
-      reset: 1
       states: [无,空格]
     - name: short					# 一个标志开头，用来控制是否将词组中的zh/ch/sh/ng替换为ẑ/ĉ/ŝ/ŋ以缩短拼音
-      reset: 0
       states: [zhong,ẑoŋ]

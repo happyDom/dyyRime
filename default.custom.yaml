@@ -16,12 +16,15 @@ patch:
     - {accept: apostrophe, send: 3, when: has_menu}  # 使用 . 键选择第 3 候选词
     - {accept: bracketleft, send: Page_Up, when: paging}  # 使用 PageUp 键向上翻页
     - {accept: bracketright, send: Page_Down, when: has_menu}  # 使用 PageDown 键向下翻页
-  menu/page_size: 10  # 存在候选词选项时，每一页显示的候选词数量，最大是 10
+  menu/+:
+    page_size: 10													# 存在候选词选项时，每一页显示的候选词数量，最大是 10
+    alternative_select_labels: [❶,❷,❸,❹,❺,❻,❼,❽,❾,⓿]		# 修改候选项标识
   recognizer/patterns/punct: "^/([0-9]0?|[A-Za-z]+)$"  # 标点符号识别模式
   schema_list:
-    - {schema: wubi_pinyin}			# 五笔・拼音 输入方案
+    - {schema: wubi86}			# 五笔・拼音 输入方案
     - {schema: easy_en}				# 英文输入方案
     - {schema: latex}				# latex输入方案
+    - {schema: luna_pinyin}			# 明月拼音输入方案
     - {schema: pinyin}				# 拼音输入
   switcher:
     abbreviate_options: true  # 功能选项显示为简写模式
