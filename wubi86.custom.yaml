@@ -32,6 +32,7 @@ patch:
   engine/translators/+:				#定制translator如下
     - table_translator@custom_phrase				# 指定使用 custom_phrase 进行输入字符的翻译
     - lua_translator@*help
+    - lua_translator@*latexLettersInWubi
     - lua_translator@*force_gc          # 暴力 GC 降低内存
   engine/filters:									# 设置以下filter
     - simplifier
