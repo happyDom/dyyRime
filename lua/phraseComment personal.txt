@@ -3,50 +3,15 @@
 # 这个字典用于管理个人/私人信息，以便在共享/分享rime配置时，可以方便的将个人信息进行隔离
 
 # 常用链接
-https://finchat.io	财报解析
-https://ynrx7b5i1u.feishu.cn/docx/N2C3dfHsYooan6xcT4Kc5yCDnJf	错题集
-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnF2lalvdNCx2lbPZgFUbk1e	货款签收
-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnENCuF7j4rv7YoqdbtIV30d	物料签收
-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnVHxjOy6dzmV29Nx7Y5ItO5	物料采购
-https://ynrx7b5i1u.feishu.cn/base/bascnrVmQvxuC6EeKBdJJwEWwoc?table=tbluKlslLxkjUOXy&view=vewlSTR1XX	采购入口
-https://ynrx7b5i1u.feishu.cn/base/bascnrVmQvxuC6EeKBdJJwEWwoc?table=tbluKlslLxkjUOXy&view=vewXSOEyEv	销售入口
-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnlua6oQJ0yVxUKH8ueJWSPf	发票签收
-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnGcXFm35chlLOYLzyJnLh3b	开票登记
-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcnoGmlx4Km1P6vL1q1hq3Vud	薪资发放
-https://bewildcard.com/i/DOU	wildcard邀请链接
-https://ynrx7b5i1u.feishu.cn/share/base/form/shrcn8jIChFJbVMrjJESTtpYaf1	产品入库
+https://baidu.com	个人网址
 
 # 账号信息
-Yangqian_yy	经办
-Yaoyuan_yy	复核
-yqdyy2&nbspmht3ZAKCibVhH5U	steam账号&nbsp密码
+xxxxx	中国银行
 
 # 联系人信息
-18217511303	豆要远
-19171537237	豆要远电信
-13163235916	杨蔓
-13817616102	杨倩
-19171607705	杨倩电信
-15327533266	杨锐电信
-15872898669	杨运明
-15872898696	刘兰香
-18037587064	黄爱花
-19137588616	豆峰
-20702038@qq.com	羊羊
-943574610@qq.com	牧羊小童
-448000	荆门市
-448268	五里铺镇
-467224	辛店乡
-顺丰ID：SFDYY0CZ000	出租屋
-顺丰ID：SFDYY0BG000	办公室
-顺丰ID：SFDYY0JM000	荆门
-顺丰ID：SFDYY0DG000	豆岗
-顺丰ID：SFDYY0WL000	五里
-顺丰ID：SFDYY0ZZ000	郑州
-顺丰ID：SFDYY0WH000	武汉
+1234548902	张三
 
 # 常用办公信息
-海口业焱科技有限公司<br>91310120MA1HMANK1K<br>海南省海口市龙华区滨海大道32号复兴城A1区A5002-395号(18156512308)<br>中国银行股份有限公司海口海府支行(265036218653)<br>yypdyy1012@126.com	业焱科技
+
 
 # 常用身份信息注释
-02375	工号(豆要远)
