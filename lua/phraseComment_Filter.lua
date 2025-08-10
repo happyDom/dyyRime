@@ -10,7 +10,7 @@ local phraseCommentModuleEnable, phraseCommentModule = pcall(require, 'phraseCom
 
 if logEnable then
 	log.writeLog('')
-	log.writeLog('log from phraseComment_Filter.lua:')
+	log.writeLog('log from phraseComment_Filter.lua')
 	log.writeLog('phraseCommentModuleEnable:'..tostring(phraseCommentModuleEnable))
 end
 

@@ -7,11 +7,11 @@ patch:
   engine/translators/+: #增加以下translator
     - table_translator@custom_phrase  # 指定使用 custom_phrase 进行输入字符的翻译
   engine/filters/+:
-    - lua_filter@*dateTime_Filter # 时间信息
+    - lua_filter@dateTime_Filter # 时间信息
     # 下面的滤镜会对候选项进行格式化处理
-    - lua_filter@*Upper_Filter #英文后加空格滤镜
+    - lua_filter@Upper_Filter #英文后加空格滤镜
     # 上面的滤镜会增加候选词选项
-    - lua_filter@*dic_4w_Filter						# 英中对照滤镜
+    - lua_filter@dic_4w_Filter						# 英中对照滤镜
     - uniquifier
   custom_phrase:
     dictionary: ""
