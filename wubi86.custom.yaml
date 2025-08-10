@@ -38,7 +38,7 @@ patch:
     - simplifier
     - lua_filter@inputShow_Filter					# 这个过滤器用于在特定场景下，增加候选项，并整理部分出词顺序
     - lua_filter@phraseExt_Filter					# 自定义短语滤镜，针对响应的关键字，添加新的选项进来
-    - lua_filter@dateTime_filter					# 时间信息，对于特定的时间或者事件关键字，添加时间信息，例如日期，今天，明天，肝炎，父亲等
+    - lua_filter@dateTime_Filter					# 时间信息，对于特定的时间或者事件关键字，添加时间信息，例如日期，今天，明天，肝炎，父亲等
     - lua_filter@dynamicPhrase_Filter				# 动态候选项，用于动态获取与运行环境有关的信息
     - lua_filter@phraseReplace_Filter				# 词语替换滤镜，针对一些指定的关键字，将其替换为指定的内容，或者当没有指定内容时，替换为 *
     - lua_filter@pinyinAdding_Filter				# pinyin滤镜，用于对候选项中的字添加拼音
